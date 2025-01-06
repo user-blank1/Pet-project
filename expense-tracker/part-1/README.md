@@ -736,13 +736,13 @@ You can fork these repositories to get started. They contain basic tests. If you
   ---
 </details>
 
+## Solution
+If you've already finished working on this part or are stuck, these repositories might be useful to you.
+  - [API](https://github.com/petproject-dev/expense-tracker-backend-part-2) - Express.js
+  - [UI](https://github.com/petproject-dev/expense-tracker-frontend-part-2) - React
 
 ## Next Steps
 If you're ready to move forward, you can proceed to [next project part](../part-2/README.md).
-
-## Solution
-  - [API](https://github.com/petproject-dev/expense-tracker-backend-part-2) - Express.js
-  - [UI](https://github.com/petproject-dev/expense-tracker-frontend-part-2) - React
 
 ## Found an Issue?
 We strive to make the project as clear and helpful as possible. If you notice any errors, inconsistencies, or unclear instructions, please open a Pull Request in this repository with your suggested fixes or improvements. Your feedback helps improve the learning experience for everyone!
