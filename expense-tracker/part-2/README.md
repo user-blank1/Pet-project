@@ -193,7 +193,6 @@ Implement security measures to ensure data protection and prevent common vulnera
 
   ---
 
-  - Check your project for compliance with the [checklist](./CHECKLIST.md)
   - Make sure the tests pass - `npm run test`
   - Open a pull request for the `master` branch and send the solution to the code review
 
@@ -452,7 +451,6 @@ Ensure all authentication pages are fully responsive on all devices.
 
   ---
 
-  - Check your project for compliance with the [checklist](./CHECKLIST.md)
   - Make sure the tests pass - `npm run test`
   - Open a pull request for the `master` branch and send the solution to the code review
 
