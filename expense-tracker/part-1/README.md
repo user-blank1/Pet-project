@@ -1,3 +1,7 @@
+## Starter 
+  - [API](https://github.com/petproject-dev/expense-tracker-backend-part-1) - Express.js
+  - [UI](https://github.com/petproject-dev/expense-tracker-frontend-part-1) - React
+
 ## Backend
 
 <details>
@@ -731,6 +735,10 @@
 
 ## Next Steps
 If you're ready to move forward, you can proceed to [next project part](../part-2/README.md).
+
+## Solution
+  - [API](https://github.com/petproject-dev/expense-tracker-backend-part-2) - Express.js
+  - [UI](https://github.com/petproject-dev/expense-tracker-frontend-part-2) - React
 
 ## Found an Issue?
 We strive to make the project as clear and helpful as possible. If you notice any errors, inconsistencies, or unclear instructions, please open a Pull Request in this repository with your suggested fixes or improvements. Your feedback helps improve the learning experience for everyone!
