@@ -1,93 +1,548 @@
 ## Backend
 
 <details>
-  <summary>Task 1</summary>
-  Details...
+  <summary>Task 1: Setup Environment</summary>
+  
+  **Description:** 
+  Prepare the development environment for the project. Create the necessary project structure, initialize the development configuration, and ensure basic tools are set up to streamline the workflow. 
+  
+  **Acceptance Criteria:**
+  - A development environment is initialized with appropriate configuration. 
+  - A basic project structure is created (e.g., with a folder for source files). 
+  - A script is available to start the project in development mode. 
+  - Upon running the project, it outputs "Hello, World!" to verify successful setup. 
+  
+  **Best Practice Recommendations:**
+  **NodeJS**
+  - Use `npm init` to initialize the project. 
+  - Set up TypeScript with `tsconfig.json` and enable strict mode (`strict: true`). 
+  - Install `ts-node-dev` for hot reloading. 
+  - Organize the project structure with a `src/` directory and an entry point like `src/index.ts`. 
+  - Add a dev script in package.json to run the project using ts-node-dev. 
 </details>
 
 <details>
-  <summary>Task 2</summary>
-  Details...
+  <summary>Task 2: Create a Basic REST API</summary>
+  
+  **Description:**
+  Set up a basic REST API with at least one route to verify the routing and response handling functionality. 
+
+  **Acceptance Criteria:**
+  - A basic route `GET /ping` is implemented. 
+  - The route responds with a predefined message (e.g., `{"message":"pong"}`). 
+  - The application uses a configurable port. 
+  - A file for environment variables (`.env`) is created, and sensitive data is excluded from version control. 
+
+  **Best Practice Recommendations:**
+  **NodeJS** 
+  - Install and use express for routing. 
+  - Use `dotenv` to load environment variables and configure a port (e.g., `PORT=8080`). 
+  - Add `.env` to `.gitignore` and create a `.env.example` file with placeholder values. 
+  - Add `config/index.ts` file for configuring environment variables. 
+  - Set up `src/app.ts` to centralize middleware and routing. 
 </details>
 
 <details>
-  <summary>Task 3</summary>
-  Details...
+  <summary>Task 3: Implement Linting and Formatting</summary>
+  
+  **Description:**
+  Set up tools to enforce consistent code quality and style across the project. 
+
+  **Acceptance Criteria:**
+  - Linting is set up using a linter. 
+  - Formatting is handled automatically using a formatter. 
+  - Pre-configured commands check and fix linting and formatting issues. 
+  - Editor configuration ensures consistent behavior across different IDEs. 
+
+  **Best Practice Recommendations:**
+  **NodeJS** 
+
+  - Install eslint with TypeScript support (`@typescript-eslint/parser` and `@typescript-eslint/eslint-plugin`). 
+  - Use `eslint-config-prettier` to integrate ESLint with Prettier. 
+  - Install prettier and create a .prettierrc file with formatting rules. 
+  - Add scripts into the `package.json`: 
+    - `**build**` – build the project 
+    - `**lint**` – check the project using eslint rules 
+    - `**lint:fix**` – check the project using eslint rules and fix errors 
+    - `**format**` – formatting project using prettier rules 
+    - `**start**` – start the project in production mode 
+  - Use husky and lint-staged to enforce linting/formatting on pre-commit. 
+</details>
+ 
+<details>
+  <summary>Task 4: Set Up SQLite Database (Raw Queries)</summary>
+  
+  **Description:**
+  Initialize and configure a SQLite database for storing project data. Set up a basic schema and implement raw queries to interact with the database. 
+
+  This step is added for educational purposes so that you understand what is hidden under the hood of an ORM. The following tasks will remove most of the code. 
+
+  **Acceptance Criteria:**
+  - SQLite driver is installed. 
+  - A database connection is established, and an initial schema is created. 
+  - The schema includes a table for expenses. 
+    - id (integer, primary key) 
+    - name (text) 
+    - amount (real) 
+    - currency (text) 
+    - category (text) 
+    - date (datetime) 
+  - Basic endpoints allow adding and retrieving expense records. 
+
+  **Best Practice Recommendations:**
+  **NodeJS**
+
+  - Use the `better-sqlite3` package for efficient SQLite interaction. 
+  - Initialize the database in `src/db/db.service.ts` and ensure connection errors are handled. 
+  - Implement raw queries for inserting and selecting records in the `src/app.ts` file. 
 </details>
 
 <details>
-  <summary>Task 4</summary>
-  Details...
+  <summary>Task 5: Set Up SQLite Database (ORM)</summary>
+  
+  **Description:** 
+  Set up an ORM for database interaction to simplify schema management and querying. 
+
+  **Acceptance Criteria:** 
+  - The ORM is installed and configured. 
+  - A schema is defined, and migrations are used to update the database. 
+  - Basic database operations use the ORM. 
+
+  **Best Practice Recommendations:** 
+  **NodeJS**
+  - Use prisma for ORM and schema management. 
+  - Initialize Prisma with npx prisma init and configure the database URL in .env. 
+  - Define the expenses model in `prisma/schema.prisma`. 
+  - Use npx prisma migrate dev to apply schema changes. 
+  - Generate the Prisma client and use it in the exist endpoints. 
 </details>
 
 <details>
-  <summary>Task 5</summary>
-  Details...
+  <summary>Task 6: Create Route for Adding Expenses</summary>
+  
+  **Description:** 
+  Set up routes for basic Create operation on the expenses table. 
+
+  **Acceptance Criteria:** 
+  - Route for adding expenses are implemented: 
+    - `POST /api/expenses` Creates new expense record. 
+  - Data is validated to ensure correctness before saving to the database. 
+  - A modular structure is established for controllers, services, repositories, and entities. 
+  - Middleware for error handling and validation is implemented. 
+  - The application structure matches the defined project layout. 
+  - Processing 404 status code defined. 
+
+  **Best Practice Recommendations:** 
+  **NodeJS**
+  - Use express to define routes and middleware. 
+  - Place the business logic for expenses in `expenses.service.ts`. 
+  - Implement database interaction methods in `expenses.repository.ts`. 
+  - Use a DTO (Data Transfer Object) in `expenses/dto` to define the shape of - request payloads. 
+  - Create an expenses.entity.ts file to define the database model or schema. 
+  - Use middleware (`helpers/middlewares/validator.ts`) to validate incoming - requests. 
+  - Implement centralized error handling in `helpers/middlewares/errorHandler.ts` 
+  - Code structure is following:
+```
+    │   app.ts 
+    │   index.ts 
+    ├───config 
+    │       index.ts 
+    ├───db 
+    │       db.service.ts 
+    ├───expenses 
+    │   │   expenses.controller.ts 
+    │   │   expenses.repository.ts 
+    │   │   expenses.service.ts 
+    │   ├───dto 
+    │   │       create-expense.dto.ts 
+    │   └───entity 
+    │           expense.entity.ts 
+    └───helpers 
+        │   Exception.ts 
+        └───middlewares 
+                errorHandler.ts 
+                validator.ts 
+```
 </details>
 
 <details>
-  <summary>Task 6</summary>
-  Details...
-</details>
+  <summary>Task 7: Create Routes for Getting Expenses</summary>
+  
+  **Description:** 
+  Set up routes for retrieving expenses from the database. Include operations for fetching all expenses (with optional pagination and filtering) and fetching a specific expense by ID. 
 
-<details>
-  <summary>Task 7</summary>
-  Details...
-</details>
+  **Acceptance Criteria:** 
+  Routes for retrieving expenses are implemented: 
+    - `GET /api/expenses` Fetches and returns all expenses with optional query parameters: 
+      - Pagination: `limit` and `offset`. 
+      - Filtering: `fromDat`e and `toDate` based on the date field. 
+    - `GET /api/expenses/:id` Fetches a specific expense by its ID. 
+  - Data is validated to ensure correctness before processing requests. 
+  - Responses include appropriate HTTP status codes and messages. 
+  - Modular structure follows the established pattern. 
 
-<details>
-  <summary>Task 8</summary>
-  Details...
+  **Best Practice Recommendations:** 
+  **NodeJS**
+  - Prepare all the necessary data in the `expenses.controller.ts`. 
+  - Implement business logic for fetching expenses in `expenses.service.ts`. 
+  - Handle database queries in `expenses.repository.ts`. 
 </details>
-
+ 
 <details>
-  <summary>Task 9</summary>
-  Details...
+  <summary>Task 8: Create Routes for Updating and Deleting Expenses</summary>
+  
+  **Description:** 
+  Set up routes for updating and deleting expense records in the database. Ensure that only specified fields are updated during PATCH operations. 
+
+  **Acceptance Criteria:** 
+  - Routes for updating and deleting expenses are implemented: 
+      - `PATCH /api/expenses/:id` Updates specific fields of an expense. 
+      - `DELETE /api/expenses/:id` Deletes an expense by its ID. 
+  - Data is validated to ensure correctness before processing requests. 
+  - Responses include appropriate HTTP status codes and messages. 
+
+  **Best Practice Recommendations:** 
+  - Prepare all the necessary data in the `expenses.controller.ts`. 
+  - Implement business logic for fetching expenses in `expenses.service.ts`. 
+  - Handle database queries in `expenses.repository.ts`. 
+  - Use DTOs in `expenses/dto` to validate request payloads and parameters. 
+  - Use middleware (`helpers/middlewares/validator.ts`) for data validation. 
+</details>
+ 
+<details>
+  <summary>Task 9: Implement Basic Logging</summary>
+  
+  **Description:** 
+  Add logging functionality to track significant events (e.g., expense creation, updates, and errors). Ensure logs are accessible in both development and production environments. 
+
+  **Acceptance Criteria:** 
+  - Logs are added for key actions: 
+    - Successful expense creation, updates, and deletions. 
+    - Errors during request handling. 
+  - Logs are displayed in the console during development. 
+  - Logs are written to a file in production. 
+
+  **Best Practice Recommendations:** 
+  **NodeJS**
+  - Use a logging library like winston or pino. 
+  - Place logging configuration in helpers/Logger.ts. 
+  - Code structure is following: 
+```
+  │   app.ts 
+  │   index.ts 
+  ├───config 
+  │       index.ts 
+  ├───db 
+  │       db.service.ts 
+  ├───expenses 
+  │   │   expenses.controller.ts 
+  │   │   expenses.repository.ts 
+  │   │   expenses.service.ts 
+  │   ├───dto 
+  │   │       create-expense.dto.ts 
+  │   │       update-expense.dto.ts 
+  │   └───entity 
+  │           expense.entity.ts 
+  └───helpers 
+      |    dateUtils.ts 
+      │   Exception.ts 
+      │   Logger.ts 
+      └───middlewares 
+              errorHandler.ts 
+              validator.ts
+```
 </details>
 
 ## Frontend
 
 <details>
-  <summary>Task 1</summary>
-  Details...
+  <summary>Task 1: Setup Development Environment</summary>
+  
+  **Description:** 
+  Prepare the development environment for the project. Initialize the necessary configurations for a smooth development process, including TypeScript setup and project structure organization. 
+
+  **Acceptance Criteria:**
+  A development environment is initialized with appropriate configuration. 
+  TypeScript is installed and properly configured (tsconfig.json is set up). 
+  Project structure is organized (e.g., src/ for source files). 
+  Running a development command starts the project in dev mode. 
+
+  **Best Practice Recommendations:**
+  **React**
+  - Use vite for initialization. 
+  - Configure TypeScript paths for cleaner imports. 
 </details>
 
 <details>
-  <summary>Task 2</summary>
-  Details...
+  <summary>Task 2: Implement Linting and Formatting</summary>
+
+  **Description:** 
+  Set up linting and formatting to maintain consistent code quality across the project. Configure ESLint, Prettier, and Stylelint, along with EditorConfig to ensure consistency. 
+
+  **Acceptance Criteria:**
+  - ESLint is installed and configured. 
+  - Prettier is installed and integrated with ESLint. 
+  - Stylelint is installed for CSS linting. 
+  - EditorConfig is set up with rules for indentation, line endings, etc. 
+  - CSS uses preprocessors (e.g., SASS) for modular styling. 
+  - Scripts added: 
+      - `**lint**` - Checks the project for linting issues. 
+      - `**lint:fix**` - Fixes linting issues. 
+      - `**stylelint**` - Checks the project for css linting issues. 
+      - `**stylelint:fix**` - Fixes css linting issues. 
+      - `**format**` - Formats code based on Prettier rules. 
+
+  **Best Practice Recommendations:**
+  **React**
+  - Use plugins such as eslint-plugin-react for React-specific linting. 
+  - Configure stylelint-config-standard for CSS linting. 
 </details>
 
 <details>
-  <summary>Task 3</summary>
-  Details...
+  <summary>Task 3: Creating Reusable Components</summary>
+
+  **Description:** 
+  Develop foundational reusable components that can be utilized across the application. These components will ensure design consistency and simplify further development. 
+
+  **Acceptance Criteria:**
+  - The following components are implemented: 
+    - **Logo**: Displays the application logo. 
+      - Design Link 
+    - **Button**: A standard button with support for different states(e.g., disabled, active). 
+      - Design Link 
+    - **Button with Icon**: A button that includes an icon. 
+      - Design Link 
+    - **Icon**: A component for rendering SVG icons. 
+      - Design Link 
+    - **FormField**: A wrapper for form fields that includes a label, children, and validation error messages. 
+      - Design Link 
+    - **Input**: A text input field with validation and style support. 
+      - Design Link 
+    - **Input with Currency**: An extension of the standard input, displaying the selected currency. 
+      - Design Link 
+    - **Date Picker**: A component for selecting dates. 
+      - Design Link 
+    - **Table**: A customizable table component with configurable columns and data rendering. 
+      - Design Link 
+  - Each component is documented with usage examples. 
+
+  **Best Practice Recommendations:**
+  **React**
+  - Logo: 
+    - Example:
+    ```jsx
+    <Logo />
+    ``` 
+  - Button: 
+    - Example:
+    ```jsx
+    <Button disabled onClick={handleClick}>Click me</Button>
+    ``` 
+  - Icon: 
+    - Create an ```<Icon />``` component for rendering SVG icons, with a name prop for specifying the icon and size for scaling. 
+    - Example:
+    ```jsx
+    <Icon iconName="plus" size="large" />
+    ``` 
+  - FormField: 
+    - Create a ```<FormField />``` component that wraps form inputs with a label and displays validation error messages. 
+    - Props include: 
+      - label: The text for the input label. 
+      - error: An error message to display (if any). 
+      - children: The input or child element. 
+    - Example:
+    ```jsx
+    <FormField
+      label="Name"
+      error="Name is required">
+      <Input value={name} onChange={handleChange} />
+    </FormField>
+    ```
+  - Button with Icon: 
+    - Extend ```<Button />``` to support an icon prop. 
+    - Use ```<Icon />``` component. 
+    - Example:
+    ```jsx
+    <Button disabled iconName={"plus"}>Add</Button>
+    ``` 
+  - Input: 
+    - Build an ```<Input />``` component that accepts props such as type, placeholder, value, and onChange. 
+    - Example:
+    ```jsx
+    <Input
+      type="text"
+      placeholder="Enter name"
+      value={name}
+      onChange={handleChange} />
+    ``` 
+  - Input with Currency: 
+    - Extend ```<Input />``` to include a currency prop that displays the selected currency symbol. 
+    - Example:
+    ```jsx
+    <InputWithCurrency
+      value={amount}
+      currency="USD"
+      onChange={handleChange} />
+    ``` 
+  - Date Picker: 
+    - Implement a ```<DatePicker />``` component for selecting dates, with support for a value prop and onChange callback. 
+    - Example:
+    ```jsx
+    <DatePicker
+      value={selectedDate}
+      onChange={handleDateChange} />
+    ```
+  - Table: 
+    - Create a ```<Table />``` component that accepts columns and data props for customization. 
+    - Example: 
+    ```jsx
+    <Table 
+      columns={[ 
+        { key: 'name', label: 'Name' }, 
+        { key: 'date', label: 'Date' }, 
+      ]} 
+      data={[{ name: 'John Doe', date: '2024-12-31' }]} 
+    /> 
+    ```
+</details>
+ 
+<details>
+  <summary>Task 4: Create Basic API Integration </summary>
+    
+  **Description:** 
+  Set up a basic API integration to fetch data from the backend and display it on the front end. Test integration by fetching expenses. 
+
+  **Acceptance Criteria:**
+  - A basic API service is created to handle HTTP requests. 
+  - Fetch expenses data from the /api/expenses endpoint and display it in the UI. 
+  - Handle loading and error states appropriately. 
+  
+  **Endpoints:**
+  - `GET /api/expenses` - Fetch all expenses. 
+
+  **Best Practice Recommendations:**
+  **React**
+  - Use axios or fetch for making API calls. 
+  - Manage API states (loading, error, success) with a react context. 
 </details>
 
 <details>
-  <summary>Task 4</summary>
-  Details...
+  <summary>Task 5: Build Responsive Layout</summary>
+  
+  **Description:** 
+  Implement a responsive design for the application that adapts to different screen sizes, ensuring usability on both mobile and desktop devices. 
+
+  **Acceptance Criteria:**
+  - The application layout adjusts seamlessly between mobile, tablet, and desktop views. 
+  - Key components, such as the header and table, are responsive. 
+  - Use CSS grid and flexbox for responsive layouts. 
 </details>
 
 <details>
-  <summary>Task 5</summary>
-  Details...
+  <summary>Task 6: Implement Header Component </summary>
+
+  **Description:** 
+  Create a header component that includes a logo. 
+
+  **Acceptance Criteria:**
+  - A header component is implemented and displayed across all pages. 
+  - Use reusable components for shared elements like the logo. 
+  - Use CSS Modules or styled-components for styling. 
 </details>
 
 <details>
-  <summary>Task 6</summary>
-  Details...
+  <summary>Task 7: Display Expenses Table </summary>
+  
+  **Description:** 
+  Create a table to display the list of expenses fetched from the backend. Handle cases where expenses are not available or are still loading. 
+
+  **Acceptance Criteria:**
+  - A table is created with columns: Name, Category, Date, Total, and Menu. 
+  - If no expenses are available, a placeholder message is displayed. 
+  - If expenses are loading, a skeleton is shown. 
+
+  **Endpoints:** 
+  - `GET /api/expenses` - Fetch all expenses. 
+
+  **Best Practice Recommendations:**
+  **React**
+  - Use libraries like react-table for table rendering and management. 
+  - Add prop-based configuration for table components. 
+</details>
+ 
+<details>
+  <summary>Task 8: Implement Add Expense Functionality</summary>
+  
+  **Description:** 
+  Create a form for adding a new expense. The form should be accessible through a right sidebar that opens when clicking the "+" button. 
+
+  **Acceptance Criteria:**
+  - A button triggers the display of a right sidebar with the form. 
+  - The form includes fields for Name, Payment amount, Category and Date. 
+  - Submitting the form sends data to the backend and updates the table. 
+
+  **Endpoints:** 
+  - `POST /api/expenses` - Add a new expense. 
+
+  **Best Practice Recommendations:**
+  **React**
+  - Use controlled components for form handling. 
+  - Validate form inputs with yup. 
+  - Use react-hook-form for work with forms. 
+</details>
+ 
+<details>
+  <summary>Task 9: Implement Expense Detail View </summary>
+  
+  **Description:** 
+  Add functionality to view detailed information about an expense by clicking on a table row. 
+
+  **Acceptance Criteria:**
+  - Clicking on a table row opens a detailed view of the expense. 
+  - The detailed view displays all expense information, including Name, Category, Date, and Total. 
+
+  **Endpoints:**
+  - `GET /api/expenses/:id` - Fetch expense details by ID. 
+
+  **Best Practice Recommendations:**
+  **React**
+  - Use React Router for routing to detailed views. 
+</details>
+ 
+<details>
+  <summary>Task 10: Add Update and Delete Expense Features </summary>
+  
+  **Description:** 
+  Implement functionality to update or delete an expense from the table. 
+
+  **Acceptance Criteria:**
+  An "Edit" button allows modification of expense details. 
+  A "Delete" button removes the expense from the list and updates the backend. 
+  
+  **Endpoints:**
+  - `PATCH /api/expenses/:id` - Update an expense. 
+  - `DELETE /api/expenses/:id` - Delete an expense. 
+
+  **Best Practice Recommendations:**
+  **React**
+  - Use modals for editing or confirming deletion. 
+  - Handle optimistic updates for better user experience. 
 </details>
 
 <details>
-  <summary>Task 7</summary>
-  Details...
-</details>
+  <summary>Task 11: Add Pagination and Filtering for Expenses </summary>
+  
+  **Description:** 
+  Implement pagination and filtering functionality to enhance the user experience when viewing expenses. Enable filtering by date range and paginated views of expense data. 
 
-<details>
-  <summary>Task 8</summary>
-  Details...
-</details>
+  **Acceptance Criteria:**
+  The expenses table supports pagination with controls for navigating between pages. Pagination works like an infinite scroll. 
+  Filtering by date range is available through a form or input fields. 
+  The UI updates dynamically based on pagination and filter inputs. 
 
-<details>
-  <summary>Task 9</summary>
-  Details...
+  **Endpoints:**
+  - `GET /api/expenses` - Fetch expenses with optional query parameters: 
+    - `**limit**` - Number of records per page. 
+    - `**offset**` - Offset for pagination. 
+    - `**fromDate**` -and toDate: Filter by date range. 
 </details>
