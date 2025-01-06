@@ -22,21 +22,6 @@ This division helps students concentrate on specific areas of development, makin
   Description: Authorization and authentication (JWT)
 - [Part 3](./part-3/README.md) - in progress
 
-## Starter repositories
-- Part 1
-  - [API](https://github.com/petproject-dev/expense-tracker-backend-part-1) - Express.js
-  - [UI](https://github.com/petproject-dev/expense-tracker-frontend-part-1) - React
-- Part 2
-  - [API](https://github.com/petproject-dev/expense-tracker-backend-part-2) - Express.js
-  - [UI](https://github.com/petproject-dev/expense-tracker-frontend-part-2) - React
-- Part 3 - in progress
- 
-## Solutions
-- Part 1
-  - [API](https://github.com/petproject-dev/expense-tracker-backend-part-2) - Express.js
-  - [UI](https://github.com/petproject-dev/expense-tracker-frontend-part-2) - React
-- Part 2 - in progress
-- Part 3 - in progress
 
 ## Found an Issue?
 We strive to make the project as clear and helpful as possible. If you notice any errors, inconsistencies, or unclear instructions, please open a Pull Request in this repository with your suggested fixes or improvements. Your feedback helps improve the learning experience for everyone!
