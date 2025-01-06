@@ -1,4 +1,8 @@
-## Starter 
+## Part 1 Description
+In this part, you will configure frontend and backend repositories, create a library of reusable components, work with responsive design, practice client-browser interaction, work with data validation, create your first CRUD, work with a database
+
+## Starter Repositories
+You can fork these repositories to get started. They contain basic tests. If you don't find a repository with the stack you need, create a repository yourself
   - [API](https://github.com/petproject-dev/expense-tracker-backend-part-1) - Express.js
   - [UI](https://github.com/petproject-dev/expense-tracker-frontend-part-1) - React
 
