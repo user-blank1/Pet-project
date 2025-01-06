@@ -23,6 +23,6 @@ This division helps students concentrate on specific areas of development, makin
 - [Part 3](./part-3/README.md)
 
 ## Starter repositories
-- [expense-tracker-part-1](https://github.com/petproject-dev/expense-tracker-part-1)
-- [expense-tracker-part-2](https://github.com/petproject-dev/expense-tracker-part-2)
-- [expense-tracker-part-3](https://github.com/petproject-dev/expense-tracker-part-3)
+- [expense-tracker-backend-part-1](https://github.com/petproject-dev/expense-tracker-backend-part-1)
+- [expense-tracker-frontend-part-1](https://github.com/petproject-dev/expense-tracker-frontend-part-1)
+- [expense-tracker-backend-part-2](https://github.com/petproject-dev/expense-tracker-backend-part-2)
