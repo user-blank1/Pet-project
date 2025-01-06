@@ -16,11 +16,13 @@ The project is divided into three main parts:
 This division helps students concentrate on specific areas of development, making the learning process more manageable and structured. Additionally, students can choose to work on only the backend or frontend if they prefer to specialize.
 
 ## Subprojects
-- [Part 1](./part-1/README.md)
-- [Part 2](./part-2/README.md)
+- [Part 1](./part-1/README.md)\
+  Description: Basic repository setup (linters, prettier, husky, bundler), creation of a basic API, creation of a component library, responsive design, data validation
+- [Part 2](./part-2/README.md)\
+  Description: Authorization and authentication (JWT)
 - [Part 3](./part-3/README.md)
 
-## Starters
-- [Part 1](https://github.com/petproject-dev/expense-tracker-part-1)
-- [Part 2](https://github.com/petproject-dev/expense-tracker-part-2)
-- [Part 3](https://github.com/petproject-dev/expense-tracker-part-3)
+## Starter repositories
+- [expense-tracker-part-1](https://github.com/petproject-dev/expense-tracker-part-1)
+- [expense-tracker-part-2](https://github.com/petproject-dev/expense-tracker-part-2)
+- [expense-tracker-part-3](https://github.com/petproject-dev/expense-tracker-part-3)
