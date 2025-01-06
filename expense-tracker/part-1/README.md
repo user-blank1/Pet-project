@@ -322,6 +322,18 @@
 ---
 </details>
 
+<details>
+  <summary>Task 10: Final step</summary>
+
+  ---
+
+  - Check your project for compliance with the [checklist](./CHECKLIST.md)
+  - Make sure the tests pass - `npm run test`
+  - Open a pull request for the `master` branch and send the solution to the code review
+
+  ---
+</details>
+
 ## Frontend
 
 <details>
@@ -703,3 +715,24 @@
 
 ---
 </details>
+
+<details>
+  <summary>Task 12: Final step</summary>
+
+  ---
+
+  - Check your project for compliance with the [checklist](./CHECKLIST.md)
+  - Make sure the tests pass - `npm run test`
+  - Open a pull request for the `master` branch and send the solution to the code review
+
+  ---
+</details>
+
+
+## Next Steps
+If you're ready to move forward, you can proceed to [next project part](../part-2/README.md).
+
+## Found an Issue?
+We strive to make the project as clear and helpful as possible. If you notice any errors, inconsistencies, or unclear instructions, please open a Pull Request in this repository with your suggested fixes or improvements. Your feedback helps improve the learning experience for everyone!
+
+Happy coding, and good luck with this part of the project!
