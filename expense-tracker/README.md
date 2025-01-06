@@ -14,3 +14,13 @@ The project is divided into three main parts:
 - **Frontend**: Covers the implementation of the user interface, reusable components, and client-side logic.
 
 This division helps students concentrate on specific areas of development, making the learning process more manageable and structured. Additionally, students can choose to work on only the backend or frontend if they prefer to specialize.
+
+## Subprojects
+- [Part 1](./part-1/README.md)
+- [Part 2](./part-2/README.md)
+- [Part 3](./part-3/README.md)
+
+## Starters
+- [Part 1](https://github.com/petproject-dev/expense-tracker-part-1)
+- [Part 2](https://github.com/petproject-dev/expense-tracker-part-2)
+- [Part 3](https://github.com/petproject-dev/expense-tracker-part-3)
