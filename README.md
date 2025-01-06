@@ -17,8 +17,8 @@ Each project is broken into manageable parts, making it easier to learn progress
 ## How It Works
 1. Choose a Project\
 Explore the list of available projects in this repository and pick one that aligns with your learning goals. For example, you can start with the [Expense Tracker](./expense-tracker/README.md).
-1. Fork the Starter Repository\
-Each project includes a starter repository containing the initial setup and tasks. Fork the repository to your GitHub account to begin working on it.
+1. Fork the Starter Repository (Optional)\
+If there is a starter in the project for the stack you have chosen, then fork it. Unfortunately, the starting project will not be suitable for every technology.
 1. Work Task by Task\
 Follow the step-by-step tasks outlined in the project README. These tasks are designed to incrementally guide you through the project, covering essential concepts and techniques.
 1. Verify Your Work\
