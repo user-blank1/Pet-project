@@ -24,17 +24,21 @@ You can fork these repositories to get started. They contain basic tests. If you
   - A script is available to start the project in development mode. 
   - Upon running the project, it outputs "Hello, World!" to verify successful setup. 
   
-  **Best Practice Recommendations:**
+  **Technology-related requirements:**
   
-  **NodeJS**
-  
+  <details>
+  <summary>NodeJS</summary>
+
   - Use `npm init` to initialize the project. 
   - Set up TypeScript with `tsconfig.json` and enable strict mode (`strict: true`). 
   - Install `ts-node-dev` for hot reloading. 
   - Organize the project structure with a `src/` directory and an entry point like `src/index.ts`. 
   - Add a dev script in package.json to run the project using ts-node-dev. 
+  </details>
+
 
 ---
+
 </details>
 
 <details>
@@ -53,17 +57,23 @@ You can fork these repositories to get started. They contain basic tests. If you
   - The application uses a configurable port. 
   - A file for environment variables (`.env`) is created, and sensitive data is excluded from version control. 
 
-  **Best Practice Recommendations:**
+  **Technology-related requirements:**
   
-  **NodeJS**
+  <details>
+  <summary>NodeJS</summary>
 
   - Install and use express for routing. 
   - Use `dotenv` to load environment variables and configure a port (e.g., `PORT=8080`). 
   - Add `.env` to `.gitignore` and create a `.env.example` file with placeholder values. 
   - Add `config/index.ts` file for configuring environment variables. 
   - Set up `src/app.ts` to centralize middleware and routing. 
+  </details>
+
+
+
 
 ---
+
 </details>
 
 <details>
@@ -82,9 +92,10 @@ You can fork these repositories to get started. They contain basic tests. If you
   - Pre-configured commands check and fix linting and formatting issues. 
   - Editor configuration ensures consistent behavior across different IDEs. 
 
-  **Best Practice Recommendations:**
+  **Technology-related requirements:**
   
-  **NodeJS**
+  <details>
+  <summary>NodeJS</summary>
 
   - Install eslint with TypeScript support (`@typescript-eslint/parser` and `@typescript-eslint/eslint-plugin`). 
   - Use `eslint-config-prettier` to integrate ESLint with Prettier. 
@@ -96,8 +107,11 @@ You can fork these repositories to get started. They contain basic tests. If you
     - `format` – formatting project using prettier rules 
     - `start` – start the project in production mode 
   - Use `husky` and `lint-staged` to enforce linting/formatting on `pre-commit`. 
+  </details>
+
 
 ---
+
 </details>
  
 <details>
@@ -124,15 +138,19 @@ You can fork these repositories to get started. They contain basic tests. If you
     - date (datetime) 
   - Basic endpoints allow adding and retrieving expense records. 
 
-  **Best Practice Recommendations:**
+  **Technology-related requirements:**
   
-  **NodeJS**
+  <details>
+  <summary>NodeJS</summary>
 
   - Use the `better-sqlite3` package for efficient SQLite interaction. 
   - Initialize the database in `src/db/db.service.ts` and ensure connection errors are handled. 
   - Implement raw queries for inserting and selecting records in the `src/app.ts` file. 
+  </details>
+
 
 ---
+
 </details>
 
 <details>
@@ -150,17 +168,21 @@ You can fork these repositories to get started. They contain basic tests. If you
   - A schema is defined, and migrations are used to update the database. 
   - Basic database operations use the ORM. 
 
-  **Best Practice Recommendations:**
+  **Technology-related requirements:**
 
-  **NodeJS**
-  
+  <details>
+  <summary>NodeJS</summary>
+
   - Use prisma for ORM and schema management. 
   - Initialize Prisma with `npx prisma init` and configure the database URL in `.env`. 
   - Define the expenses model in `prisma/schema.prisma`. 
   - Use npx prisma migrate dev to apply schema changes. 
   - Generate the Prisma client and use it in the exist endpoints. 
+  </details>
+
 
 ---
+
 </details>
 
 <details>
@@ -182,10 +204,11 @@ You can fork these repositories to get started. They contain basic tests. If you
   - The application structure matches the defined project layout. 
   - Processing 404 status code defined. 
 
-  **Best Practice Recommendations:**
+  **Technology-related requirements:**
 
-  **NodeJS**
-  
+  <details>
+  <summary>NodeJS</summary>
+
   - Use express to define routes and middleware. 
   - Place the business logic for expenses in `expenses.service.ts`. 
   - Implement database interaction methods in `expenses.repository.ts`. 
@@ -215,8 +238,11 @@ You can fork these repositories to get started. They contain basic tests. If you
                 errorHandler.ts 
                 validator.ts 
 ```
+  </details>
+
 
 ---
+
 </details>
 
 <details>
@@ -239,15 +265,18 @@ You can fork these repositories to get started. They contain basic tests. If you
   - Responses include appropriate HTTP status codes and messages. 
   - Modular structure follows the established pattern. 
 
-  **Best Practice Recommendations:**
+  **Technology-related requirements:**
 
-  **NodeJS**
-  
+  <details>
+  <summary>NodeJS</summary>
+
   - Prepare all the necessary data in the `expenses.controller.ts`. 
   - Implement business logic for fetching expenses in `expenses.service.ts`. 
   - Handle database queries in `expenses.repository.ts`. 
+  </details>
 
 ---
+
 </details>
  
 <details>
@@ -267,15 +296,20 @@ You can fork these repositories to get started. They contain basic tests. If you
   - Data is validated to ensure correctness before processing requests. 
   - Responses include appropriate HTTP status codes and messages. 
 
-  **Best Practice Recommendations:**
+  **Technology-related requirements:**
+
+  <details>
+  <summary>NodeJS</summary>
 
   - Prepare all the necessary data in the `expenses.controller.ts`. 
   - Implement business logic for fetching expenses in `expenses.service.ts`. 
   - Handle database queries in `expenses.repository.ts`. 
   - Use DTOs in `expenses/dto` to validate request payloads and parameters. 
   - Use middleware (`helpers/middlewares/validator.ts`) for data validation. 
+  </details>
 
 ---
+
 </details>
  
 <details>
@@ -295,10 +329,11 @@ You can fork these repositories to get started. They contain basic tests. If you
   - Logs are displayed in the console during development. 
   - Logs are written to a file in production. 
 
-  **Best Practice Recommendations:**
+  **Technology-related requirements:**
 
-  **NodeJS**
-  
+  <details>
+  <summary>NodeJS</summary>
+
   - Use a logging library like winston or pino. 
   - Place logging configuration in helpers/Logger.ts. 
   - Code structure is following: 
@@ -326,8 +361,10 @@ You can fork these repositories to get started. They contain basic tests. If you
               errorHandler.ts 
               validator.ts
 ```
+  </details>
 
 ---
+
 </details>
 
 <details>
@@ -339,7 +376,9 @@ You can fork these repositories to get started. They contain basic tests. If you
   - Make sure the tests pass - `npm run test`
   - Open a pull request for the `master` branch and send the solution to the code review
 
+  
   ---
+
 </details>
 
 ## Frontend
@@ -355,19 +394,22 @@ You can fork these repositories to get started. They contain basic tests. If you
 
   **Acceptance Criteria:**
   
-  A development environment is initialized with appropriate configuration. 
-  TypeScript is installed and properly configured (`tsconfig.json` is set up). 
-  Project structure is organized (e.g., `src/` for source files). 
-  Running a development command starts the project in dev mode. 
-
-  **Best Practice Recommendations:**
-  
-  **React**
-  
-  - Use vite for initialization. 
+  - A development environment is initialized with appropriate configuration. 
+  - TypeScript is installed and properly configured (`tsconfig.json` is set up). 
+  - Project structure is organized (e.g., `src/` for source files). 
+  - Running a development command starts the project in dev mode. 
   - Configure TypeScript paths for cleaner imports. 
 
+  **Technology-related requirements:**
+  
+  <details>
+  <summary>React</summary>
+
+  - Use vite for initialization. 
+  </details>
+
 ---
+
 </details>
 
 <details>
@@ -393,14 +435,17 @@ You can fork these repositories to get started. They contain basic tests. If you
       - `stylelint:fix` - Fixes css linting issues. 
       - `format` - Formats code based on Prettier rules. 
 
-  **Best Practice Recommendations:**
+  **Technology-related requirements:**
   
-  **React**
+  <details>
+  <summary>React</summary>
   
-  - Use plugins such as eslint-plugin-react for React-specific linting. 
-  - Configure stylelint-config-standard for CSS linting. 
+  - Use plugins such as `eslint-plugin-react` for React-specific linting. 
+  - Configure `stylelint-config-standard` for CSS linting.
+  </details>
 
 ---
+
 </details>
 
 <details>
@@ -435,11 +480,12 @@ You can fork these repositories to get started. They contain basic tests. If you
       - [Design Link](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=2-19441&t=ra9tjWdp5aVmkqRH-4)
   - Each component is documented with usage examples. 
 
-  **Best Practice Recommendations:**
+  **Technology-related requirements:**
   
-  **React**
+  <details>
+  <summary>React</summary>
   
-  - Logo: 
+    - Logo: 
     - Example:
     ```jsx
     <Logo />
@@ -515,8 +561,10 @@ You can fork these repositories to get started. They contain basic tests. If you
       data={[{ name: 'John Doe', date: '2024-12-31' }]} 
     /> 
     ```
+  </details>
 
 ---
+
 </details>
  
 <details>
@@ -538,14 +586,17 @@ You can fork these repositories to get started. They contain basic tests. If you
   
   - `GET /api/expenses` - Fetch all expenses. 
 
-  **Best Practice Recommendations:**
+  **Technology-related requirements:**
   
-  **React**
-  
+  <details>
+  <summary>React</summary>
+
   - Use axios or fetch for making API calls. 
-  - Manage API states (loading, error, success) with a react context. 
+  - Manage API states (loading, error, success) with a React Context. 
+  </details>
 
 ---
+
 </details>
 
 <details>
@@ -563,7 +614,9 @@ You can fork these repositories to get started. They contain basic tests. If you
   - Key components, such as the header and table, are responsive. 
   - Use CSS grid and flexbox for responsive layouts. 
 
+
 ---
+
 </details>
 
 <details>
@@ -581,7 +634,9 @@ You can fork these repositories to get started. They contain basic tests. If you
   - Use reusable components for shared elements like the logo. 
   - Use CSS Modules or styled-components for styling. 
 
+
 ---
+
 </details>
 
 <details>
@@ -603,14 +658,17 @@ You can fork these repositories to get started. They contain basic tests. If you
 
   - `GET /api/expenses` - Fetch all expenses. 
 
-  **Best Practice Recommendations:**
+  **Technology-related requirements:**
   
-  **React**
-  
+  <details>
+  <summary>React</summary>
+
   - Use libraries like react-table for table rendering and management. 
   - Add prop-based configuration for table components. 
+  </details>
 
 ---
+
 </details>
  
 <details>
@@ -632,15 +690,18 @@ You can fork these repositories to get started. They contain basic tests. If you
 
   - `POST /api/expenses` - Add a new expense. 
 
-  **Best Practice Recommendations:**
+  **Technology-related requirements:**
   
-  **React**
-  
+  <details>
+  <summary>React</summary>
+
   - Use controlled components for form handling. 
-  - Validate form inputs with yup. 
-  - Use react-hook-form for work with forms. 
+  - Validate form inputs with `yup`. 
+  - Use `react-hook-form` for work with forms. 
+  </details>
 
 ---
+
 </details>
  
 <details>
@@ -661,13 +722,16 @@ You can fork these repositories to get started. They contain basic tests. If you
   
   - `GET /api/expenses/:id` - Fetch expense details by ID. 
 
-  **Best Practice Recommendations:**
+  **Technology-related requirements:**
   
-  **React**
-  
-  - Use React Router for routing to detailed views. 
+  <details>
+  <summary>React</summary>
+
+  - Use `react-router` for routing to detailed views. 
+  </details>
 
 ---
+
 </details>
  
 <details>
@@ -689,14 +753,17 @@ You can fork these repositories to get started. They contain basic tests. If you
   - `PATCH /api/expenses/:id` - Update an expense. 
   - `DELETE /api/expenses/:id` - Delete an expense. 
 
-  **Best Practice Recommendations:**
+  **Technology-related requirements:**
   
-  **React**
-  
+  <details>
+  <summary>React</summary>
+
   - Use modals for editing or confirming deletion. 
   - Handle optimistic updates for better user experience. 
+  </details>
 
 ---
+
 </details>
 
 <details>
@@ -721,7 +788,9 @@ You can fork these repositories to get started. They contain basic tests. If you
     - `offset` - Offset for pagination. 
     - `fromDate` -and toDate: Filter by date range. 
 
+
 ---
+
 </details>
 
 <details>
@@ -733,7 +802,9 @@ You can fork these repositories to get started. They contain basic tests. If you
   - Make sure the tests pass - `npm run test`
   - Open a pull request for the `master` branch and send the solution to the code review
 
+  
   ---
+
 </details>
 
 ## Solution
