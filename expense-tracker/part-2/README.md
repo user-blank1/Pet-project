@@ -141,7 +141,25 @@ Implement the `/api/auth/forgot-password` and `/api/auth/restore-password` endpo
 </details>  
 
 <details>  
-<summary>Task 7: Implement Access Guard for Protected Routes</summary>  
+<summary>Task 7: Implement verification ndpoint</summary>  
+
+---
+
+**Description:**  
+Create the `/api/auth/verify` endpoint to verify the reset code sent to the user's email and issue an access token for the password reset process.  
+
+**Acceptance Criteria:**  
+- `POST /api/auth/verify` accepts the reset code from the user.  
+- Validates the reset code and ensures it hasn't expired.  
+- Issues an access token if the reset code is valid.  
+- Returns `401 Unauthorized` if the reset code is invalid or expired.  
+- Important events (e.g., successful verification, invalid code attempts) are logged.  
+
+---
+</details>
+
+<details>  
+<summary>Task 8: Implement Access Guard for Protected Routes</summary>  
 
 ---
 
@@ -163,7 +181,7 @@ Implement a guard mechanism to restrict access to specific routes based on user 
 </details>  
 
 <details>  
-<summary>Task 8: Security Hardening</summary>  
+<summary>Task 9: Security Hardening</summary>  
 
 ---
 
@@ -189,7 +207,7 @@ Implement security measures to ensure data protection and prevent common vulnera
 </details>  
 
 <details>
-  <summary>Task 9: Final step</summary>
+  <summary>Task 10: Final step</summary>
 
   ---
 
