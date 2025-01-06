@@ -61,11 +61,11 @@
   - Use `eslint-config-prettier` to integrate ESLint with Prettier. 
   - Install prettier and create a .prettierrc file with formatting rules. 
   - Add scripts into the `package.json`: 
-    - `**build**` – build the project 
-    - `**lint**` – check the project using eslint rules 
-    - `**lint:fix**` – check the project using eslint rules and fix errors 
-    - `**format**` – formatting project using prettier rules 
-    - `**start**` – start the project in production mode 
+    - `build` – build the project 
+    - `lint` – check the project using eslint rules 
+    - `lint:fix` – check the project using eslint rules and fix errors 
+    - `format` – formatting project using prettier rules 
+    - `start` – start the project in production mode 
   - Use husky and lint-staged to enforce linting/formatting on pre-commit. 
 </details>
  
@@ -286,11 +286,11 @@
   - EditorConfig is set up with rules for indentation, line endings, etc. 
   - CSS uses preprocessors (e.g., SASS) for modular styling. 
   - Scripts added: 
-      - `**lint**` - Checks the project for linting issues. 
-      - `**lint:fix**` - Fixes linting issues. 
-      - `**stylelint**` - Checks the project for css linting issues. 
-      - `**stylelint:fix**` - Fixes css linting issues. 
-      - `**format**` - Formats code based on Prettier rules. 
+      - `lint` - Checks the project for linting issues. 
+      - `lint:fix` - Fixes linting issues. 
+      - `stylelint` - Checks the project for css linting issues. 
+      - `stylelint:fix` - Fixes css linting issues. 
+      - `format` - Formats code based on Prettier rules. 
 
   **Best Practice Recommendations:**
   **React**
@@ -542,7 +542,7 @@
 
   **Endpoints:**
   - `GET /api/expenses` - Fetch expenses with optional query parameters: 
-    - `**limit**` - Number of records per page. 
-    - `**offset**` - Offset for pagination. 
-    - `**fromDate**` -and toDate: Filter by date range. 
+    - `limit` - Number of records per page. 
+    - `offset` - Offset for pagination. 
+    - `fromDate` -and toDate: Filter by date range. 
 </details>
