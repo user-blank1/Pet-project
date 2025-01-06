@@ -44,7 +44,8 @@ Create endpoints for user registration (`POST /api/auth/sign-up`) and login (`PO
 **Technology-related requirements:**  
 <details>  
 <summary>NodeJS</summary>  
-- Use `Passport.js` for local strategy authentication.  
+
+  - Use `Passport.js` for local strategy authentication.  
 - Use `jsonwebtoken` for token management.  
 </details>  
 
@@ -68,7 +69,8 @@ Develop middleware to validate and protect routes that require authentication.
 **Technology-related requirements:**  
 <details>  
 <summary>NodeJS</summary>  
-- Create middleware for token validation using `jsonwebtoken`.  
+
+  - Create middleware for token validation using `jsonwebtoken`.  
 </details>  
 
 ---
@@ -109,7 +111,8 @@ Implement the `/api/auth/token` endpoint to refresh access tokens using refresh 
 **Technology-related requirements:**  
 <details>  
 <summary>NodeJS</summary>  
-- Use `jsonwebtoken` to sign and validate refresh tokens.  
+
+  - Use `jsonwebtoken` to sign and validate refresh tokens.  
 </details>  
 
 ---
@@ -133,7 +136,8 @@ Implement the `/api/auth/forgot-password` and `/api/auth/restore-password` endpo
 **Technology-related requirements:**  
 <details>  
 <summary>NodeJS</summary>  
-- Use `nodemailer` for sending emails.  
+
+  - Use `nodemailer` for sending emails.  
 </details>  
 
 ---
@@ -173,7 +177,8 @@ Implement a guard mechanism to restrict access to specific routes based on user 
 **Technology-related requirements:**  
 <details>  
 <summary>NodeJS</summary>  
-- Implement guard logic in middleware.  
+
+  - Implement guard logic in middleware.  
 </details>  
 
 ---
@@ -197,7 +202,8 @@ Implement security measures to ensure data protection and prevent common vulnera
 **Technology-related requirements:**  
 <details>  
 <summary>NodeJS</summary>  
-- Use `helmet` for basic security headers.  
+
+  - Use `helmet` for basic security headers.  
 - Use `express-rate-limit` for rate limiting.  
 - Validate all incoming data and sanitize inputs.  
 </details>  
@@ -237,7 +243,8 @@ Prepare the project structure specifically for authentication and authorization-
 **Technology-related requirements:**  
 <details>
 <summary>React</summary>  
-- Use `.env` files to define API base URLs.  
+
+  - Use `.env` files to define API base URLs.  
 - Structure `pages` as follows:
 ```
 /src
@@ -276,7 +283,8 @@ Create reusable UI components for building authentication screens.
 **Technology-related requirements:**  
 <details>
 <summary>React</summary>  
-- Use props to handle validation states and dynamic styles.  
+
+  - Use props to handle validation states and dynamic styles.  
 - Ensure accessibility (e.g., `aria-label` for inputs).  
 </details>
 
@@ -304,7 +312,8 @@ Create the Sign-Up page, allowing users to register by providing necessary infor
 **Technology-related requirements:**  
 <details>
 <summary>React</summary>  
-- Use `react-hook-form` for form handling.  
+
+  - Use `react-hook-form` for form handling.  
 - Use `yup` for validation.  
 </details>
 
@@ -331,7 +340,8 @@ Develop the Sign-In page to authenticate users using their email and password.
 **Technology-related requirements:**  
 <details>
 <summary>React</summary>  
-- Use `react-hook-form` for form handling.  
+
+  - Use `react-hook-form` for form handling.  
 - Display validation and backend errors clearly.  
 </details>
 
@@ -360,7 +370,8 @@ Develop a password recovery flow with pages for email submission, token validati
 **Technology-related requirements:**  
 <details>
 <summary>React</summary>  
-- Use `react-router` for navigation across recovery pages.  
+
+  - Use `react-router` for navigation across recovery pages.  
 - Handle loading and error states gracefully.  
 </details>
 
@@ -387,7 +398,8 @@ Handle access and refresh tokens securely to maintain user sessions.
 **Technology-related requirements:**  
 <details>
 <summary>React</summary>  
-- Use interceptors in `axios` to manage token logic globally.  
+
+  - Use interceptors in `axios` to manage token logic globally.  
 </details>
 
 ---
@@ -410,7 +422,8 @@ Create route guards to protect authenticated routes and restrict unauthorized ac
 **Technology-related requirements:**  
 <details>
 <summary>React</summary>  
-- Use `react-router-dom` to implement route protection.  
+
+  - Use `react-router-dom` to implement route protection.  
 </details>
 
 ---
@@ -435,7 +448,8 @@ Create a user profile page displaying authenticated user details.
 **Technology-related requirements:**  
 <details>
 <summary>React</summary>  
-- Fetch user details using `useEffect`.  
+
+  - Fetch user details using `useEffect`.  
 </details>
 
 ---
@@ -457,7 +471,8 @@ Ensure all authentication pages are fully responsive on all devices.
 **Technology-related requirements:**  
 <details>
 <summary>React</summary>  
-- Use CSS Modules or styled-components for responsive design.  
+
+  - Use CSS Modules or styled-components for responsive design.  
 </details>
 
 ---
