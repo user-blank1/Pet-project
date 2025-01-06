@@ -16,12 +16,9 @@ The project is divided into three main parts:
 This division helps students concentrate on specific areas of development, making the learning process more manageable and structured. Additionally, students can choose to work on only the backend or frontend if they prefer to specialize.
 
 ## Subprojects
-- [Part 1](./part-1/README.md)\
-  Description: Basic repository setup (linters, prettier, husky, bundler), creation of a basic API, creation of a component library, responsive design, data validation
-- [Part 2](./part-2/README.md)\
-  Description: Authorization and authentication (JWT)
+- [Part 1](./part-1/README.md)
+- [Part 2](./part-2/README.md) - in progress
 - [Part 3](./part-3/README.md) - in progress
-
 
 ## Found an Issue?
 We strive to make the project as clear and helpful as possible. If you notice any errors, inconsistencies, or unclear instructions, please open a Pull Request in this repository with your suggested fixes or improvements. Your feedback helps improve the learning experience for everyone!
