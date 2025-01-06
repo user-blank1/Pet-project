@@ -160,8 +160,6 @@
   ---
 </details>
 
----
-
 <details>
   <summary>Task 9: Implement Restore Password Endpoint</summary>
 
