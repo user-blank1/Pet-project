@@ -23,10 +23,12 @@ This division helps students concentrate on specific areas of development, makin
 - [Part 3](./part-3/README.md)
 
 ## Starter repositories
-- [expense-tracker-backend-part-1](https://github.com/petproject-dev/expense-tracker-backend-part-1)
-- [expense-tracker-frontend-part-1](https://github.com/petproject-dev/expense-tracker-frontend-part-1)
-- [expense-tracker-backend-part-2](https://github.com/petproject-dev/expense-tracker-backend-part-2)
-- [expense-tracker-frontend-part-2](https://github.com/petproject-dev/expense-tracker-frontend-part-2)
+- Part 1
+  - [expense-tracker-backend-part-1](https://github.com/petproject-dev/expense-tracker-backend-part-1) - Express.js
+  - [expense-tracker-frontend-part-1](https://github.com/petproject-dev/expense-tracker-frontend-part-1) - React
+- Part 2
+  - [expense-tracker-backend-part-2](https://github.com/petproject-dev/expense-tracker-backend-part-2) - Express.js
+  - [expense-tracker-frontend-part-2](https://github.com/petproject-dev/expense-tracker-frontend-part-2) - React
 
 ## Found an Issue?
 We strive to make the project as clear and helpful as possible. If you notice any errors, inconsistencies, or unclear instructions, please open a Pull Request in this repository with your suggested fixes or improvements. Your feedback helps improve the learning experience for everyone!
