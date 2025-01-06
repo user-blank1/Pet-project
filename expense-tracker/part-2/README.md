@@ -8,184 +8,209 @@ You can fork these repositories to get started. If you don't find a repository w
 
 ## Backend
 
-<details>
-  <summary>Task 1: Setup Environment and Project Structure</summary>
+<details>  
+<summary>Task 1: Implement User Model and Database Schema</summary>  
 
-  ---
+---
 
-  **Description:**
-  
-  Organize the backend environment and structure for the authentication module, ensuring consistency with the first part of the project.
-  
-  **Acceptance Criteria:**
-  
-  - The folder structure is updated to include an `auth` module with controllers, services, and necessary configurations.
-  - No duplicate installation of already configured libraries from the first part.
-  - `.env` includes required variables for JWT secret and email settings.
+**Description:**  
+Create the user model and database schema to handle user-related data securely. Additionally, set up `auth` and `user` modules with appropriate controllers, services, and repositories.  
 
-  ---
-</details>
+**Acceptance Criteria:**  
+- Database schema includes `users` table with fields: `id`, `email`, `name`, `password`.  
+- Migrations are successfully applied to the database.  
+- `auth` module is created with controller, service, and repository.  
+- `user` module is created with controller, service, and repository.  
+- Folder structure aligns with modular design principles.  
 
-<details>
-  <summary>Task 2: Implement User Model and Database Schema</summary>
+---
 
-  ---
+</details>  
 
-  **Description:**
-  
-  Create the user schema, ensuring proper fields for authentication.
-  
-  **Acceptance Criteria:**
-  
-  - Database schema includes a `users` table with fields: `id`, `email`, `password`, `name`.
-  - Migrations are successfully applied to the database. Use a migration tool to ensure database schema consistency across environments.
+<details>  
+<summary>Task 2: Implement Sign-Up and Sign-In Endpoints</summary>  
 
-  ---
-</details>
+---
 
+**Description:**  
+Create endpoints for user registration (`POST /api/auth/sign-up`) and login (`POST /api/auth/sign-in`) with token-based authentication.  
 
-<details>
-  <summary>Task 3: Implement Sign-Up Endpoint</summary>
+**Acceptance Criteria:**  
+- `POST /api/auth/sign-up`: Validates input and creates a new user.  
+- `POST /api/auth/sign-in`: Validates credentials and returns access and refresh tokens.  
+- Tokens are signed and include expiration times.  
+- Important events (e.g., successful sign-up, failed login attempts) are logged.  
 
-  ---
+**Technology-related requirements:**  
+<details>  
+<summary>NodeJS</summary>  
+- Use `Passport.js` for local strategy authentication.  
+- Use `jsonwebtoken` for token management.  
+</details>  
 
-  **Description:**
+---
 
-  Create the `POST /sign-up` endpoint to register new users.
-  
-  **Acceptance Criteria:**
-  
-  - Validates input data (e.g., email format, password length).
-  - Hashes passwords before saving them to the database.
-  - Returns 201 status with a success message after successful registration.
-  - Prevents duplicate email registration and returns a 400 error if attempted.
-  
-  **Best Practice Recommendations:**
-  
-  - Use `bcrypt` for hashing passwords securely.
+</details>  
 
-  ---
-</details>
+<details>  
+<summary>Task 3: Middleware for Access Control</summary>  
 
-<details>
-  <summary>Task 4: Implement Sign-In Endpoint</summary>
+---
 
-  ---
+**Description:**  
+Develop middleware to validate and protect routes that require authentication.  
 
-  **Description:**
+**Acceptance Criteria:**  
+- Middleware validates access tokens and restricts unauthorized access.  
+- Protected routes return `401 Unauthorized` if the token is invalid or expired.  
+- Unauthorized access attempts are logged.  
 
-  Create the `POST /sign-in` endpoint to authenticate users and generate tokens.
-  
-  **Acceptance Criteria:**
-  
-  - Validates email and password against the database.
-  - Generates and returns access and refresh tokens upon successful authentication.
-  - Returns 401 for invalid credentials.
-  
-  **Best Practice Recommendations:**
-  
-  - Use `Passport.js` for implementing local strategy authentication.
-  - Use `jsonwebtoken` for generating and validating JWTs.
+**Technology-related requirements:**  
+<details>  
+<summary>NodeJS</summary>  
+- Create middleware for token validation using `jsonwebtoken`.  
+</details>  
 
-  ---
-</details>
+---
 
-<details>
-  <summary>Task 5: Implement Middleware for Access Control</summary>
+</details>  
 
-  ---
+<details>  
+<summary>Task 4: Implement `/api/users/me` Endpoint</summary>  
 
-  **Description:**
+---
 
-  Develop middleware to restrict access to private URLs based on user authentication status.
-  
-  **Acceptance Criteria:**
-  
-  - Middleware validates the access token.
-  - Returns 401 if the token is missing or invalid.
-  - Allows access to protected routes only for authenticated users.
+**Description:**  
+Create the `/api/users/me` endpoint in the `user` module to return details of the currently authenticated user.  
 
-  ---
-</details>
+**Acceptance Criteria:**  
+- `GET /api/users/me` returns user information (excluding sensitive fields).  
+- Protected by authentication middleware.  
+- Access to `/api/users/me` endpoint is logged.  
 
-<details>
-  <summary>Task 6: Implement /me Endpoint</summary>
+---
 
-  ---
+</details>  
 
-  **Description:**
+<details>  
+<summary>Task 5: Implement Token Refresh Endpoint</summary>  
 
-  Create the `GET /me` endpoint to fetch data of the currently authenticated user.
-  
-  **Acceptance Criteria:**
-  
-  - Middleware validates the access token.
-  - Returns the user’s data (excluding sensitive information like password) on success.
-  - Returns 401 for unauthorized requests.
+---
 
-  ---
-</details>
+**Description:**  
+Implement the `/api/auth/token` endpoint to refresh access tokens using refresh tokens.  
 
-<details>
-  <summary>Task 7: Implement Token Refresh Endpoint</summary>
+**Acceptance Criteria:**  
+- `POST /api/auth/token` validates the refresh token.  
+- Issues a new access token if the refresh token is valid.  
+- Invalid refresh tokens return `401 Unauthorized`.  
+- Token refresh attempts are logged.  
 
-  ---
+**Technology-related requirements:**  
+<details>  
+<summary>NodeJS</summary>  
+- Use `jsonwebtoken` to sign and validate refresh tokens.  
+</details>  
 
-  **Description:**
+---
 
-  Create the `GET /token` endpoint to refresh the access token using a valid refresh token.
-  
-  **Acceptance Criteria:**
-  
-  - Validates the refresh token from the request.
-  - Generates and returns a new access token upon successful validation.
-  - Returns 401 for invalid or expired refresh tokens.
+</details>  
 
-  ---
-</details>
+<details>  
+<summary>Task 6: Forgot Password Flow</summary>  
 
-<details>
-  <summary>Task 8: Implement Forgot Password Endpoint</summary>
+---
 
-  ---
+**Description:**  
+Implement the `/api/auth/forgot-password` and `/api/auth/restore-password` endpoints to allow users to reset their passwords securely.  
 
-  **Description:**
+**Acceptance Criteria:**  
+- `POST /api/auth/forgot-password`: Sends a reset code via email.  
+- `POST /api/auth/restore-password`: Validates the reset code and updates the user's password.  
+- The reset token expires in 10 minutes.  
+- Password reset requests and successful resets are logged.  
 
-  Create the `POST /forgot-password` endpoint to initiate the password recovery process.
-  
-  **Acceptance Criteria:**
-  
-  - Validates the provided email.
-  - Generates a secure password reset token and sends it via email.
-  - Returns 200 status after sending the email.
-  - Returns 404 if the email is not found in the database.
-  - Include an expiration time for password reset tokens.
-  
-  **Best Practice Recommendations:**
-  
-  - Use `nodemailer` for sending emails securely.
-  
-  ---
-</details>
+**Technology-related requirements:**  
+<details>  
+<summary>NodeJS</summary>  
+- Use `nodemailer` for sending emails.  
+</details>  
 
-<details>
-  <summary>Task 9: Implement Restore Password Endpoint</summary>
+---
 
-  ---
+</details>  
 
-  **Description:**
-  
-  Create the `POST /restore-password` endpoint to reset the user’s password.
-  
-  **Acceptance Criteria:**
-  
-  - Validates the password reset token.
-  - Allows the user to set a new password.
-  - Hashes and updates the password in the database.
-  - Invalidates the used reset token.
-  - Returns 200 status upon success.
+<details>  
+<summary>Task 7: Implement Access Guard for Protected Routes</summary>  
 
-  ---
+---
+
+**Description:**  
+Implement a guard mechanism to restrict access to specific routes based on user roles or permissions.  
+
+**Acceptance Criteria:**  
+- Guards restrict access to routes based on predefined rules.  
+- Unauthorized access attempts are logged.  
+
+**Technology-related requirements:**  
+<details>  
+<summary>NodeJS</summary>  
+- Implement guard logic in middleware.  
+</details>  
+
+---
+
+</details>  
+
+<details>  
+<summary>Task 8: Security Hardening</summary>  
+
+---
+
+**Description:**  
+Implement security measures to ensure data protection and prevent common vulnerabilities.  
+
+**Acceptance Criteria:**  
+- Implement rate limiting for authentication endpoints.  
+- Ensure tokens are securely signed and validated.  
+- Enable CORS with secure configurations.  
+- Prevent common attacks such as SQL injection and XSS.  
+
+**Technology-related requirements:**  
+<details>  
+<summary>NodeJS</summary>  
+- Use `helmet` for basic security headers.  
+- Use `express-rate-limit` for rate limiting.  
+- Validate all incoming data and sanitize inputs.  
+</details>  
+
+---
+
+</details>  
+
+<details>  
+<summary>Task 9: Final Review and Testing</summary>  
+
+---
+
+**Description:**  
+Finalize and review the authentication and authorization implementation.  
+
+**Acceptance Criteria:**  
+- All endpoints are covered by integration tests.  
+- Tests cover success and failure scenarios.  
+- The project adheres to the defined structure and best practices.  
+- Open a pull request for mentor review.  
+
+**Technology-related requirements:**  
+<details>  
+<summary>NodeJS</summary>  
+- Write tests using `Jest` or similar frameworks.  
+- Ensure database mocks are used for testing.  
+</details>  
+
+---
+
 </details>
 
 ## Solution
