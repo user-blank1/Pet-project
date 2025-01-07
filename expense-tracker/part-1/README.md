@@ -246,7 +246,7 @@ You can fork these repositories to get started. They contain basic tests. If you
 </details>
 
 <details>
-  <summary>Task 7: Create Routes for Getting Expenses</summary>
+  <summary>Task 7: Create Endpoints for Getting Expenses</summary>
   
   ---
 
@@ -259,10 +259,10 @@ You can fork these repositories to get started. They contain basic tests. If you
   - Routes for retrieving expenses are implemented: 
     - `GET /api/expenses` Fetches and returns all expenses with optional query parameters: 
       - Pagination: `limit` and `offset`. 
-      - Filtering: `fromDat`e and `toDate` based on the date field. 
+      - Filtering: `fromDate` and `toDate` based on the date field. 
     - `GET /api/expenses/:id` Fetches a specific expense by its ID. 
   - Data is validated to ensure correctness before processing requests. 
-  - Responses include appropriate HTTP status codes and messages. 
+  - Responses include appropriate HTTP status codes and data. 
   - Modular structure follows the established pattern. 
 
   **Technology-related requirements:**
@@ -294,7 +294,7 @@ You can fork these repositories to get started. They contain basic tests. If you
       - `PATCH /api/expenses/:id` Updates specific fields of an expense. 
       - `DELETE /api/expenses/:id` Deletes an expense by its ID. 
   - Data is validated to ensure correctness before processing requests. 
-  - Responses include appropriate HTTP status codes and messages. 
+  - Responses include appropriate HTTP status codes and data. 
 
   **Technology-related requirements:**
 
