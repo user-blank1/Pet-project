@@ -468,8 +468,6 @@ You can fork these repositories to get started. They contain basic tests. If you
       - [Design Link](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=2-19187&t=GKFeiEqjFghP7rf5-4)
     - **Icon**: A component for rendering SVG icons. 
       - [Design Link](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=7-5669&t=ra9tjWdp5aVmkqRH-4)
-    - **FormField**: A wrapper for form fields that includes a label, children, and validation error messages. 
-      - [Design Link](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=2-19394&t=ra9tjWdp5aVmkqRH-4)
     - **Input**: A text input field with validation and style support. 
       - [Design Link](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=2-19412&t=ra9tjWdp5aVmkqRH-4)
     - **Input with Currency**: An extension of the standard input, displaying the selected currency. 
@@ -499,37 +497,27 @@ You can fork these repositories to get started. They contain basic tests. If you
     - Create an ```<Icon />``` component for rendering SVG icons, with a name prop for specifying the icon and size for scaling. 
     - Example:
     ```jsx
-    <Icon iconName="plus" size="large" />
+    <Icon iconName="plus" size={15} color="white" />
     ``` 
-  - FormField: 
-    - Create a ```<FormField />``` component that wraps form inputs with a label and displays validation error messages. 
-    - Props include: 
-      - label: The text for the input label. 
-      - error: An error message to display (if any). 
-      - children: The input or child element. 
-    - Example:
-    ```jsx
-    <FormField
-      label="Name"
-      error="Name is required">
-      <Input value={name} onChange={handleChange} />
-    </FormField>
-    ```
   - Button with Icon: 
-    - Extend ```<Button />``` to support an icon prop. 
     - Use ```<Icon />``` component. 
     - Example:
     ```jsx
-    <Button disabled iconName={"plus"}>Add</Button>
+    <IconButton>
+      <Icon icon="close" color="white" size={12} />
+    </IconButton>
     ``` 
   - Input: 
     - Build an ```<Input />``` component that accepts props such as type, placeholder, value, and onChange. 
     - Example:
     ```jsx
     <Input
+      label="Field name"
       type="text"
       placeholder="Enter name"
-      value={name}
+      defaultValue={name}
+      error
+      helperText="Error message"
       onChange={handleChange} />
     ``` 
   - Input with Currency: 
@@ -537,8 +525,12 @@ You can fork these repositories to get started. They contain basic tests. If you
     - Example:
     ```jsx
     <InputWithCurrency
-      value={amount}
       currency="USD"
+      label="Field name"
+      placeholder="Enter name"
+      defaultValue={name}
+      error
+      helperText="Error message"
       onChange={handleChange} />
     ``` 
   - Date Picker: 
