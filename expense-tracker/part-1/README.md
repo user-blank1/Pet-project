@@ -462,6 +462,8 @@ You can fork these repositories to get started. They contain basic tests. If you
   - The following components are implemented: 
     - **Logo**: Displays the application logo. 
       - [Design Link](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=2-19420&t=GKFeiEqjFghP7rf5-4)
+    - **Loader**: Displays the loader component. 
+      - [Design Link](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=1-3471&t=AyMjf1BcxpIwHBXC-4)
     - **Button**: A standard button with support for different states(e.g., disabled, active). 
       - [Design Link](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=2-19193&t=GKFeiEqjFghP7rf5-4)
     - **Button with Icon**: A button that includes an icon. 
@@ -472,7 +474,9 @@ You can fork these repositories to get started. They contain basic tests. If you
       - [Design Link](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=2-19412&t=ra9tjWdp5aVmkqRH-4)
     - **Input with Currency**: An extension of the standard input, displaying the selected currency. 
       - [Design Link](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=2-19408&t=ra9tjWdp5aVmkqRH-4)
-    - **Date Picker**: A component for selecting dates. 
+    - **Date Picker**: A component for selecting date. 
+      - [Design Link](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=71-5906&t=AyMjf1BcxpIwHBXC-4)
+    - **Date Picker Range**: A component for selecting dates. 
       - [Design Link](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=3-2073&t=ra9tjWdp5aVmkqRH-4)
     - **Table**: A customizable table component with configurable columns and data rendering. 
       - [Design Link](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=2-19441&t=ra9tjWdp5aVmkqRH-4)
@@ -483,10 +487,15 @@ You can fork these repositories to get started. They contain basic tests. If you
   <details>
   <summary>React</summary>
   
-    - Logo: 
+  - Logo: 
     - Example:
     ```jsx
     <Logo />
+    ```
+  - Loading: 
+    - Example:
+    ```jsx
+    <Loading />
     ``` 
   - Button: 
     - Example:
@@ -534,57 +543,39 @@ You can fork these repositories to get started. They contain basic tests. If you
       onChange={handleChange} />
     ``` 
   - Date Picker: 
-    - Implement a ```<DatePicker />``` component for selecting dates, with support for a value prop and onChange callback. 
+    - Implement a ```<DatePicker />``` component for selecting the date, with support for a value prop and onChange callback. 
     - Example:
     ```jsx
     <DatePicker
       value={selectedDate}
       onChange={handleDateChange} />
     ```
+  - Date Picker Range: 
+    - Implement a ```<DatePickerRange />``` component for selecting dates, with support for a value prop and onChange callback. 
+    - Example:
+    ```jsx
+    <<DatePickerRange
+      from={fromDate}
+      to={toDate}
+      onChange={handleUpdateDateRange} />
+    ```
   - Table: 
     - Create a ```<Table />``` component that accepts columns and data props for customization. 
     - Example: 
     ```jsx
-    <Table 
-      columns={[ 
-        { key: 'name', label: 'Name' }, 
-        { key: 'date', label: 'Date' }, 
-      ]} 
-      data={[{ name: 'John Doe', date: '2024-12-31' }]} 
-    /> 
+    <Table>
+      <TableHead>
+        <TableRow>
+          <TableCell>Column<TableCell>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        <TableRow>
+          <TableCell>Column<TableCell>
+        </TableRow>
+      </TableBody>
+    </Table>
     ```
-  </details>
-
----
-
-</details>
- 
-<details>
-  <summary>Task 4: Create Basic API Integration </summary>
-  
-  ---
-
-  **Description:**
-
-  Set up a basic API integration to fetch data from the backend and display it on the front end. Test integration by fetching expenses. 
-
-  **Acceptance Criteria:**
-  
-  - A basic API service is created to handle HTTP requests. 
-  - Fetch expenses data from the /api/expenses endpoint and display it in the UI. 
-  - Handle loading and error states appropriately. 
-  
-  **Endpoints:**
-  
-  - `GET /api/expenses` - Fetch all expenses. 
-
-  **Technology-related requirements:**
-  
-  <details>
-  <summary>React</summary>
-
-  - Use axios or fetch for making API calls. 
-  - Manage API states (loading, error, success) with a React Context. 
   </details>
 
 ---
@@ -626,13 +617,44 @@ You can fork these repositories to get started. They contain basic tests. If you
   - Use reusable components for shared elements like the logo. 
   - Use CSS Modules or styled-components for styling. 
 
+---
+
+</details>
+
+<details>
+  <summary>Task 4: Create Basic API Integration </summary>
+  
+  ---
+
+  **Description:**
+
+  Set up a basic API integration to fetch data from the backend and display it on the front end. Test integration by fetching expenses. 
+
+  **Acceptance Criteria:**
+  
+  - A basic API service is created to handle HTTP requests. 
+  - Fetch expenses data from the /api/expenses endpoint and display it in the UI. 
+  - Handle loading and error states appropriately. 
+  
+  **Endpoints:**
+  
+  - `GET /api/expenses` - Fetch all expenses. 
+
+  **Technology-related requirements:**
+  
+  <details>
+  <summary>React</summary>
+
+  - Use axios or fetch for making API calls. 
+  - Manage API states (loading, error, success) with a React Context. 
+  </details>
 
 ---
 
 </details>
 
 <details>
-  <summary>Task 7: Display Expenses Table </summary>
+  <summary>Task 7: Display Expenses Table</summary>
   
   ---
 
@@ -697,7 +719,7 @@ You can fork these repositories to get started. They contain basic tests. If you
 </details>
  
 <details>
-  <summary>Task 9: Implement Expense Detail View </summary>
+  <summary>Task 9: Implement Expense Detail View</summary>
   
   ---
 
