@@ -70,8 +70,6 @@ You can fork these repositories to get started. They contain basic tests. If you
   </details>
 
 
-
-
 ---
 
 </details>
@@ -449,13 +447,13 @@ You can fork these repositories to get started. They contain basic tests. If you
 </details>
 
 <details>
-  <summary>Task 3: Creating Reusable Components</summary>
+  <summary>Task 3: Creating Reusable Components (primitive components)</summary>
 
 ---
 
   **Description:**
 
-  Develop foundational reusable components that can be utilized across the application. These components will ensure design consistency and simplify further development. 
+  Develop foundational reusable components that can be utilized across the application. These components will ensure design consistency and simplify further development. In this task you implement primitive components that are independent from other components
 
   **Acceptance Criteria:**
   
@@ -466,20 +464,18 @@ You can fork these repositories to get started. They contain basic tests. If you
       - [Design Link](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=1-3471&t=AyMjf1BcxpIwHBXC-4)
     - **Button**: A standard button with support for different states(e.g., disabled, active). 
       - [Design Link](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=2-19193&t=GKFeiEqjFghP7rf5-4)
-    - **Button with Icon**: A button that includes an icon. 
-      - [Design Link](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=2-19187&t=GKFeiEqjFghP7rf5-4)
-    - **Icon**: A component for rendering SVG icons. 
-      - [Design Link](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=7-5669&t=ra9tjWdp5aVmkqRH-4)
+    - **Input Label**: The label appears above many of our components. This should be a stylized label html tag with all the standard label features. 
+      - [Design Link](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=2-19389&t=GTL1yhChXxd9Efzr-4)
     - **Input**: A text input field with validation and style support. 
       - [Design Link](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=2-19412&t=ra9tjWdp5aVmkqRH-4)
-    - **Input with Currency**: An extension of the standard input, displaying the selected currency. 
-      - [Design Link](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=2-19408&t=ra9tjWdp5aVmkqRH-4)
-    - **Date Picker**: A component for selecting date. 
+    - **Icon**: A component for rendering SVG icons. 
+      - [Design Link](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=7-5669&t=ra9tjWdp5aVmkqRH-4)
+    - **Date Picker**: A component for selecting date. This component is complex and its styles does not necessarily match the design. You can use standard `<input type="date" />`
       - [Design Link](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=71-5906&t=AyMjf1BcxpIwHBXC-4)
-    - **Date Picker Range**: A component for selecting dates. 
-      - [Design Link](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=3-2073&t=ra9tjWdp5aVmkqRH-4)
-    - **Table**: A customizable table component with configurable columns and data rendering. 
+    - **Table**: A customizable `Table`, `TableHead`, `TableBody`, `TableRow`, `TableCell` components. Since we have a responsive design and it is complex with styling in the form that we offer, you can use `divs`. But if you feel that you can handle it, you can use standard table tags
       - [Design Link](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=2-19441&t=ra9tjWdp5aVmkqRH-4)
+    - **Menu**: Component for displaying menu items after click.
+      - [Design Link](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=3-13999&t=cvakLOlrrBuwZq9F-4)
   - Each component is documented with usage examples. 
 
   **Technology-related requirements:**
@@ -492,32 +488,30 @@ You can fork these repositories to get started. They contain basic tests. If you
     ```jsx
     <Logo />
     ```
-  - Loading: 
+  - Loader: 
     - Example:
     ```jsx
-    <Loading />
+    <Loader />
     ``` 
   - Button: 
     - Example:
     ```jsx
     <Button disabled onClick={handleClick}>Click me</Button>
+    ```
+  - Input Label: 
+    - Example:
+    ```jsx
+    <InputLabel>Name</InputLabel>
+    <InputLabel htmlFor="name1">Name</InputLabel>
     ``` 
   - Icon: 
-    - Create an ```<Icon />``` component for rendering SVG icons, with a name prop for specifying the icon and size for scaling. 
+    - Create an `Icon` component for rendering SVG icons, with a name prop for specifying the icon and size for scaling. 
     - Example:
     ```jsx
     <Icon iconName="plus" size={15} color="white" />
     ``` 
-  - Button with Icon: 
-    - Use ```<Icon />``` component. 
-    - Example:
-    ```jsx
-    <IconButton>
-      <Icon icon="close" color="white" size={12} />
-    </IconButton>
-    ``` 
   - Input: 
-    - Build an ```<Input />``` component that accepts props such as type, placeholder, value, and onChange. 
+    - Build an `Input` component that accepts props such as type, placeholder, value, and onChange. 
     - Example:
     ```jsx
     <Input
@@ -529,38 +523,17 @@ You can fork these repositories to get started. They contain basic tests. If you
       helperText="Error message"
       onChange={handleChange} />
     ``` 
-  - Input with Currency: 
-    - Extend ```<Input />``` to include a currency prop that displays the selected currency symbol. 
-    - Example:
-    ```jsx
-    <InputWithCurrency
-      currency="USD"
-      label="Field name"
-      placeholder="Enter name"
-      defaultValue={name}
-      error
-      helperText="Error message"
-      onChange={handleChange} />
-    ``` 
   - Date Picker: 
-    - Implement a ```<DatePicker />``` component for selecting the date, with support for a value prop and onChange callback. 
+    - Implement a `DatePicker` component for selecting the date, with support for a value prop and onChange callback. 
     - Example:
     ```jsx
     <DatePicker
       value={selectedDate}
       onChange={handleDateChange} />
-    ```
-  - Date Picker Range: 
-    - Implement a ```<DatePickerRange />``` component for selecting dates, with support for a value prop and onChange callback. 
-    - Example:
-    ```jsx
-    <<DatePickerRange
-      from={fromDate}
-      to={toDate}
-      onChange={handleUpdateDateRange} />
+    <DatePicker />
     ```
   - Table: 
-    - Create a ```<Table />``` component that accepts columns and data props for customization. 
+    - Create a `Table`, `TableHead`, `TableBody`, `TableRow`, `TableCell` components
     - Example: 
     ```jsx
     <Table>
@@ -576,6 +549,15 @@ You can fork these repositories to get started. They contain basic tests. If you
       </TableBody>
     </Table>
     ```
+  - Menu: 
+    - Implement a `Menu` and `MenuItem` components. 
+    - Example:
+    ```jsx
+    <Menu>
+      <MenuItem onClick={handleEdit}>Edit</MenuItem>
+      <MenuItem onClick={handleDelete}>Delete</MenuItem>
+    </Menu>
+    ```
   </details>
 
 ---
@@ -583,7 +565,153 @@ You can fork these repositories to get started. They contain basic tests. If you
 </details>
 
 <details>
-  <summary>Task 5: Build Responsive Layout</summary>
+  <summary>Task 4: Creating Reusable Components (complex)</summary>
+
+---
+
+  **Description:**
+
+  Develop foundational reusable components that can be utilized across the application. These components will ensure design consistency and simplify further development. In this task you implement complex components that reuse existing components internally
+
+  **Acceptance Criteria:**
+  
+  - The following components are implemented: 
+    - **Button with Icon**: A button that includes an icon. 
+      - [Design Link](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=2-19187&t=GKFeiEqjFghP7rf5-4)
+    - **IconRadio**: Component for rendering input radio with icon display. Reuse `Icon` component here
+      - [Design Link](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=4-34033&t=GTL1yhChXxd9Efzr-4)
+    - **Category Group**: Based on the `IconRadio` and `Icon` components, create a CategoryGroup component. When you click on the icon it should be activated. User can only select one category
+      - [Design Link](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=4-34103&t=cvakLOlrrBuwZq9F-4)
+    - **Input with Currency**: An extension of the standard input, displaying the selected currency. 
+      - [Design Link](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=2-19408&t=ra9tjWdp5aVmkqRH-4)
+    - **Date Picker Range**: A component for selecting dates. To change the range date, you need to click on one of the date and a ready-made date picker component should appear
+      - [Design Link](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=3-2073&t=ra9tjWdp5aVmkqRH-4)
+    - **ExpenseTable**: Component for displaying expenses based on an already implemented `Table` component. 
+      - [Design Link](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=1-3551&t=AyMjf1BcxpIwHBXC-4)
+  - Each component is documented with usage examples. 
+
+  **Technology-related requirements:**
+  
+  <details>
+  <summary>React</summary>
+  
+  - Button with Icon: 
+    - Use `Icon` component. 
+    - Example:
+    ```jsx
+    <IconButton>
+      <Icon icon="close" color="white" size={12} />
+    </IconButton>
+    ```
+  - Radio button input:
+    - Use `Icon` component. 
+    - Example:
+    ```jsx
+    <IconRadio name="category">
+      <Icon icon="credits" size={24} />
+    </IconRadio>
+    ```
+  - List of icon categories:
+    - Use `IconRadio` and `Icon` components
+    - Example:
+    ```jsx
+    <CategoryGroup defaultValue="mobile" />
+    <CategoryGroup />
+    ```
+  - Input with Currency: 
+    - Extend `Input` to include a currency prop that displays the selected currency symbol. 
+    - Example:
+    ```jsx
+    <InputWithCurrency />
+    <InputWithCurrency
+      id="name4"
+      defaultValue="123"
+      selectProps={{ defaultValue: 'USD' }} />
+    <InputWithCurrency
+      id="name4"
+      onChange={handleAmountChange}
+      defaultValue="123"
+      selectProps={{
+        defaultValue: 'USD',
+        onChange: handleCurrencyChange }} />
+    ``` 
+  - Date Picker Range: 
+    - Implement a `DatePickerRange` component for selecting dates, with support for a value prop and onChange callback. 
+    - Example:
+    ```jsx
+    <DatePickerRange
+      from={fromDate}
+      to={toDate}
+      onChange={handleUpdateDateRange} />
+    ```
+  - ExpenseTable: 
+    - Create a `ExpenseTable` component that accepts columns and data props for customization. 
+    - Example: 
+    ```jsx
+    <ExpenseTable
+      data={[
+        { id: 1, name: 'John Doe', category: 'hobby', date: '2024-12-31', total: '-7.22$' },
+        { id: 2, name: 'John Doe2', category: 'mobile', date: '2024-12-31', total: '+7.22$' },
+      ]}
+    />
+    ```
+  </details>
+
+---
+
+</details>
+
+
+<details>
+  <summary>Task 5: Implement Layout Component</summary>
+
+---
+
+  **Description:**
+
+  Create a Layout component that includes Header. 
+
+  **Acceptance Criteria:**
+
+  - A layout component has been created which is a general wrapper for the application.
+  - A header component is implemented and displayed on the layout. 
+    - Use reusable components for shared elements like the logo. 
+
+---
+
+</details>
+
+<details>
+  <summary>Task 6: Implement Sidebar Component</summary>
+
+---
+
+  **Description:**
+
+  Create a Sidebar component that appear after clicking plus button
+
+  **Acceptance Criteria:**
+
+  - The sidebar open button is rendered in the lower right corner.
+  - Button and sidebar components are located in the main Layout.
+  - When user click the button, a sidebar appears on the right. The sidebar should appear with smooth animation.
+  - Sidebar styles and content match the design.
+  - The logic for creating a record at this step does not need to be done
+
+  **Technology-related requirements:**
+  
+  <details>
+  <summary>React</summary>
+
+  - Use `react-transition-group` to animate the sidebar.
+  </details>
+  
+---
+
+</details>
+
+<details>
+  <summary>Task 7: Build Responsive Layout</summary>
   
   ---
 
@@ -597,32 +725,12 @@ You can fork these repositories to get started. They contain basic tests. If you
   - Key components, such as the header and table, are responsive. 
   - Use CSS grid and flexbox for responsive layouts. 
 
-
 ---
 
 </details>
 
 <details>
-  <summary>Task 6: Implement Header Component </summary>
-
----
-
-  **Description:**
-
-  Create a header component that includes a logo. 
-
-  **Acceptance Criteria:**
-  
-  - A header component is implemented and displayed across all pages. 
-  - Use reusable components for shared elements like the logo. 
-  - Use CSS Modules or styled-components for styling. 
-
----
-
-</details>
-
-<details>
-  <summary>Task 4: Create Basic API Integration </summary>
+  <summary>Task 8: Create Basic API Integration </summary>
   
   ---
 
@@ -653,7 +761,7 @@ You can fork these repositories to get started. They contain basic tests. If you
 
 </details>
 
-<details>
+ <details>
   <summary>Task 7: Display Expenses Table</summary>
   
   ---
@@ -672,19 +780,10 @@ You can fork these repositories to get started. They contain basic tests. If you
 
   - `GET /api/expenses` - Fetch all expenses. 
 
-  **Technology-related requirements:**
-  
-  <details>
-  <summary>React</summary>
-
-  - Use libraries like react-table for table rendering and management. 
-  - Add prop-based configuration for table components. 
-  </details>
-
 ---
 
 </details>
- 
+
 <details>
   <summary>Task 8: Implement Add Expense Functionality</summary>
   
