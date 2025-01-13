@@ -588,6 +588,9 @@ You can fork these repositories to get started. They contain basic tests. If you
       - [Design Link](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=3-2073&t=ra9tjWdp5aVmkqRH-4)
     - **ExpenseTable**: Component for displaying expenses based on an already implemented `Table` component. 
       - [Design Link](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=1-3551&t=AyMjf1BcxpIwHBXC-4)
+      - If there is no data, then a message with an image should be displayed as in the [design](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=1-3601&t=XWnEQbC9qTwXBf01-4)
+      - If there is no data and a request response is expected, then a [stub should be displayed](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=1-3585&t=XWnEQbC9qTwXBf01-4)
+      - If there is initial data, but a new portion of data is expected to be loaded, then the [spinner](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=1-3471&t=XWnEQbC9qTwXBf01-4) is displayed
   - Each component is documented with usage examples. 
 
   **Technology-related requirements:**
@@ -648,12 +651,7 @@ You can fork these repositories to get started. They contain basic tests. If you
     - Create a `ExpenseTable` component that accepts columns and data props for customization. 
     - Example: 
     ```jsx
-    <ExpenseTable
-      data={[
-        { id: 1, name: 'John Doe', category: 'hobby', date: '2024-12-31', total: '-7.22$' },
-        { id: 2, name: 'John Doe2', category: 'mobile', date: '2024-12-31', total: '+7.22$' },
-      ]}
-    />
+    <ExpenseTable />
     ```
   </details>
 
@@ -661,25 +659,6 @@ You can fork these repositories to get started. They contain basic tests. If you
 
 </details>
 
-
-<details>
-  <summary>Task 5: Implement Layout Component</summary>
-
----
-
-  **Description:**
-
-  Create a Layout component that includes Header. 
-
-  **Acceptance Criteria:**
-
-  - A layout component has been created which is a general wrapper for the application.
-  - A header component is implemented and displayed on the layout. 
-    - Use reusable components for shared elements like the logo. 
-
----
-
-</details>
 
 <details>
   <summary>Task 6: Implement Sidebar Component</summary>
@@ -693,25 +672,37 @@ You can fork these repositories to get started. They contain basic tests. If you
   **Acceptance Criteria:**
 
   - The sidebar open button is rendered in the lower right corner.
-  - Button and sidebar components are located in the main Layout.
   - When user click the button, a sidebar appears on the right. The sidebar should appear with smooth animation.
   - Sidebar styles and content match the design.
   - The logic for creating a record at this step does not need to be done
-
-  **Technology-related requirements:**
-  
-  <details>
-  <summary>React</summary>
-
-  - Use `react-transition-group` to animate the sidebar.
-  </details>
   
 ---
 
 </details>
 
+
 <details>
-  <summary>Task 7: Build Responsive Layout</summary>
+  <summary>Task 7: Implement Layout Component</summary>
+
+---
+
+  **Description:**
+
+  Create a Layout component that includes Header and Sidebar
+
+  **Acceptance Criteria:**
+
+  - A layout component has been created which is a general wrapper for the application.
+  - A header component is implemented and displayed on the layout. 
+    - Use reusable components for shared elements like the logo. 
+
+---
+
+</details>
+
+
+<details>
+  <summary>Task 8: Build Responsive Layout</summary>
   
   ---
 
@@ -729,63 +720,35 @@ You can fork these repositories to get started. They contain basic tests. If you
 
 </details>
 
-<details>
-  <summary>Task 8: Create Basic API Integration </summary>
-  
-  ---
-
-  **Description:**
-
-  Set up a basic API integration to fetch data from the backend and display it on the front end. Test integration by fetching expenses. 
-
-  **Acceptance Criteria:**
-  
-  - A basic API service is created to handle HTTP requests. 
-  - Fetch expenses data from the /api/expenses endpoint and display it in the UI. 
-  - Handle loading and error states appropriately. 
-  
-  **Endpoints:**
-  
-  - `GET /api/expenses` - Fetch all expenses. 
-
-  **Technology-related requirements:**
-  
-  <details>
-  <summary>React</summary>
-
-  - Use axios or fetch for making API calls. 
-  - Manage API states (loading, error, success) with a React Context. 
-  </details>
-
----
-
-</details>
-
  <details>
-  <summary>Task 7: Display Expenses Table</summary>
+  <summary>Task 9: Display Expenses Table</summary>
   
   ---
 
   **Description:**
 
-  Create a table to display the list of expenses fetched from the backend. Handle cases where expenses are not available or are still loading. 
+  `ExpenseTable` component is already created. Connect data to it and display component on the screen
 
   **Acceptance Criteria:**
   
-  - A table is created with columns: Name, Category, Date, Total, and Menu. 
   - If no expenses are available, a placeholder message is displayed. 
-  - If expenses are loading, a skeleton is shown. 
+  - If expenses are loading, a skeleton is shown.
+  - Pagination implemented. When the user scrolls to the end of the screen, a new piece of data should be loaded
+  - Filtering is implemented. The user selects a range of dates and the table is redrawn taking into account the selected dates
 
   **Endpoints:**
 
-  - `GET /api/expenses` - Fetch all expenses. 
+  - `GET /api/expenses` - Fetch all expenses.
+    - `limit` - Number of records per page. 
+    - `offset` - Offset for pagination. 
+    - `fromDate` -and toDate: Filter by date range. 
 
 ---
 
 </details>
 
 <details>
-  <summary>Task 8: Implement Add Expense Functionality</summary>
+  <summary>Task 10: Implement Add Expense Functionality</summary>
   
   ---
 
@@ -797,7 +760,8 @@ You can fork these repositories to get started. They contain basic tests. If you
   
   - A button triggers the display of a right sidebar with the form. 
   - The form includes fields for Name, Payment amount, Category and Date. 
-  - Submitting the form sends data to the backend and updates the table. 
+  - Submitting the form sends data to the backend and updates the table.
+  - * Animate the appearance of a new record in the table
 
   **Endpoints:**
 
@@ -817,38 +781,9 @@ You can fork these repositories to get started. They contain basic tests. If you
 
 </details>
  
-<details>
-  <summary>Task 9: Implement Expense Detail View</summary>
-  
-  ---
-
-  **Description:**
-
-  Add functionality to view detailed information about an expense by clicking on a table row. 
-
-  **Acceptance Criteria:**
-  
-  - Clicking on a table row opens a detailed view of the expense. 
-  - The detailed view displays all expense information, including Name, Category, Date, and Total. 
-
-  **Endpoints:**
-  
-  - `GET /api/expenses/:id` - Fetch expense details by ID. 
-
-  **Technology-related requirements:**
-  
-  <details>
-  <summary>React</summary>
-
-  - Use `react-router` for routing to detailed views. 
-  </details>
-
----
-
-</details>
  
 <details>
-  <summary>Task 10: Add Update and Delete Expense Features </summary>
+  <summary>Task 11: Add Update and Delete Expense Features</summary>
   
   ---
 
@@ -858,8 +793,9 @@ You can fork these repositories to get started. They contain basic tests. If you
 
   **Acceptance Criteria:**
   
-  An "Edit" button allows modification of expense details. 
-  A "Delete" button removes the expense from the list and updates the backend. 
+  - An "Edit" button allows modification of expense details. 
+  - A "Delete" button removes the expense from the list and updates the backend.
+  -  * Animate deleting a table record
   
   **Endpoints:**
   
@@ -879,32 +815,6 @@ You can fork these repositories to get started. They contain basic tests. If you
 
 </details>
 
-<details>
-  <summary>Task 11: Add Pagination and Filtering for Expenses </summary>
-  
-  ---
-
-  **Description:**
-
-  Implement pagination and filtering functionality to enhance the user experience when viewing expenses. Enable filtering by date range and paginated views of expense data. 
-
-  **Acceptance Criteria:**
-  
-  The expenses table supports pagination with controls for navigating between pages. Pagination works like an infinite scroll. 
-  Filtering by date range is available through a form or input fields. 
-  The UI updates dynamically based on pagination and filter inputs. 
-
-  **Endpoints:**
-  
-  - `GET /api/expenses` - Fetch expenses with optional query parameters: 
-    - `limit` - Number of records per page. 
-    - `offset` - Offset for pagination. 
-    - `fromDate` -and toDate: Filter by date range. 
-
-
----
-
-</details>
 
 <details>
   <summary>Task 12: Final step</summary>
