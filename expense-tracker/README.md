@@ -15,7 +15,7 @@ The project is divided into two main parts:
 
 This division helps students concentrate on specific areas of development, making the learning process more manageable and structured. Additionally, students can choose to work on only the backend or frontend if they prefer to specialize.
 
-[Design](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=1-3549&t=aTL5fCdfx7KDxohB-0)
+[Design](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=1-3605&m=dev&t=cWXPIDXrgBjd2Khh-1)
 
 ## Subprojects
 - [Part 1](./part-1/README.md)
