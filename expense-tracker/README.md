@@ -1,5 +1,7 @@
 # Expense Tracker
 
+![Expense Tracker](./assets/expense_tracker.jpg)
+
 Expense Tracker is an educational project designed to help students learn the fundamentals of full-stack development. The project focuses on building a simple expense management application where users can add, edit, delete, and view expenses.
 
 The project is split into multiple parts, each focusing on specific concepts and technologies, making it easier for students to learn step by step. By completing this project, students will:

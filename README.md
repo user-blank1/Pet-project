@@ -23,9 +23,7 @@ If there is a starter in the project for the stack you have chosen, then fork it
 Follow the step-by-step tasks outlined in the project README. These tasks are designed to incrementally guide you through the project, covering essential concepts and techniques.
 1. Verify Your Work\
 After completing all tasks, ensure that:
-    * Your solution passes all the provided tests (if they exist).
-    * You’ve compared your progress against the provided checklists.
-    * Everything meets the project requirements. 
+    * Everything meets the project requirements.
 1. Request feedback from a Mentor by filling out the form at the last step\
 Once you're confident in your work, request feedback from a mentor. Mentors provide invaluable guidance, helping you improve your solution and grow as a developer.
     * Work in a Development Branch: We highly recommend working in a separate dev branch rather than directly pushing to master. This way, you can open a Pull Request (PR) from your dev branch to master for review.
