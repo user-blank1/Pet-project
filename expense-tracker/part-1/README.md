@@ -267,23 +267,21 @@ You can fork these repositories to get started. They contain basic tests. If you
 </details>
 
 <details>
-  <summary>Task 7: Create Endpoints for Getting Expenses</summary>
+  <summary>Task 7: Create Endpoint for getting list of expenses</summary>
 
   ---
 
   **Description:**
 
-  Set up routes for retrieving expenses from the database. Include operations for fetching all expenses (with optional pagination and filtering) and fetching a specific expense by ID.
+  Set up route for retrieving expenses from the database. Include operations for fetching all expenses (with optional pagination and filtering).
 
   **Acceptance Criteria:**
 
-  - Routes for retrieving expenses are implemented:
+  - Route for retrieving expenses are implemented:
     - `GET /api/expenses` Fetches and returns all expenses with optional query parameters:
       - Pagination: `limit` and `offset`.
       - Filtering: `fromDate` and `toDate` based on the date field.
-    - `GET /api/expenses/:id` Fetches a specific expense by its ID.
-  - Data is validated to ensure correctness before processing requests.
-  - Responses include appropriate HTTP status codes and data.
+  - Response include appropriate HTTP status codes and data.
   - Modular structure follows the established pattern.
 
   **Technology-related requirements:**
@@ -305,19 +303,48 @@ You can fork these repositories to get started. They contain basic tests. If you
 </details>
 
 <details>
-  <summary>Task 8: Create Routes for Updating and Deleting Expenses</summary>
+  <summary>Task 8: Create endpoint for getting expense by id</summary>
 
   ---
 
   **Description:**
 
-  Set up routes for updating and deleting expense records in the database. Ensure that only specified fields are updated during PATCH operations.
+  Set up route for retrieving expense from the database. Include operation for fetching a specific expense by ID.
 
   **Acceptance Criteria:**
 
-  - Routes for updating and deleting expenses are implemented:
+  - Routes for retrieving expenses are implemented:
+    - `GET /api/expenses/:id` Fetches a specific expense by its ID.
+  - Responses include appropriate HTTP status codes and data.
+  - Modular structure follows the established pattern.
+
+  **Technology-related requirements:**
+
+  <details>
+  <summary>NodeJS</summary>
+
+  - Prepare all the necessary data in the `expenses.controller.ts`.
+  - Implement business logic for fetching expenses in `expenses.service.ts`.
+  - Handle database queries in `expenses.repository.ts`.
+  </details>
+
+---
+
+</details>
+
+<details>
+  <summary>Task 9: Create Routes for Updating and Deleting Expenses</summary>
+
+  ---
+
+  **Description:**
+
+  Set up route for updating expense records in the database. Ensure that only specified fields are updated during PATCH operations.
+
+  **Acceptance Criteria:**
+
+  - Route for updating expense are implemented:
       - `PATCH /api/expenses/:id` Updates specific fields of an expense.
-      - `DELETE /api/expenses/:id` Deletes an expense by its ID.
   - Data is validated to ensure correctness before processing requests.
   - Responses include appropriate HTTP status codes and data.
 
@@ -338,7 +365,36 @@ You can fork these repositories to get started. They contain basic tests. If you
 </details>
 
 <details>
-  <summary>Task 9: Implement Basic Logging</summary>
+  <summary>Task 10: Create Route for Deleting Expenses</summary>
+
+  ---
+
+  **Description:**
+
+  Set up route for deleting expense records in the database
+
+  **Acceptance Criteria:**
+
+  - Route for deleting expenses are implemented:
+      - `DELETE /api/expenses/:id` Deletes an expense by its ID.
+  - Response include appropriate HTTP status code.
+
+  **Technology-related requirements:**
+
+  <details>
+  <summary>NodeJS</summary>
+
+  - Prepare all the necessary data in the `expenses.controller.ts`.
+  - Implement business logic for fetching expenses in `expenses.service.ts`.
+  - Handle database queries in `expenses.repository.ts`.
+  </details>
+
+---
+
+</details>
+
+<details>
+  <summary>Task 11: Implement Basic Logging</summary>
 
   ---
 
@@ -399,7 +455,7 @@ You can fork these repositories to get started. They contain basic tests. If you
 </details>
 
 <details>
-  <summary>Task 10: Final step</summary>
+  <summary>Task 12: Final step</summary>
 
   ---
 
