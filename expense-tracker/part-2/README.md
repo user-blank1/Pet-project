@@ -388,10 +388,10 @@ Create the Sign-In page to authenticate users using their email and password.
 After successful login, the user receives an access token as a response. A refresh token will also be set as a cookie. Refresh token is controlled on the backend, access token will be controlled by the frontend. Since it is advisable not to store the access token in any storage, we will store it in a closure.
 
 **Acceptance Criteria:**
-- After you receive the token, you need to save it in the closure of the tool through which you send requests.
+- The access token is not stored in any storage.
 - Each subsequent request must take the token and closures and add an authentication header.
-- If a user sends a request to a private route and his token expires, then you need to get a new access token based on the refresh token.
-
+- The access token is automatically renewed when the old one expires.
+  
 **Endpoints:**
 - `POST /api/auth/token`
 
@@ -443,7 +443,7 @@ Develop a password recovery flow with pages for email submission, token validati
 </details>
 
 <details>
-  <summary>Task 8: Implement Protected Routes</summary>
+  <summary>Task 7: Implement Protected Routes</summary>
 
 ---
 
@@ -468,7 +468,7 @@ Create route guards to protect authenticated routes and restrict unauthorized ac
 </details>
 
 <details>
-  <summary>Task 9: Implement User Profile Page</summary>
+  <summary>Task 8: Implement User Profile Page</summary>
 
 ---
 
@@ -495,7 +495,7 @@ Create a user profile page displaying authenticated user details.
 </details>
 
 <details>
-  <summary>Task 10: Implement Responsive Design</summary>
+  <summary>Task 9: Implement Responsive Design</summary>
 
 ---
 
@@ -519,7 +519,7 @@ Ensure all authentication pages are fully responsive on all devices.
 </details>
 
 <details>
-  <summary>Task 11: Final step</summary>
+  <summary>Task 10: Final step</summary>
 
   ---
 
