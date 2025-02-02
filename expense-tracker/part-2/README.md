@@ -380,7 +380,7 @@ Create the Sign-In page to authenticate users using their email and password.
 </details>
 
 <details>
-  <summary>Task 5: Token update</summary>
+  <summary>Task 5: Token Management</summary>
 
 ---
 
@@ -394,6 +394,14 @@ After successful login, the user receives an access token as a response. A refre
 
 **Endpoints:**
 - `POST /api/auth/token`
+
+**Technology-related requirements:**
+
+<details>
+<summary>React</summary>
+
+- Use interceptors in `axios` to manage token logic globally.
+</details>
 
 **Materials:**
 
@@ -428,34 +436,6 @@ Develop a password recovery flow with pages for email submission, token validati
 
 - Use `react-router` for navigation across recovery pages.
 - Handle loading and error states gracefully.
-</details>
-
----
-
-</details>
-
-<details>
-  <summary>Task 7: Token Management</summary>
-
----
-
-**Description:**
-Handle access and refresh tokens securely to maintain user sessions.
-
-**Acceptance Criteria:**
-- Access tokens are securely stored and attached to API requests.
-- Tokens are automatically refreshed before expiration.
-- Expired tokens redirect users to the sign-in page.
-
-**Endpoints:**
-- `POST /api/auth/token`
-
-**Technology-related requirements:**
-
-<details>
-<summary>React</summary>
-
-- Use interceptors in `axios` to manage token logic globally.
 </details>
 
 ---
