@@ -264,37 +264,26 @@ Cover the functionality of `auth` and `user` modules with unit tests.
 ## Frontend
 
 <details>
-  <summary>Task 1: Setup Authentication Project Structure</summary>
+  <summary>Task 1: Routing</summary>
 
 ---
 
 **Description:**
-Prepare the project structure specifically for authentication and authorization-related components, services, and routes.
+Add a router with empty blank pages. This will allow you to make transitions between pages in the future.
+
 
 **Acceptance Criteria:**
-- A dedicated `auth` module is created with folders for `components`, `pages`, and `services`.
-- The folder structure aligns with best practices for modular frontend architecture.
-- Environment variables are configured for backend API URLs.
+- Empty placeholders added for sign in, sign up, forgot password, verification code, restore password, success pages
+- Router added
+- Pages and routes are linked
+- The root route belongs to the main page and displays a table with expenses
 
 **Technology-related requirements:**
 
 <details>
 <summary>React</summary>
 
-- Use `.env` files to define API base URLs.
-- Structure `pages` as follows:
-```
-/src
-├── pages
-│ ├── SignInPage.tsx
-│ ├── SignUpPage.tsx
-│ ├── ForgotPasswordPage.tsx
-│ ├── ResetPasswordPage.tsx
-│ ├── SuccessPage.tsx
-│ └── EmailVerificationPage.tsx
-│ └── ...
-...
-```
+- Use `react-router-dom`
 </details>
 
 ---
@@ -302,28 +291,25 @@ Prepare the project structure specifically for authentication and authorization-
 </details>
 
 <details>
-  <summary>Task 2: Build Reusable Authentication Components</summary>
+  <summary>Task 2: Layout for Authentication Components</summary>
 
 ---
 
 **Description:**
-Create reusable UI components for building authentication screens.
+Create a common layout for authentication pages.
 
 **Acceptance Criteria:**
-- The following reusable components are implemented:
-   - **AuthInput:** Styled input for email and password fields.
-   - **AuthButton:** Primary button for submitting forms.
-   - **AuthFormField:** A wrapper for form fields with validation error messages.
-   - **AuthLayout:** A shared layout for authentication pages.
-- Components are reusable across multiple authentication pages.
+- [Design Link](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=3-25446&t=OWBBHRgYsR67Eq8H-4)
+- Layout can be a wrapper for authentication pages.
+- Layout added to the router for authentication pages
+- Added styles for responsive design
 
-**Technology-related requirements:**
+**Materials:**
 
 <details>
 <summary>React</summary>
 
-- Use props to handle validation states and dynamic styles.
-- Ensure accessibility (e.g., `aria-label` for inputs).
+- [Building a Layout with React Router](https://medium.com/@ravipatel.it/building-a-layout-with-react-router-v6-step-by-step-guide-75b9637f1fbe)
 </details>
 
 ---
@@ -339,10 +325,13 @@ Create reusable UI components for building authentication screens.
 Create the Sign-Up page, allowing users to register by providing necessary information.
 
 **Acceptance Criteria:**
-- The page includes input fields: `email`, `password`, `confirm password`, `name`.
-- Validation ensures valid email and matching passwords.
+- Added password input component.
+- The page includes input fields: `name`, `email`, `password`.
+- Validation guarantees a valid email. The password must contain 8-12 characters long and contain uppercase and lowercase letters, as well as numbers.
 - Errors are displayed if validation fails.
 - A success message is displayed after registration.
+- After successful registration, the user should be redirected to the sign-in page.
+- The links in the design should lead to the corresponding pages.
 
 **Endpoints:**
 - `POST /api/auth/sign-up`
@@ -366,10 +355,11 @@ Create the Sign-Up page, allowing users to register by providing necessary infor
 ---
 
 **Description:**
-Develop the Sign-In page to authenticate users using their email and password.
+Create the Sign-In page to authenticate users using their email and password.
 
 **Acceptance Criteria:**
 - The page includes input fields: `email`, `password`.
+- The email and password validation rules must be exactly the same as on the sign-up page.
 - Invalid credentials display appropriate error messages.
 - On success, the user is redirected to a protected route.
 
@@ -390,7 +380,31 @@ Develop the Sign-In page to authenticate users using their email and password.
 </details>
 
 <details>
-  <summary>Task 5: Implement Forgot Password Flow</summary>
+  <summary>Task 5: Token update</summary>
+
+---
+
+**Description:**
+After successful login, the user receives an access token as a response. A refresh token will also be set as a cookie. Refresh token is controlled on the backend, access token will be controlled by the frontend. Since it is advisable not to store the access token in any storage, we will store it in a closure.
+
+**Acceptance Criteria:**
+- After you receive the token, you need to save it in the closure of the tool through which you send requests.
+- Each subsequent request must take the token and closures and add an authentication header.
+- If a user sends a request to a private route and his token expires, then you need to get a new access token based on the refresh token.
+
+**Endpoints:**
+- `POST /api/auth/token`
+
+**Materials:**
+
+- [xUsing Axios interceptors for refreshing your API token](https://www.thedutchlab.com/insights/using-axios-interceptors-for-refreshing-your-api-token)
+
+---
+
+</details>
+
+<details>
+  <summary>Task 6: Implement Forgot Password Flow</summary>
 
 ---
 
@@ -421,7 +435,7 @@ Develop a password recovery flow with pages for email submission, token validati
 </details>
 
 <details>
-  <summary>Task 6: Token Management</summary>
+  <summary>Task 7: Token Management</summary>
 
 ---
 
@@ -449,7 +463,7 @@ Handle access and refresh tokens securely to maintain user sessions.
 </details>
 
 <details>
-  <summary>Task 7: Implement Protected Routes</summary>
+  <summary>Task 8: Implement Protected Routes</summary>
 
 ---
 
@@ -474,7 +488,7 @@ Create route guards to protect authenticated routes and restrict unauthorized ac
 </details>
 
 <details>
-  <summary>Task 8: Implement User Profile Page</summary>
+  <summary>Task 9: Implement User Profile Page</summary>
 
 ---
 
@@ -501,7 +515,7 @@ Create a user profile page displaying authenticated user details.
 </details>
 
 <details>
-  <summary>Task 9: Implement Responsive Design</summary>
+  <summary>Task 10: Implement Responsive Design</summary>
 
 ---
 
@@ -525,7 +539,7 @@ Ensure all authentication pages are fully responsive on all devices.
 </details>
 
 <details>
-  <summary>Task 10: Final step</summary>
+  <summary>Task 11: Final step</summary>
 
   ---
 
