@@ -332,6 +332,7 @@ Create the Sign-Up page, allowing users to register by providing necessary infor
 - A success message is displayed after registration.
 - After successful registration, the user should be redirected to the sign-in page.
 - The links in the design should lead to the corresponding pages.
+- Added styles for responsive design
 
 **Endpoints:**
 - `POST /api/auth/sign-up`
@@ -362,6 +363,7 @@ Create the Sign-In page to authenticate users using their email and password.
 - The email and password validation rules must be exactly the same as on the sign-up page.
 - Invalid credentials display appropriate error messages.
 - On success, the user is redirected to a protected route.
+- Added styles for responsive design
 
 **Endpoints:**
 - `POST /api/auth/sign-in`
@@ -391,7 +393,7 @@ After successful login, the user receives an access token as a response. A refre
 - The access token is not stored in any storage.
 - Each subsequent request must take the token and closures and add an authentication header.
 - The access token is automatically renewed when the old one expires.
-  
+
 **Endpoints:**
 - `POST /api/auth/token`
 
@@ -424,6 +426,7 @@ Develop a password recovery flow with pages for email submission, token validati
 - **Reset Code Page:** User enters the reset code.
 - **Restore Password Page:** User sets a new password.
 - On success, the user is redirected to a success page.
+- Added styles for responsive design
 
 **Endpoints:**
 - `POST /api/auth/forgot-password`
@@ -453,13 +456,15 @@ Create route guards to protect authenticated routes and restrict unauthorized ac
 **Acceptance Criteria:**
 - Authenticated users can access protected routes.
 - Unauthenticated users are redirected to the sign-in page.
-- Routes are secured using a reusable `PrivateRoute` component.
+- Make the root page with the table protected so that only authorized users have access to it.
+- Each user should be able to see only their data in the table.
 
 **Technology-related requirements:**
 
 <details>
 <summary>React</summary>
 
+- Routes are secured using a reusable `PrivateRoute` component.
 - Use `react-router-dom` to implement route protection.
 </details>
 
@@ -473,45 +478,41 @@ Create route guards to protect authenticated routes and restrict unauthorized ac
 ---
 
 **Description:**
-Create a user profile page displaying authenticated user details.
+Create a user profile page displaying authenticated user details. Our design does not include this page. You can make this page whatever you want.
 
 **Acceptance Criteria:**
 - User details (excluding sensitive fields) are displayed.
-- Errors are gracefully handled.
+- Added styles for responsive design.
+- A profile icon has been added to the header when clicked on which the user should be redirected to the user’s page.
+- The user has access only to his data.
+- Route is protected.
 
 **Endpoints:**
 - `GET /api/users/me`
 
-**Technology-related requirements:**
-
-<details>
-<summary>React</summary>
-
-- Fetch user details using `useEffect`.
-</details>
-
 ---
 
 </details>
 
 <details>
-  <summary>Task 9: Implement Responsive Design</summary>
+  <summary>Task 9: Unit tests</summary>
 
 ---
 
 **Description:**
-Ensure all authentication pages are fully responsive on all devices.
+Improve the stability of the application by covering the main functionality with unit tests.
 
 **Acceptance Criteria:**
-- Authentication pages adapt to mobile, tablet, and desktop views.
-- UI elements adjust dynamically without breaking layout.
+- A suitable testing tool has been selected. All necessary dependencies are installed.
+- A test script has been added to package.json, which runs the testing command.
+- The main functionality of the components is covered by unit tests (this part and previous one).
 
 **Technology-related requirements:**
 
 <details>
 <summary>React</summary>
 
-- Use CSS Modules or styled-components for responsive design.
+- Use `react-testing-library`
 </details>
 
 ---
@@ -519,7 +520,24 @@ Ensure all authentication pages are fully responsive on all devices.
 </details>
 
 <details>
-  <summary>Task 10: Final step</summary>
+  <summary>Task 10: Add storybook</summary>
+
+---
+
+**Description:**
+By now you should have a large number of components ready to be reused. As the application grows, it becomes more difficult to remember which components are ready and which have states. You are invited to add a storybook to visualize the existing components.
+
+**Acceptance Criteria:**
+- The storybook is installed.
+- All components that can be reused are added to the storybook.
+- The script for launching the storybook has been added to package.json
+
+---
+
+</details>
+
+<details>
+  <summary>Task 11: Final step</summary>
 
   ---
 
@@ -532,9 +550,11 @@ Ensure all authentication pages are fully responsive on all devices.
 </details>
 
 ## Solution
-If you've already finished working on this part or are stuck, these repositories might be useful to you.
+In progress...
+<!-- If you've already finished working on this part or are stuck, these repositories might be useful to you.
   - [API](https://github.com/petproject-dev/expense-tracker-backend-part-3) - Express.js
-  - [UI](https://github.com/petproject-dev/expense-tracker-frontend-part-3) - React
+  - [UI](https://github.com/petproject-dev/expense-tracker-frontend-part-3) - React -->
+
 
 ## Next Steps
 If you're ready to move forward, you can proceed to [next project part](../part-3/README.md).
