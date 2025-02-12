@@ -34,6 +34,8 @@ Once you're confident in your work, request feedback from a mentor. Mentors prov
 
 1. [Expense Tracker](./expense-tracker/README.md)\
 Description: A full-stack application for managing expenses. This project is designed to teach the fundamentals of backend and frontend development, testing, and reusable component creation.
+1. [NASA Proxy Server](./NASA%20Proxy%20Server/README.md)\
+Description: Service for interaction with external NASA Api.
 
 As additional projects are added to this repository, they will appear here, each offering unique challenges and opportunities to expand your knowledge.
 
