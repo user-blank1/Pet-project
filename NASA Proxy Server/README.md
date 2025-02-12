@@ -473,7 +473,7 @@ By completing this project, students will learn:
 </details>
 
 <details>
-  <summary>Task 15: Add logging</summary>
+  <summary>Task 15: Add unit tests</summary>
 
   ---
 
