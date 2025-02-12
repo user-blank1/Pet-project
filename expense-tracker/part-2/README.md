@@ -233,9 +233,10 @@ Implement security measures to ensure data protection and prevent common vulnera
 Cover the functionality of `auth` and `user` modules with unit tests.
 
 **Acceptance Criteria:**
-- The test environment is configured
-- Tests interact only with mock data
-- Test coverage from 70%
+- The test environment is configured.
+- A test script has been added to package.json, which runs the testing command.
+- Tests interact only with mock data.
+- Test coverage from 70%.
 
 **Technology-related requirements:**
 
@@ -495,15 +496,15 @@ Create a user profile page displaying authenticated user details. Our design doe
 </details>
 
 <details>
-  <summary>Task 9: Unit tests</summary>
+  <summary>Task 9: Add unit tests</summary>
 
 ---
 
 **Description:**
-Improve the stability of the application by covering the main functionality with unit tests.
+Cover the functionality with unit tests.
 
 **Acceptance Criteria:**
-- A suitable testing tool has been selected. All necessary dependencies are installed.
+- The test environment is configured.
 - A test script has been added to package.json, which runs the testing command.
 - The main functionality of the components is covered by unit tests (this part and previous one).
 
