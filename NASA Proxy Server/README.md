@@ -511,5 +511,9 @@ By completing this project, students will learn:
 
 </details>
 
+## Solution
+If you've already finished working on this part or are stuck, these repositories might be useful to you.
+  - [API](https://github.com/petproject-dev/nasa_proxy_server) - Express.js
+
 ## Found an Issue?
 We strive to make the project as clear and helpful as possible. If you notice any errors, inconsistencies, or unclear instructions, please open a Pull Request in this repository with your suggested fixes or improvements. Your feedback helps improve the learning experience for everyone!
