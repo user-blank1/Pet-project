@@ -22,6 +22,7 @@ This division helps students concentrate on specific areas of development, makin
 ## Subprojects
 - [Part 1](./part-1/README.md)
 - [Part 2](./part-2/README.md)
+- [Part 3](./part-3/README.md)
 
 ## Found an Issue?
 We strive to make the project as clear and helpful as possible. If you notice any errors, inconsistencies, or unclear instructions, please open a Pull Request in this repository with your suggested fixes or improvements. Your feedback helps improve the learning experience for everyone!
