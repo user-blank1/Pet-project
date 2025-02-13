@@ -25,6 +25,7 @@ You need to create an endpoint that will accept an invoice image in jpg format a
 - The file is not saved anywhere.
 - The user receives an error if the file could not be parsed.
 - If successful, the user receives a response in the format
+- Unit tests added.
 ```js
 {
   name: string,
@@ -73,7 +74,8 @@ To improve debugging, monitoring, and error tracking, we need to integrate a log
 - Logging has been added to key application areas, such as API requests, database operations, and error handling.
 - A mechanism has been introduced to store logs efficiently, supporting both local and external log management solutions.
 - Configuration options have been provided to enable or disable logging in different environments (development, production).
-
+- Unit tests added.
+- 
 ---
 
 </details>
@@ -184,6 +186,8 @@ To streamline the expense creation process, a feature for uploading invoices has
 - The image is sent to the backend, which returns extracted invoice data.
 - The expense form is pre-filled with the received data.
 - Proper validation and error handling have been implemented.
+- Storybook added.
+- Unit tests added.
 
 ---
 
