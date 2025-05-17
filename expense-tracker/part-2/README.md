@@ -28,6 +28,23 @@ Create the user model and database schema to handle user-related data securely. 
 
 ---
 
+<details>
+<summary>AI Prompt (NodeJS)</summary>
+
+Perform Backend Task 1 from the README file `expense-tracker/part-2/README.md`:
+- Work in the `<project-name>` folder
+- Create all necessary files and folders yourself
+- Use a modular structure for `auth` and `user` modules, each with controller, service, and repository
+- Define the database schema for `Users` table with fields: `id`, `email`, `name`, `password`
+- Create a migration that creates the `Users` table; running the migration again should not change the schema
+- Use Prisma or another migration tool as required
+- Do not skip any Acceptance Criteria from the README
+- After completion, provide a short report on what was done and what needs to be done manually (e.g., npm install, run migration)
+
+</details>
+
+---
+
 </details>
 
 <details>
@@ -51,6 +68,24 @@ Create endpoints for user registration (`POST /api/auth/sign-up`) and login (`PO
 
 ---
 
+<details>
+<summary>AI Prompt (NodeJS)</summary>
+
+Perform Backend Task 2 from the README file `expense-tracker/part-2/README.md`:
+- Work in the `<project-name>` folder
+- Use the modular structure for `auth` and `user` modules (controller, service, repository)
+- Create endpoints `POST /api/auth/sign-up` and `POST /api/auth/sign-in` with token-based authentication
+- Implement validation for input data and credentials
+- Create and associate `RefreshToken` table with `User` in the database schema
+- Sign tokens and set expiration times
+- Log important events (successful sign-up, failed login attempts)
+- Do not skip any Acceptance Criteria from the README
+- After completion, provide a short report on what was done and what needs to be done manually (e.g., npm install, run migration)
+
+</details>
+
+---
+
 </details>
 
 <details>
@@ -68,6 +103,22 @@ Develop middleware to validate and protect routes that require authentication.
 
 ---
 
+<details>
+<summary>AI Prompt (NodeJS)</summary>
+
+Perform Backend Task 3 from the README file `expense-tracker/part-2/README.md`:
+- Work in the `<project-name>` folder
+- Use the modular structure for `auth` and `user` modules (controller, service, repository)
+- Implement middleware to validate access tokens and protect routes
+- Ensure protected routes return `401 Unauthorized` for invalid or expired tokens
+- Log unauthorized access attempts
+- Do not skip any Acceptance Criteria from the README
+- After completion, provide a short report on what was done and what needs to be done manually
+
+</details>
+
+---
+
 </details>
 
 <details>
@@ -82,6 +133,22 @@ Create the `/api/users/me` endpoint in the `user` module to return details of th
 - `GET /api/users/me` returns user information (excluding sensitive fields).
 - Protected by authentication middleware.
 - Access to `/api/users/me` endpoint is logged.
+
+---
+
+<details>
+<summary>AI Prompt (NodeJS)</summary>
+
+Perform Backend Task 4 from the README file `expense-tracker/part-2/README.md`:
+- Work in the `<project-name>` folder
+- Use the modular structure for `user` module (controller, service, repository)
+- Implement the endpoint `GET /api/users/me` to return details of the currently authenticated user (excluding sensitive fields)
+- Protect the endpoint with authentication middleware
+- Log access to `/api/users/me`
+- Do not skip any Acceptance Criteria from the README
+- After completion, provide a short report on what was done and what needs to be done manually
+
+</details>
 
 ---
 
@@ -103,6 +170,23 @@ Implement the `/api/auth/token` endpoint to refresh access tokens using refresh 
 
 ---
 
+<details>
+<summary>AI Prompt (NodeJS)</summary>
+
+Perform Backend Task 5 from the README file `expense-tracker/part-2/README.md`:
+- Work in the `<project-name>` folder
+- Use the modular structure for `auth` module (controller, service, repository)
+- Implement the endpoint `POST /api/auth/token` to refresh access tokens using refresh tokens
+- Validate the refresh token and issue new tokens if valid
+- Return `401 Unauthorized` for invalid refresh tokens
+- Log token refresh attempts
+- Do not skip any Acceptance Criteria from the README
+- After completion, provide a short report on what was done and what needs to be done manually
+
+</details>
+
+---
+
 </details>
 
 <details>
@@ -115,7 +199,7 @@ Implement the `/api/auth/forgot-password` endpoint to allow users to recover the
 
 **Acceptance Criteria:**
 - `POST /api/auth/forgot-password`: Sends a reset code via email. The email also contains a link to the password change page.
-- `ResetCode` table is created ans associated with `User` table.
+- `ResetCode` table is created and associated with `User` table.
 - The reset code expires in 10 minutes.
 
 **Technology-related requirements:**
@@ -124,6 +208,23 @@ Implement the `/api/auth/forgot-password` endpoint to allow users to recover the
 <summary>NodeJS</summary>
 
 - Use `nodemailer` for sending emails.
+</details>
+
+---
+
+<details>
+<summary>AI Prompt (NodeJS)</summary>
+
+Perform Backend Task 6 from the README file `expense-tracker/part-2/README.md`:
+- Work in the `<project-name>` folder
+- Use the modular structure for `auth` module (controller, service, repository)
+- Implement the endpoint `POST /api/auth/forgot-password` to send a reset code via email (with a link to the password change page)
+- Create the `ResetCode` table and associate it with the `User` table in the database schema
+- Ensure the reset code expires in 10 minutes
+- Use `nodemailer` for sending emails
+- Do not skip any Acceptance Criteria from the README
+- After completion, provide a short report on what was done and what needs to be done manually
+
 </details>
 
 ---
@@ -152,18 +253,20 @@ Implement the `/api/auth/restore-password` endpoint.
 - Use `node-cron` for scheduling crone jobs.
 </details>
 
-<br />
-
-**Materials:**
-
-- [What Is a Cron Job](https://www.hostinger.com/tutorials/cron-job#:~:text=A%20cron%20job%20is%20a,efficiency%20and%20minimal%20human%20error.)
-
-<br />
+---
 
 <details>
-<summary>NodeJS</summary>
+<summary>AI Prompt (NodeJS)</summary>
 
-- [How to Schedule Cron Job in Node.js + Express.js](https://dev.to/thesohailjafri/how-to-schedule-cron-job-in-nodejs-expressjs-2flm)
+Perform Backend Task 7 from the README file `expense-tracker/part-2/README.md`:
+- Work in the `<project-name>` folder
+- Use the modular structure for `auth` module (controller, service, repository)
+- Implement the endpoint `POST /api/auth/restore-password` to validate the reset code and update the user's password
+- Remove the `ResetCode` after successful password reset
+- Create a scheduled job (using `node-cron`) to delete all expired codes once a week
+- Log password reset requests and successful resets
+- Do not skip any Acceptance Criteria from the README
+- After completion, provide a short report on what was done and what needs to be done manually
 
 </details>
 
@@ -190,6 +293,21 @@ Implement the `/api/auth/logout` and `/api/auth/logoutAll` endpoints.
 <summary>NodeJS</summary>
 
 - Use `node-cron` for scheduling crone jobs.
+</details>
+
+---
+
+<details>
+<summary>AI Prompt (NodeJS)</summary>
+
+Perform Backend Task 8 from the README file `expense-tracker/part-2/README.md`:
+- Work in the `<project-name>` folder
+- Use the modular structure for `auth` module (controller, service, repository)
+- Implement the endpoints `GET /api/auth/logout` and `GET /api/auth/logoutAll` for logging out from current and all devices
+- Create a scheduled job (using `node-cron`) to delete all expired refresh tokens once a week
+- Do not skip any Acceptance Criteria from the README
+- After completion, provide a short report on what was done and what needs to be done manually
+
 </details>
 
 ---
@@ -222,6 +340,23 @@ Implement security measures to ensure data protection and prevent common vulnera
 
 ---
 
+<details>
+<summary>AI Prompt (NodeJS)</summary>
+
+Perform Backend Task 9 from the README file `expense-tracker/part-2/README.md`:
+- Work in the `<project-name>` folder
+- Implement security measures for data protection and prevention of common vulnerabilities
+- Use `helmet` for security headers and `express-rate-limit` for rate limiting
+- Enable CORS with secure configurations
+- Validate and sanitize all incoming data
+- Ensure tokens are securely signed and validated
+- Do not skip any Acceptance Criteria from the README
+- After completion, provide a short report on what was done and what needs to be done manually
+
+</details>
+
+---
+
 </details>
 
 <details>
@@ -248,17 +383,46 @@ Cover the functionality of `auth` and `user` modules with unit tests.
 
 ---
 
+<details>
+<summary>AI Prompt (NodeJS)</summary>
+
+Perform Backend Task 10 from the README file `expense-tracker/part-2/README.md`:
+- Work in the `<project-name>` folder
+- Use the modular structure for `auth` and `user` modules (controller, service, repository)
+- Configure the test environment and add a test script to package.json
+- Cover the functionality of `auth` and `user` modules with unit tests (using only mock data)
+- Achieve at least 70% test coverage
+- Use `supertest` and `jest` for testing
+- Do not skip any Acceptance Criteria from the README
+- After completion, provide a short report on what was done and what needs to be done manually
+
+</details>
+
+---
+
 </details>
 
 <details>
-  <summary>Task 11: Final step</summary>
+<summary>Task 11: Final step</summary>
 
-  ---
+---
 
-  - Make sure the tests pass - `npm run test`
-  - Open a pull request for the `master` branch and send the solution to the code review
+- Make sure the tests pass - `npm run test`
+- Open a pull request for the `master` branch and send the solution to the code review
 
-  ---
+---
+
+<details>
+<summary>AI Prompt (NodeJS)</summary>
+
+Perform Backend Task 11 from the README file `expense-tracker/part-2/README.md`:
+- Make sure all previous tasks are completed and all tests pass (`npm run test`)
+- Open a pull request for the `master` branch and send the solution to code review
+- After completion, provide a short report on what was done
+
+</details>
+
+---
 
 </details>
 
@@ -272,7 +436,6 @@ Cover the functionality of `auth` and `user` modules with unit tests.
 **Description:**
 Add a router with empty blank pages. This will allow you to make transitions between pages in the future.
 
-
 **Acceptance Criteria:**
 - Empty placeholders added for sign in, sign up, forgot password, verification code, restore password, success pages
 - Router added
@@ -285,6 +448,23 @@ Add a router with empty blank pages. This will allow you to make transitions bet
 <summary>React</summary>
 
 - Use `react-router-dom`
+</details>
+
+---
+
+<details>
+<summary>AI Prompt (React)</summary>
+
+Perform Frontend Task 1 from the README file `expense-tracker/part-2/README.md`:
+- Work in the `<project-name>` folder
+- Add routing using `react-router-dom` v6+
+- Create empty placeholder pages for sign in, sign up, forgot password, verification code, restore password, and success
+- Link all pages and routes according to the Acceptance Criteria
+- The root route should display a table with expenses (can be a placeholder for now)
+- Use a modular structure: `src/pages/`, `src/routes/`, `src/components/`
+- Export all pages and routes for easy extension
+- After completion, provide a short report on what was done and what needs to be done manually
+
 </details>
 
 ---
@@ -311,6 +491,22 @@ Create a common layout for authentication pages.
 <summary>React</summary>
 
 - [Building a Layout with React Router](https://medium.com/@ravipatel.it/building-a-layout-with-react-router-v6-step-by-step-guide-75b9637f1fbe)
+</details>
+
+---
+
+<details>
+<summary>AI Prompt (React)</summary>
+
+Perform Frontend Task 2 from the README file `expense-tracker/part-2/README.md`:
+- Work in the `<project-name>` folder
+- Create a reusable layout component for authentication pages in `src/layouts/AuthLayout/AuthLayout.tsx`
+- Add responsive styles and match the Figma design as closely as possible
+- Integrate the layout into the router for all authentication-related pages
+- Use a modular structure: `src/layouts/`, `src/pages/`, `src/routes/`
+- Export the layout for reuse
+- After completion, provide a short report on what was done and what needs to be done manually
+
 </details>
 
 ---
@@ -349,6 +545,24 @@ Create the Sign-Up page, allowing users to register by providing necessary infor
 
 ---
 
+<details>
+<summary>AI Prompt (React)</summary>
+
+Perform Frontend Task 3 from the README file `expense-tracker/part-2/README.md`:
+- Work in the `<project-name>` folder
+- Create a Sign-Up page in `src/pages/SignUp/SignUp.tsx` with fields: name, email, password
+- Use `react-hook-form` and `yup` for form handling and validation
+- Add a password input component with show/hide functionality
+- Display errors and a success message after registration
+- Redirect to the sign-in page after successful registration
+- Add links to other auth pages as in the design
+- Add responsive styles
+- After completion, provide a short report on what was done and what needs to be done manually
+
+</details>
+
+---
+
 </details>
 
 <details>
@@ -376,6 +590,22 @@ Create the Sign-In page to authenticate users using their email and password.
 
 - Use `react-hook-form` for form handling.
 - Display validation and backend errors clearly.
+</details>
+
+---
+
+<details>
+<summary>AI Prompt (React)</summary>
+
+Perform Frontend Task 4 from the README file `expense-tracker/part-2/README.md`:
+- Work in the `<project-name>` folder
+- Create a Sign-In page in `src/pages/SignIn/SignIn.tsx` with fields: email, password
+- Use `react-hook-form` for form handling and validation (same rules as sign-up)
+- Display validation and backend errors clearly
+- Redirect to a protected route on success
+- Add responsive styles
+- After completion, provide a short report on what was done and what needs to be done manually
+
 </details>
 
 ---
@@ -408,7 +638,22 @@ After successful login, the user receives an access token as a response. A refre
 
 **Materials:**
 
-- [xUsing Axios interceptors for refreshing your API token](https://www.thedutchlab.com/insights/using-axios-interceptors-for-refreshing-your-api-token)
+- [Using Axios interceptors for refreshing your API token](https://www.thedutchlab.com/insights/using-axios-interceptors-for-refreshing-your-api-token)
+
+---
+
+<details>
+<summary>AI Prompt (React)</summary>
+
+Perform Frontend Task 5 from the README file `expense-tracker/part-2/README.md`:
+- Work in the `<project-name>` folder
+- Implement token management using closures (do not store access token in storage)
+- Use `axios` interceptors to add the access token to each request and handle token refresh automatically
+- Integrate with the backend endpoint `POST /api/auth/token`
+- Add a utility for managing tokens in `src/utils/`
+- After completion, provide a short report on what was done and what needs to be done manually
+
+</details>
 
 ---
 
@@ -444,6 +689,23 @@ Develop a password recovery flow with pages for email submission, token validati
 
 ---
 
+<details>
+<summary>AI Prompt (React)</summary>
+
+Perform Frontend Task 6 from the README file `expense-tracker/part-2/README.md`:
+- Work in the `<project-name>` folder
+- Implement a password recovery flow with three pages: Forgot Password, Reset Code, Restore Password
+- Use `react-router` for navigation between these pages
+- Add forms for email, reset code, and new password (with validation)
+- Handle loading and error states gracefully
+- Redirect to a success page on completion
+- Add responsive styles
+- After completion, provide a short report on what was done and what needs to be done manually
+
+</details>
+
+---
+
 </details>
 
 <details>
@@ -471,6 +733,21 @@ Create route guards to protect authenticated routes and restrict unauthorized ac
 
 ---
 
+<details>
+<summary>AI Prompt (React)</summary>
+
+Perform Frontend Task 7 from the README file `expense-tracker/part-2/README.md`:
+- Work in the `<project-name>` folder
+- Implement route guards using a reusable `PrivateRoute` component in `src/routes/`
+- Protect the root page (table) and any other authenticated routes
+- Redirect unauthenticated users to the sign-in page
+- Ensure each user sees only their data in the table
+- After completion, provide a short report on what was done and what needs to be done manually
+
+</details>
+
+---
+
 </details>
 
 <details>
@@ -484,12 +761,27 @@ Create a user profile page displaying authenticated user details. Our design doe
 **Acceptance Criteria:**
 - User details (excluding sensitive fields) are displayed.
 - Added styles for responsive design.
-- A profile icon has been added to the header when clicked on which the user should be redirected to the user’s page.
+- A profile icon has been added to the header when clicked on which the user should be redirected to the user's page.
 - The user has access only to his data.
 - Route is protected.
 
 **Endpoints:**
 - `GET /api/users/me`
+
+---
+
+<details>
+<summary>AI Prompt (React)</summary>
+
+Perform Frontend Task 8 from the README file `expense-tracker/part-2/README.md`:
+- Work in the `<project-name>` folder
+- Create a user profile page in `src/pages/Profile/Profile.tsx` displaying authenticated user details (excluding sensitive fields)
+- Add a profile icon to the header that links to the profile page
+- Protect the route so only authenticated users can access it
+- Add responsive styles
+- After completion, provide a short report on what was done and what needs to be done manually
+
+</details>
 
 ---
 
@@ -518,6 +810,20 @@ Cover the functionality with unit tests.
 
 ---
 
+<details>
+<summary>AI Prompt (React)</summary>
+
+Perform Frontend Task 9 from the README file `expense-tracker/part-2/README.md`:
+- Work in the `<project-name>` folder
+- Configure the test environment and add a test script to package.json
+- Cover the main functionality of the components with unit tests using `react-testing-library`
+- Ensure tests cover both this part and the previous one
+- After completion, provide a short report on what was done and what needs to be done manually
+
+</details>
+
+---
+
 </details>
 
 <details>
@@ -535,18 +841,43 @@ By now you should have a large number of components ready to be reused. As the a
 
 ---
 
+<details>
+<summary>AI Prompt (React)</summary>
+
+Perform Frontend Task 10 from the README file `expense-tracker/part-2/README.md`:
+- Work in the `<project-name>` folder
+- Install and configure Storybook for React
+- Add all reusable components to Storybook with stories for each state
+- Add a script for launching Storybook to package.json
+- After completion, provide a short report on what was done and what needs to be done manually
+
+</details>
+
+---
+
 </details>
 
 <details>
   <summary>Task 11: Final step</summary>
 
-  ---
+---
 
-  - Make sure the tests pass - `npm run test`
-  - Open a pull request for the `master` branch and send the solution to the code review
+- Make sure the tests pass - `npm run test`
+- Open a pull request for the `master` branch and send the solution to the code review
 
+---
 
-  ---
+<details>
+<summary>AI Prompt (React)</summary>
+
+Perform Frontend Task 11 from the README file `expense-tracker/part-2/README.md`:
+- Make sure all previous tasks are completed and all tests pass (`npm run test`)
+- Open a pull request for the `master` branch and send the solution to code review
+- After completion, provide a short report on what was done
+
+</details>
+
+---
 
 </details>
 

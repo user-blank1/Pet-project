@@ -37,6 +37,24 @@ You need to create an endpoint that will accept an invoice image in jpg format a
 
 ---
 
+<details>
+<summary>AI Prompt (NodeJS)</summary>
+
+Perform Backend Task 1 from the README file `expense-tracker/part-3/README.md`:
+- Work in the `<project-name>` folder
+- Create a new endpoint that accepts a JPG invoice image (up to 5MB) as input
+- Validate the file format and size (jpg, ≤5MB)
+- Do not save the file anywhere
+- Analyze the image and return an object with fields: name, amount, currency (USD/EUR), date
+- Return an error if the file could not be parsed
+- Add unit tests for the endpoint and logic
+- Do not skip any Acceptance Criteria from the README
+- After completion, provide a short report on what was done and what needs to be done manually
+
+</details>
+
+---
+
 </details>
 
 <details>
@@ -53,6 +71,21 @@ Drag & drag functionality will be added to the frontend. It is necessary to prov
 - A new field has been added to the `Expenses` model to save the display order of a record.
 - Added a new endpoint for updating the order of records.
 - Updated endpoint for receiving records. Now the data should be sorted by the order field.
+
+---
+
+<details>
+<summary>AI Prompt (NodeJS)</summary>
+
+Perform Backend Task 2 from the README file `expense-tracker/part-3/README.md`:
+- Work in the `<project-name>` folder
+- Add a new field to the `Expenses` model to store the display order
+- Create a new endpoint for updating the order of records
+- Update the endpoint for retrieving records to sort by the order field
+- Do not skip any Acceptance Criteria from the README
+- After completion, provide a short report on what was done and what needs to be done manually
+
+</details>
 
 ---
 
@@ -75,7 +108,25 @@ To improve debugging, monitoring, and error tracking, we need to integrate a log
 - A mechanism has been introduced to store logs efficiently, supporting both local and external log management solutions.
 - Configuration options have been provided to enable or disable logging in different environments (development, production).
 - Unit tests added.
-- 
+-
+---
+
+<details>
+<summary>AI Prompt (NodeJS)</summary>
+
+Perform Backend Task 3 from the README file `expense-tracker/part-3/README.md`:
+- Work in the `<project-name>` folder
+- Integrate a logging system with multiple log levels (info, warn, error, debug)
+- Structure logs with timestamps and contextual information
+- Add logging to key areas: API requests, DB operations, error handling
+- Support both local and external log management solutions
+- Provide configuration for enabling/disabling logging in different environments
+- Add unit tests for logging logic
+- Do not skip any Acceptance Criteria from the README
+- After completion, provide a short report on what was done and what needs to be done manually
+
+</details>
+
 ---
 
 </details>
@@ -98,6 +149,22 @@ To ensure optimal system performance and scalability, an analysis of the existin
 
 ---
 
+<details>
+<summary>AI Prompt (NodeJS)</summary>
+
+Perform Backend Task 4 from the README file `expense-tracker/part-3/README.md`:
+- Work in the `<project-name>` folder
+- Analyze existing endpoints to identify performance bottlenecks
+- Evaluate and implement optimization techniques (caching, indexing, query optimization, load balancing, multi-threading) where applicable
+- Measure RPS before and after optimizations
+- Create a summary report with findings, solutions, and performance comparisons
+- Do not skip any Acceptance Criteria from the README
+- After completion, provide a short report on what was done and what needs to be done manually
+
+</details>
+
+---
+
 </details>
 
 <details>
@@ -116,6 +183,23 @@ To improve deployment efficiency and maintainability, the backend has been conta
 - The application runs successfully inside a Docker container.
 - Environment variables are managed securely and injected into the container.
 - The container has been tested locally to ensure it functions correctly.
+
+---
+
+<details>
+<summary>AI Prompt (NodeJS)</summary>
+
+Perform Backend Task 5 from the README file `expense-tracker/part-3/README.md`:
+- Work in the `<project-name>` folder
+- Create and optimize a Dockerfile for production use
+- Add a .dockerignore file to exclude unnecessary files
+- Ensure the application runs successfully inside a Docker container
+- Manage environment variables securely and inject them into the container
+- Test the container locally
+- Do not skip any Acceptance Criteria from the README
+- After completion, provide a short report on what was done and what needs to be done manually
+
+</details>
 
 ---
 
@@ -144,6 +228,22 @@ To automate the development workflow, a GitHub Action has been added. This workf
 
 ---
 
+<details>
+<summary>AI Prompt (NodeJS)</summary>
+
+Perform Backend Task 6 from the README file `expense-tracker/part-3/README.md`:
+- Work in the `<project-name>` folder
+- Create a GitHub Action workflow file (`.github/workflows/ci.yml`)
+- Add steps for running unit/integration tests, type checking, code formatting, building the app, and building a Docker container
+- Ensure the workflow runs on every pull request and push to main
+- Integrate status checks to prevent merging if tests fail
+- Do not skip any Acceptance Criteria from the README
+- After completion, provide a short report on what was done and what needs to be done manually
+
+</details>
+
+---
+
 </details>
 
 <details>
@@ -161,6 +261,22 @@ To make the application available for production use, a deployment pipeline has 
 - The deployment process is automated through a CI/CD pipeline.
 - Environment variables are securely injected during deployment.
 - Monitoring and logging tools have been configured to track application performance.
+
+---
+
+<details>
+<summary>AI Prompt (NodeJS)</summary>
+
+Perform Backend Task 7 from the README file `expense-tracker/part-3/README.md`:
+- Work in the `<project-name>` folder
+- Deploy the backend application to the target environment
+- Automate the deployment process through a CI/CD pipeline
+- Securely inject environment variables during deployment
+- Configure monitoring and logging tools to track application performance
+- Do not skip any Acceptance Criteria from the README
+- After completion, provide a short report on what was done and what needs to be done manually
+
+</details>
 
 ---
 
@@ -191,6 +307,23 @@ To streamline the expense creation process, a feature for uploading invoices has
 
 ---
 
+<details>
+<summary>AI Prompt (React)</summary>
+
+Perform Frontend Task 1 from the README file `expense-tracker/part-3/README.md`:
+- Work in the `<project-name>` folder
+- Add a "Upload Invoice" button to the sidebar
+- Implement a modal window with drag & drop and file selection for JPG files up to 5MB
+- Send the image to the backend and pre-fill the expense form with the received data
+- Add validation and error handling for file type, size, and backend errors
+- Add Storybook stories for the modal and upload components
+- Add unit tests for the upload and pre-fill logic
+- After completion, provide a short report on what was done and what needs to be done manually
+
+</details>
+
+---
+
 </details>
 
 <details>
@@ -207,6 +340,22 @@ Drag & Drop functionality has been added to enhance usability. Users can now int
 - Drag & Drop functionality has been integrated.
 - The system correctly processes dropped elements.
 - The previously created API endpoint is used to persist changes.
+
+---
+
+<details>
+<summary>AI Prompt (React)</summary>
+
+Perform Frontend Task 2 from the README file `expense-tracker/part-3/README.md`:
+- Work in the `<project-name>` folder
+- Integrate drag & drop functionality for expense table records
+- Use the backend API endpoint to persist the new order of records
+- Ensure correct processing of dropped elements and update the UI accordingly
+- Add unit tests for drag & drop logic
+- Add Storybook stories for drag & drop components
+- After completion, provide a short report on what was done and what needs to be done manually
+
+</details>
 
 ---
 
@@ -230,6 +379,20 @@ To improve application performance, DevTools have been used to analyze and optim
 
 ---
 
+<details>
+<summary>AI Prompt (React)</summary>
+
+Perform Frontend Task 3 from the README file `expense-tracker/part-3/README.md`:
+- Work in the `<project-name>` folder
+- Install and use DevTools (React DevTools, Redux DevTools, why-did-you-render) to analyze re-renders
+- Identify components with excessive re-renders and optimize them using memoization, useCallback, and useMemo
+- Verify performance improvements with updated benchmarks
+- After completion, provide a short report on what was done and what needs to be done manually
+
+</details>
+
+---
+
 </details>
 
 <details>
@@ -250,6 +413,21 @@ To improve error tracking and debugging, logging tools have been integrated into
 
 ---
 
+<details>
+<summary>AI Prompt (React)</summary>
+
+Perform Frontend Task 4 from the README file `expense-tracker/part-3/README.md`:
+- Work in the `<project-name>` folder
+- Integrate Sentry for error and performance logging
+- Configure source maps for better debugging
+- Add global error boundaries to prevent UI crashes
+- Ensure logs include user actions and relevant context
+- After completion, provide a short report on what was done and what needs to be done manually
+
+</details>
+
+---
+
 </details>
 
 <details>
@@ -266,6 +444,19 @@ To ensure consistency across environments, the frontend has been containerized u
 - A Dockerfile has been created for the frontend.
 - A .dockerignore file has been added.
 - The application runs successfully inside a Docker container.
+
+---
+
+<details>
+<summary>AI Prompt (React)</summary>
+
+Perform Frontend Task 5 from the README file `expense-tracker/part-3/README.md`:
+- Work in the `<project-name>` folder
+- Create a Dockerfile and .dockerignore for the frontend
+- Ensure the application runs successfully inside a Docker container
+- After completion, provide a short report on what was done and what needs to be done manually
+
+</details>
 
 ---
 
@@ -292,6 +483,20 @@ A CI/CD pipeline has been added to automate testing, linting, and building of th
 
 ---
 
+<details>
+<summary>AI Prompt (React)</summary>
+
+Perform Frontend Task 6 from the README file `expense-tracker/part-3/README.md`:
+- Work in the `<project-name>` folder
+- Create a GitHub Action workflow for the frontend (`.github/workflows/ci.yml`)
+- Add steps for linting, formatting, unit/integration tests, building the app, and building a Docker image
+- Ensure the pipeline runs on pull requests and pushes to main
+- After completion, provide a short report on what was done and what needs to be done manually
+
+</details>
+
+---
+
 </details>
 
 <details>
@@ -308,6 +513,20 @@ To make the frontend application accessible, an automated deployment pipeline ha
 - The application has been deployed to the target environment.
 - The deployment process is automated and triggered by the CI/CD pipeline.
 - Environment variables are securely managed.
+
+---
+
+<details>
+<summary>AI Prompt (React)</summary>
+
+Perform Frontend Task 7 from the README file `expense-tracker/part-3/README.md`:
+- Work in the `<project-name>` folder
+- Deploy the frontend application to the target environment
+- Automate the deployment process via the CI/CD pipeline
+- Ensure environment variables are securely managed
+- After completion, provide a short report on what was done and what needs to be done manually
+
+</details>
 
 ---
 

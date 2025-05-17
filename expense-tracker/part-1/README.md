@@ -36,6 +36,50 @@ You can fork these repositories to get started. They contain basic tests. If you
   - Add a dev script in package.json to run the project using ts-node-dev.
   </details>
 
+  <details>
+  <summary>AI Prompt (NodeJS)</summary>
+
+  Perform Backend Task 1 from the README file `expense-tracker/part-1/README.md`:
+  - Work in the `<project-name>` folder
+  - Create all necessary files and folders yourself
+  - Use this structure:
+    ```
+    src/
+      app.ts
+      index.ts
+      config/
+      db/
+      expenses/
+        dto/
+        entity/
+        expenses.controller.ts
+        expenses.repository.ts
+        expenses.service.ts
+      helpers/
+        Logger.ts
+        Exception.ts
+        dateUtils.ts
+        middlewares/
+          errorHandler.ts
+          validator.ts
+    prisma/
+    tests/
+    .editorconfig
+    .prettierrc
+    .prettierignore
+    eslint.config.mjs
+    jest.config.js
+    ```
+  - Install the minimum required dependencies (TypeScript, ts-node-dev, @types/node)
+  - Enable strict mode in TypeScript
+  - Set up outDir as `build` in tsconfig.json
+  - Add scripts for start, dev, build, test, migrate, lint, lint:fix, format, prepare (husky) to `package.json`
+  - Add `.gitignore` and exclude .env, build, node_modules, etc.
+  - The file `src/index.ts` should import and run `start()` from `src/app.ts`, which should print "Server listening on port ..."
+  - Do not skip any Acceptance Criteria from the README
+  - After completion, provide a short report on what was done and what needs to be done manually (e.g., npm install)
+
+  </details>
 
 ---
 
@@ -67,6 +111,26 @@ You can fork these repositories to get started. They contain basic tests. If you
   - Add `.env` to `.gitignore` and create a `.env.example` file with placeholder values.
   - Add `config/index.ts` file for configuring environment variables.
   - Set up `src/app.ts` to centralize middleware and routing.
+  </details>
+
+  <details>
+  <summary>AI Prompt (NodeJS)</summary>
+
+  Perform Backend Task 2 from the README file `expense-tracker/part-1/README.md`:
+  - Work in the `<project-name>` folder
+  - Use the structure from Task 1
+  - Install and use `express` for routing
+  - Use `dotenv` to load environment variables and configure a port (e.g., `PORT=8080`)
+  - Implement a basic route `GET /api/ping` that responds with `{ "message": "pong" }` (route should be in `app.ts`)
+  - The application must use a configurable port from environment variables (see `src/config/index.ts`)
+  - Create a `.env` file for environment variables and add it to `.gitignore`
+  - Create a `.env.example` file with placeholder values (PORT, DATABASE_URL)
+  - Add a `config/index.ts` file for configuring environment variables
+  - Set up `src/app.ts` to centralize middleware and routing
+  - All routes should be connected in `app.ts`
+  - Do not skip any Acceptance Criteria from the README
+  - After completion, provide a short report on what was done and what needs to be done manually (e.g., npm install)
+
   </details>
 
   <br />
@@ -113,13 +177,30 @@ You can fork these repositories to get started. They contain basic tests. If you
   - Use `husky` and `lint-staged` to enforce linting/formatting on `pre-commit`.
   </details>
 
-  <br />
+  <details>
+  <summary>AI Prompt (NodeJS)</summary>
 
-  **Materials:**
+  Perform Backend Task 3 from the README file `expense-tracker/part-1/README.md`:
+  - Work in the `<project-name>` folder
+  - Use the structure from Task 1
+  - Install and configure ESLint with TypeScript support (`@typescript-eslint/parser`, `@typescript-eslint/eslint-plugin`, `eslint-config-prettier`, `eslint-plugin-prettier`)
+  - Create `eslint.config.mjs` for ESLint configuration
+  - Install and configure Prettier, and integrate it with ESLint
+  - Create a `.prettierrc` file with formatting rules and a `.prettierignore` file
+  - Add scripts to `package.json`:
+    - `build` – build the project
+    - `lint` – check the project using eslint rules
+    - `lint:fix` – check the project using eslint rules and fix errors
+    - `format` – format the project using prettier rules
+    - `start` – start the project in production mode
+  - Set up `husky` and `lint-staged` to enforce linting/formatting on pre-commit
+  - Add `.editorconfig` for consistent editor settings
+  - Do not skip any Acceptance Criteria from the README
+  - After completion, provide a short report on what was done and what needs to be done manually (e.g., npm install)
 
-  - [How to Use Linters and Code Formatters in Your Projects](https://www.freecodecamp.org/news/using-prettier-and-jslint/)
+  </details>
 
----
+  ---
 
 </details>
 
@@ -157,8 +238,24 @@ You can fork these repositories to get started. They contain basic tests. If you
   - Implement raw queries for inserting and selecting records in the `src/app.ts` file.
   </details>
 
+  <details>
+  <summary>AI Prompt (NodeJS)</summary>
 
----
+  Perform Backend Task 4 from the README file `expense-tracker/part-1/README.md`:
+  - Work in the `<project-name>` folder
+  - Use the structure from Task 1
+  - Install the `better-sqlite3` package for efficient SQLite interaction
+  - Initialize the database in `src/db/db.service.ts` and handle connection errors
+  - Create an initial schema with a table for expenses (id, name, amount, currency, category, date)
+  - Implement raw queries for inserting and selecting records in `expenses.repository.ts` and use them in `expenses.service.ts`
+  - Expose endpoints for adding and retrieving expense records via `expenses.controller.ts` and connect them in `app.ts`
+  - Use `.env` and `.env.example` for configuration
+  - Do not skip any Acceptance Criteria from the README
+  - After completion, provide a short report on what was done and what needs to be done manually (e.g., npm install)
+
+  </details>
+
+  ---
 
 </details>
 
@@ -189,13 +286,24 @@ You can fork these repositories to get started. They contain basic tests. If you
   - Generate the Prisma client and use it in the exist endpoints.
   </details>
 
-  <br />
+  <details>
+  <summary>AI Prompt (NodeJS)</summary>
 
-  **Materials:**
+  Perform Backend Task 5 from the README file `expense-tracker/part-1/README.md`:
+  - Work in the `<project-name>` folder
+  - Use the structure from Task 1
+  - Install and configure Prisma as ORM
+  - Initialize Prisma with `npx prisma init` and configure the database URL in `.env` and `.env.example`
+  - Define the expenses model in `prisma/schema.prisma` as in the example project
+  - Use `npx prisma migrate dev` to apply schema changes
+  - Generate the Prisma client and use it in `expenses.repository.ts` and `expenses.service.ts`
+  - Expose endpoints via `expenses.controller.ts` and connect them in `app.ts`
+  - Do not skip any Acceptance Criteria from the README
+  - After completion, provide a short report on what was done and what needs to be done manually (e.g., npm install, prisma migrate)
 
-  - [What is an ORM?](https://www.prisma.io/dataguide/types/relational/what-is-an-orm)
+  </details>
 
----
+  ---
 
 </details>
 
@@ -254,15 +362,30 @@ You can fork these repositories to get started. They contain basic tests. If you
 ```
   </details>
 
-  <br />
+  <details>
+  <summary>AI Prompt (NodeJS)</summary>
 
-  **Materials:**
+  Perform Backend Task 6 from the README file `expense-tracker/part-1/README.md`:
+  - Work in the `<project-name>` folder
+  - Use the structure from Task 1
+  - Use Express to define routes and middleware
+  - Implement the business logic for expenses in `expenses.service.ts`
+  - Implement database interaction methods in `expenses.repository.ts`
+  - Use DTOs in `expenses/dto` to define the shape of request payloads
+  - Create an `expenses.entity.ts` file to define the database model or schema
+  - Use middleware (`helpers/middlewares/validator.ts`) to validate incoming requests
+  - Implement centralized error handling in `helpers/middlewares/errorHandler.ts`
+  - Ensure the application structure matches the defined project layout
+  - Implement a route `POST /api/expenses` to create a new expense record, and connect all routes through `expenses.controller.ts` in `app.ts`
+  - Handle 404 status code in `app.ts`
+  - Use winston for logging in `helpers/Logger.ts`
+  - Add at least one Jest test in `tests/`
+  - Do not skip any Acceptance Criteria from the README
+  - After completion, provide a short report on what was done and what needs to be done manually
 
-  - [Services, Controllers and Repositories. An Introduction](https://gabrielgomes61320.medium.com/services-controllers-and-repositories-an-introduction-241ac52cdd93)
-  - [Understanding the Building Blocks of a Web Application: Routes, Controllers, Services, Repositories, and Databases](https://codewithmatt.hashnode.dev/understanding-the-building-blocks-of-a-web-application-routes-controllers-services-repositories-and-databases)
+  </details>
 
-
----
+  ---
 
 </details>
 
@@ -292,6 +415,27 @@ You can fork these repositories to get started. They contain basic tests. If you
   - Prepare all the necessary data in the `expenses.controller.ts`.
   - Implement business logic for fetching expenses in `expenses.service.ts`.
   - Handle database queries in `expenses.repository.ts`.
+  </details>
+
+  <details>
+  <summary>AI Prompt (NodeJS)</summary>
+
+  Perform Backend Task 7 from the README file `expense-tracker/part-1/README.md`:
+  - Work in the `<project-name>` folder
+  - Use the structure from Task 1
+  - Implement a route `GET /api/expenses` in `expenses.controller.ts` to fetch and return all expenses with optional query parameters:
+    - Pagination: `limit` and `offset`
+    - Filtering: `fromDate` and `toDate` based on the date field
+  - Prepare all the necessary data in `expenses.controller.ts`
+  - Implement business logic for fetching expenses in `expenses.service.ts`
+  - Handle database queries in `expenses.repository.ts`
+  - Ensure the response includes appropriate HTTP status codes and data
+  - Follow the established modular structure
+  - Connect the route in `app.ts`
+  - Add at least one Jest test in `tests/`
+  - Do not skip any Acceptance Criteria from the README
+  - After completion, provide a short report on what was done and what needs to be done manually
+
   </details>
 
   **Materials:**
@@ -328,7 +472,26 @@ You can fork these repositories to get started. They contain basic tests. If you
   - Handle database queries in `expenses.repository.ts`.
   </details>
 
----
+  <details>
+  <summary>AI Prompt (NodeJS)</summary>
+
+  Perform Backend Task 8 from the README file `expense-tracker/part-1/README.md`:
+  - Work in the `<project-name>` folder
+  - Use the structure from Task 1
+  - Implement a route `GET /api/expenses/:id` in `expenses.controller.ts` to fetch a specific expense by its ID
+  - Prepare all the necessary data in `expenses.controller.ts`
+  - Implement business logic for fetching expenses in `expenses.service.ts`
+  - Handle database queries in `expenses.repository.ts`
+  - Ensure the response includes appropriate HTTP status codes and data
+  - Follow the established modular structure
+  - Connect the route in `app.ts`
+  - Add at least one Jest test in `tests/`
+  - Do not skip any Acceptance Criteria from the README
+  - After completion, provide a short report on what was done and what needs to be done manually
+
+  </details>
+
+  ---
 
 </details>
 
@@ -360,7 +523,26 @@ You can fork these repositories to get started. They contain basic tests. If you
   - Use middleware (`helpers/middlewares/validator.ts`) for data validation.
   </details>
 
----
+  <details>
+  <summary>AI Prompt (NodeJS)</summary>
+
+  Perform Backend Task 9 from the README file `expense-tracker/part-1/README.md`:
+  - Work in the `<project-name>` folder
+  - Use the structure from Task 1
+  - Implement a route `PATCH /api/expenses/:id` in `expenses.controller.ts` to update specific fields of an expense
+  - Validate data before processing requests using DTOs in `expenses/dto` and middleware (`helpers/middlewares/validator.ts`)
+  - Prepare all the necessary data in `expenses.controller.ts`
+  - Implement business logic for updating expenses in `expenses.service.ts`
+  - Handle database queries in `expenses.repository.ts`
+  - Ensure the response includes appropriate HTTP status codes and data
+  - Connect the route in `app.ts`
+  - Add at least one Jest test in `tests/`
+  - Do not skip any Acceptance Criteria from the README
+  - After completion, provide a short report on what was done and what needs to be done manually
+
+  </details>
+
+  ---
 
 </details>
 
@@ -389,7 +571,23 @@ You can fork these repositories to get started. They contain basic tests. If you
   - Handle database queries in `expenses.repository.ts`.
   </details>
 
----
+  <details>
+  <summary>AI Prompt (NodeJS)</summary>
+
+  Perform Backend Task 10 from the README file `expense-tracker/part-1/README.md`:
+  - Work in the `<project-name>` folder
+  - Use the structure from Task 1
+  - Implement a route `DELETE /api/expenses/:id` in `expenses.controller.ts` to delete an expense by its ID
+  - Prepare all the necessary data in `expenses.controller.ts`
+  - Implement business logic for deleting expenses in `expenses.service.ts`
+  - Handle database queries in `expenses.repository.ts`
+  - Ensure the response includes appropriate HTTP status code
+  - Do not skip any Acceptance Criteria from the README
+  - After completion, provide a short report on what was done and what needs to be done manually
+
+  </details>
+
+  ---
 
 </details>
 
@@ -450,7 +648,26 @@ You can fork these repositories to get started. They contain basic tests. If you
 
   - [REST API Logging](https://romanglushach.medium.com/java-rest-api-logging-best-practices-and-guidelines-bf5982ee4180)
 
----
+  <details>
+  <summary>AI Prompt (NodeJS)</summary>
+
+  Perform Backend Task 11 from the README file `expense-tracker/part-1/README.md`:
+  - Work in the `<project-name>` folder
+  - Use the structure from Task 1
+  - Use a logging library like `winston` in `helpers/Logger.ts`
+  - Place error classes in `helpers/Exception.ts`
+  - Add logs for key actions:
+    - Successful expense creation, updates, and deletions
+    - Errors during request handling
+  - Logs should be displayed in the console during development and written to a file in production
+  - Ensure the code structure matches the provided example
+  - Add at least one Jest test in `tests/`
+  - Do not skip any Acceptance Criteria from the README
+  - After completion, provide a short report on what was done and what needs to be done manually
+
+  </details>
+
+  ---
 
 </details>
 
@@ -459,7 +676,15 @@ You can fork these repositories to get started. They contain basic tests. If you
 
   ---
 
+  <details>
+  <summary>AI Prompt (NodeJS)</summary>
+
+  Perform Backend Task 12 from the README file `expense-tracker/part-1/README.md`:
   - Open a pull request for the `master` branch and send the solution to the code review
+  - Ensure that all previous tasks are completed and at least one Jest test exists in `tests/`
+  - After completion, provide a short report on what was done
+
+  </details>
 
   ---
 
@@ -492,7 +717,39 @@ You can fork these repositories to get started. They contain basic tests. If you
   - Use [Vite](https://vite.dev/guide/) for initialization.
   </details>
 
----
+  <details>
+  <summary>AI Prompt (React)</summary>
+
+  Perform Frontend Task 1 from the README file `expense-tracker/part-1/README.md`:
+  - Work in the `<project-name>` folder
+  - Initialize the project using Vite with React and TypeScript template
+  - Set up the following structure:
+    ```
+    src/
+      components/
+      pages/
+      hooks/
+      utils/
+      assets/
+      App.tsx
+      main.tsx
+    public/
+    .editorconfig
+    .prettierrc
+    .prettierignore
+    eslint.config.mjs
+    stylelint.config.js
+    tsconfig.json
+    ```
+  - Install and configure TypeScript, set up `tsconfig.json` with strict mode and path aliases for cleaner imports
+  - Add scripts to `package.json` for dev, build, preview, lint, lint:fix, stylelint, stylelint:fix, format
+  - Add `.gitignore` and exclude node_modules, dist, .env, etc.
+  - Ensure the project runs in development mode with a single command
+  - After completion, provide a short report on what was done and what needs to be done manually (e.g., npm install)
+
+  </details>
+
+  ---
 
 </details>
 
@@ -542,6 +799,30 @@ You can fork these repositories to get started. They contain basic tests. If you
 
 ---
 
+  <details>
+  <summary>AI Prompt (React)</summary>
+
+  Perform Frontend Task 2 from the README file `expense-tracker/part-1/README.md`:
+  - Work in the `<project-name>` folder
+  - Use the structure from Task 1
+  - Install and configure ESLint with TypeScript and React support (`@typescript-eslint/parser`, `@typescript-eslint/eslint-plugin`, `eslint-plugin-react`, `eslint-config-prettier`, `eslint-plugin-prettier`)
+  - Install and configure Prettier, integrate it with ESLint
+  - Install and configure Stylelint with `stylelint-config-standard` for CSS linting
+  - Create `.prettierrc`, `.prettierignore`, `.editorconfig`, `eslint.config.mjs`, and `stylelint.config.js`
+  - Add scripts to `package.json`:
+    - `lint` – check the project using eslint rules
+    - `lint:fix` – fix eslint errors
+    - `stylelint` – check CSS linting
+    - `stylelint:fix` – fix CSS linting errors
+    - `format` – format code using Prettier
+  - Set up Husky and lint-staged to enforce linting/formatting on pre-commit
+  - Do not skip any Acceptance Criteria from the README
+  - After completion, provide a short report on what was done and what needs to be done manually
+
+  </details>
+
+---
+
 </details>
 
 <details>
@@ -578,6 +859,23 @@ You can fork these repositories to get started. They contain basic tests. If you
   </details>
 ---
 
+  <details>
+  <summary>AI Prompt (React)</summary>
+
+  Perform Frontend Task 3 from the README file `expense-tracker/part-1/README.md`:
+  - Work in the `<project-name>` folder
+  - Create a reusable `Logo` component in `src/components/Logo/Logo.tsx`
+  - Follow best practices for component structure: include `Logo.module.css` (or .scss), `index.ts`, and a Storybook story if Storybook is used
+  - The component should be accessible, semantic, and match the Figma design
+  - Export the component from `src/components/Logo/index.ts`
+  - Add a test file (e.g., `Logo.test.tsx`) for basic rendering
+  - Document usage with a JSDoc comment and/or Storybook
+  - After completion, provide a short report on what was done and what needs to be done manually
+
+  </details>
+
+---
+
 </details>
 
 <details>
@@ -597,8 +895,7 @@ You can fork these repositories to get started. They contain basic tests. If you
 
   ```jsx
   <Loader />
-  ```
-  </details>
+  ```  </details>
 
   <br />
 
@@ -612,6 +909,23 @@ You can fork these repositories to get started. They contain basic tests. If you
   - [Your First Component](https://react.dev/learn/your-first-component)
   - [Building Reusable UI Components](https://medium.com/cstech/building-reusable-ui-components-with-react-best-practices-and-patterns-24b6fe921347)
   </details>
+---
+
+  <details>
+  <summary>AI Prompt (React)</summary>
+
+  Perform Frontend Task 4 from the README file `expense-tracker/part-1/README.md`:
+  - Work in the `<project-name>` folder
+  - Create a reusable `Loader` component in `src/components/Loader/Loader.tsx`
+  - Follow best practices for structure: include styles, `index.ts`, and a Storybook story if Storybook is used
+  - The component should be accessible, semantic, and match the Figma design
+  - Export the component from `src/components/Loader/index.ts`
+  - Add a test file for basic rendering
+  - Document usage with a JSDoc comment and/or Storybook
+  - After completion, provide a short report on what was done and what needs to be done manually
+
+  </details>
+
 ---
 
 </details>
@@ -647,6 +961,24 @@ You can fork these repositories to get started. They contain basic tests. If you
 
   - [Your First Component](https://react.dev/learn/your-first-component)
   - [Building Reusable UI Components](https://medium.com/cstech/building-reusable-ui-components-with-react-best-practices-and-patterns-24b6fe921347)
+  </details>
+
+  ---
+
+  <details>
+  <summary>AI Prompt (React)</summary>
+
+  Perform Frontend Task 5 from the README file `expense-tracker/part-1/README.md`:
+  - Work in the `<project-name>` folder
+  - Create a reusable `Button` component in `src/components/Button/Button.tsx`
+  - Support props for `disabled`, `onClick`, and children, and any other relevant states (active, loading, etc.)
+  - Follow best practices for structure: include styles, `index.ts`, and a Storybook story if Storybook is used
+  - Ensure accessibility (e.g., correct ARIA attributes)
+  - Export the component from `src/components/Button/index.ts`
+  - Add a test file for basic rendering and interaction
+  - Document usage with a JSDoc comment and/or Storybook
+  - After completion, provide a short report on what was done and what needs to be done manually
+
   </details>
 
   ---
@@ -690,6 +1022,24 @@ You can fork these repositories to get started. They contain basic tests. If you
 
   - [Your First Component](https://react.dev/learn/your-first-component)
   - [Building Reusable UI Components](https://medium.com/cstech/building-reusable-ui-components-with-react-best-practices-and-patterns-24b6fe921347)
+  </details>
+
+  ---
+
+  <details>
+  <summary>AI Prompt (React)</summary>
+
+  Perform Frontend Task 6 from the README file `expense-tracker/part-1/README.md`:
+  - Work in the `<project-name>` folder
+  - Create a reusable `InputLabel` component in `src/components/InputLabel/InputLabel.tsx`
+  - Support standard label features, including `htmlFor` prop
+  - Follow best practices for structure: include styles, `index.ts`, and a Storybook story if Storybook is used
+  - Ensure accessibility and semantic HTML
+  - Export the component from `src/components/InputLabel/index.ts`
+  - Add a test file for basic rendering
+  - Document usage with a JSDoc comment and/or Storybook
+  - After completion, provide a short report on what was done and what needs to be done manually
+
   </details>
 
   ---
@@ -741,6 +1091,24 @@ You can fork these repositories to get started. They contain basic tests. If you
 
   ---
 
+  <details>
+  <summary>AI Prompt (React)</summary>
+
+  Perform Frontend Task 7 from the README file `expense-tracker/part-1/README.md`:
+  - Work in the `<project-name>` folder
+  - Create a reusable `Input` component in `src/components/Input/Input.tsx`
+  - Support props for `type`, `placeholder`, `defaultValue`, `error`, `helperText`, `onChange`, etc.
+  - Follow best practices for structure: include styles, `index.ts`, and a Storybook story if Storybook is used
+  - Ensure accessibility and semantic HTML
+  - Export the component from `src/components/Input/index.ts`
+  - Add a test file for basic rendering and validation
+  - Document usage with a JSDoc comment and/or Storybook
+  - After completion, provide a short report on what was done and what needs to be done manually
+
+  </details>
+
+  ---
+
 </details>
 
 <details>
@@ -783,6 +1151,25 @@ You can fork these repositories to get started. They contain basic tests. If you
 
   ---
 
+  <details>
+  <summary>AI Prompt (React)</summary>
+
+  Perform Frontend Task 8 from the README file `expense-tracker/part-1/README.md`:
+  - Work in the `<project-name>` folder
+  - Create a reusable `Icon` component in `src/components/Icon/Icon.tsx`
+  - Support props for `iconName`, `size`, `color`, etc.
+  - Use SVGs for icons, and organize them in `src/assets/icons/` or similar
+  - Follow best practices for structure: include styles, `index.ts`, and a Storybook story if Storybook is used
+  - Ensure accessibility (e.g., `aria-label`)
+  - Export the component from `src/components/Icon/index.ts`
+  - Add a test file for basic rendering
+  - Document usage with a JSDoc comment and/or Storybook
+  - After completion, provide a short report on what was done and what needs to be done manually
+
+  </details>
+
+  ---
+
 </details>
 
 <details>
@@ -809,490 +1196,25 @@ You can fork these repositories to get started. They contain basic tests. If you
   ```
   </details>
 
-  <br />
-
-  **Materials:**
-
-  - [HTML Semantic Elements](https://www.w3schools.com/html/html5_semantic_elements.asp)
-
   <details>
-  <summary>React</summary>
+  <summary>AI Prompt (React)</summary>
 
-  - [Your First Component](https://react.dev/learn/your-first-component)
-  - [Building Reusable UI Components](https://medium.com/cstech/building-reusable-ui-components-with-react-best-practices-and-patterns-24b6fe921347)
+  Perform Frontend Task 9 from the README file `expense-tracker/part-1/README.md`:
+  - Work in the `<project-name>` folder
+  - Create a reusable `DatePicker` component in `src/components/DatePicker/DatePicker.tsx`
+  - Support props for `value`, `onChange`, and any other relevant props
+  - Use a standard `<input type="date" />` for simplicity, but style it to match the design as much as possible
+  - Follow best practices for structure: include styles, `index.ts`, and a Storybook story if Storybook is used
+  - Ensure accessibility and semantic HTML
+  - Export the component from `src/components/DatePicker/index.ts`
+  - Add a test file for basic rendering and interaction
+  - Document usage with a JSDoc comment and/or Storybook
+  - After completion, provide a short report on what was done and what needs to be done manually
+
   </details>
 
   ---
 
 </details>
 
-<details>
-  <summary>Task 10: Create Table component</summary>
-
-  ---
-
-  **Description:**
-  Develop foundational reusable component that can be utilized across the application. A customizable `Table`, `TableHead`, `TableBody`, `TableRow`, `TableCell` components. Since we have a responsive design and it is complex with styling in the form that we offer, you can use `divs`. But if you feel that you can handle it, you can use standard table tags
-
-  **Acceptance Criteria:**
-  - [Design Link](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=2-19441&m=dev&t=ra9tjWdp5aVmkqRH-4)
-
-  **Technology-related requirements:**
-  <details>
-  <summary>React</summary>
-
-  ```jsx
-  <Table>
-    <TableHead>
-      <TableRow>
-        <TableCell>Column<TableCell>
-      </TableRow>
-    </TableHead>
-    <TableBody>
-      <TableRow>
-        <TableCell>Column<TableCell>
-      </TableRow>
-    </TableBody>
-  </Table>
-  ```
-  </details>
-
-  <br />
-
-  **Materials:**
-
-  - [HTML Semantic Elements](https://www.w3schools.com/html/html5_semantic_elements.asp)
-
-  <details>
-  <summary>React</summary>
-
-  - [Your First Component](https://react.dev/learn/your-first-component)
-  - [Building Reusable UI Components](https://medium.com/cstech/building-reusable-ui-components-with-react-best-practices-and-patterns-24b6fe921347)
-  </details>
-
-  ---
-
-</details>
-
-<details>
-  <summary>Task 11: Create Menu component</summary>
-
-  ---
-
-  **Description:**
-  Develop foundational reusable component that can be utilized across the application. Component for displaying menu items after click.
-
-  **Acceptance Criteria:**
-  - [Design Link](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=3-13999&m=dev&t=cvakLOlrrBuwZq9F-4)
-
-  **Technology-related requirements:**
-  <details>
-  <summary>React</summary>
-
-  - Implement a `Menu` and `MenuItem` components.
-  ```jsx
-  <Menu>
-    <MenuItem onClick={handleEdit}>Edit</MenuItem>
-    <MenuItem onClick={handleDelete}>Delete</MenuItem>
-  </Menu>
-  ```
-  </details>
-
-  <br />
-
-  **Materials:**
-
-  - [HTML Semantic Elements](https://www.w3schools.com/html/html5_semantic_elements.asp)
-
-  <details>
-  <summary>React</summary>
-
-  - [Your First Component](https://react.dev/learn/your-first-component)
-  - [Building Reusable UI Components](https://medium.com/cstech/building-reusable-ui-components-with-react-best-practices-and-patterns-24b6fe921347)
-  </details>
-
-  ---
-
-</details>
-
-<details>
-  <summary>Task 12: Create Button Icon component</summary>
-
-  ---
-
-  **Description:**
-  Develop foundational reusable component that can be utilized across the application. Reuse the previously created icon component
-
-  **Acceptance Criteria:**
-  - [Design Link](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=2-19187&m=dev&t=GKFeiEqjFghP7rf5-4)
-
-  **Technology-related requirements:**
-
-  <details>
-  <summary>React</summary>
-
-  ```jsx
-  <IconButton>
-    <Icon icon="close" color="white" size={12} />
-  </IconButton>
-  ```
-  </details>
-
-  ---
-
-</details>
-
-<details>
-  <summary>Task 13: Create Icon Radio component</summary>
-
-  ---
-
-  **Description:**
-  Develop foundational reusable component that can be utilized across the application. Reuse the previously created icon component.
-
-  **Acceptance Criteria:**
-  - [Design Link](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=4-34033&m=dev&t=GTL1yhChXxd9Efzr-4)
-
-  **Technology-related requirements:**
-
-  <details>
-  <summary>React</summary>
-
-  ```jsx
-  <IconRadio name="category">
-    <Icon icon="credits" size={24} />
-  </IconRadio>
-  ```
-  </details>
-
-  ---
-
-</details>
-
-<details>
-  <summary>Task 14: Create Category Group component</summary>
-
-  ---
-
-  **Description:**
-  Develop foundational reusable component that can be utilized across the application. Based on the `IconRadio` and `Icon` components, create a CategoryGroup component. When you click on the icon it should be activated. User can only select one category
-
-  **Acceptance Criteria:**
-  - [Design Link](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=4-34103&m=dev&t=cvakLOlrrBuwZq9F-4)
-
-  **Technology-related requirements:**
-
-  <details>
-  <summary>React</summary>
-
-  ```jsx
-  <>
-    <CategoryGroup defaultValue="mobile" />
-    <CategoryGroup />
-  </>
-  ```
-  </details>
-
-  ---
-
-</details>
-
-<details>
-  <summary>Task 15: Create Input with Currency component</summary>
-
-  ---
-
-  **Description:**
-  Develop foundational reusable component that can be utilized across the application. An extension of the standard input, displaying the selected currency.
-
-  **Acceptance Criteria:**
-  - [Design Link](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=2-19408&m=dev&t=ra9tjWdp5aVmkqRH-4)
-
-  **Technology-related requirements:**
-
-  <details>
-  <summary>React</summary>
-
-  ```jsx
-  <>
-    <InputWithCurrency />
-    <InputWithCurrency
-      id="name4"
-      defaultValue="123"
-      selectProps={{ defaultValue: 'USD' }} />
-    <InputWithCurrency
-      id="name4"
-      onChange={handleAmountChange}
-      defaultValue="123"
-      selectProps={{
-        defaultValue: 'USD',
-        onChange: handleCurrencyChange }} />
-  </>
-  ```
-  </details>
-
-  ---
-
-</details>
-
-<details>
-  <summary>Task 16: Create Date Picker Range component</summary>
-
-  ---
-
-  **Description:**
-  Develop foundational reusable component that can be utilized across the application. A component for selecting dates. To change the range date, you need to click on one of the date and a ready-made date picker component should appear
-
-  **Acceptance Criteria:**
-  - [Design Link](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=3-2073&m=dev&t=ra9tjWdp5aVmkqRH-4)
-
-  **Technology-related requirements:**
-
-  <details>
-  <summary>React</summary>
-
-  ```jsx
-  <DatePickerRange
-    from={fromDate}
-    to={toDate}
-    onChange={handleUpdateDateRange} />
-  ```
-  </details>
-
-  ---
-
-</details>
-
-<details>
-  <summary>Task 17: Create Expense Table component</summary>
-
-  ---
-
-  **Description:**
-  Develop foundational reusable component that can be utilized across the application. Component for displaying expenses based on an already implemented `Table` component.
-
-  **Acceptance Criteria:**
-  - [Design Link](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=1-3551&m=dev&t=AyMjf1BcxpIwHBXC-4)
-  - If there is no data, then a message with an image should be displayed as in the [design](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=1-3601&m=dev&t=XWnEQbC9qTwXBf01-4)
-  - If there is no data and a request response is expected, then a [stub should be displayed](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=1-3585&m=dev&t=XWnEQbC9qTwXBf01-4)
-  - If there is initial data, but a new portion of data is expected to be loaded, then the [spinner](https://www.figma.com/design/rLNUulPqnl0jhhnXeGDxEb/Expense-tracker?node-id=1-3471&m=dev&t=XWnEQbC9qTwXBf01-4) is displayed
-
-  **Technology-related requirements:**
-
-  <details>
-  <summary>React</summary>
-
-  ```jsx
-  <ExpenseTable />
-  ```
-  </details>
-
-  ---
-
-</details>
-
-
-<details>
-  <summary>Task 18: Implement Sidebar Component</summary>
-
----
-
-  **Description:**
-
-  Create a Sidebar component that appear after clicking `plus` button
-
-  **Acceptance Criteria:**
-
-  - The sidebar open button is rendered in the lower right corner.
-  - When user click the button, a sidebar appears on the right
-  - Sidebar styles and content match the design.
-  - The sidebar contains a form for creating a new expense record. The logic for creating a record at this step does not need to be done
-  - *The sidebar appear with smooth animation.
-  - *When the user clicks outside the `Sidebar` or presses the esc key, the component should close.
-
-  **Materials:**
-
-  - [CSS Animations](https://www.w3schools.com/css/css3_animations.asp)
-
----
-
-</details>
-
-
-<details>
-  <summary>Task 19: Implement Layout Component</summary>
-
----
-
-  **Description:**
-
-  Create a Layout component that includes Header and Sidebar
-
-  **Acceptance Criteria:**
-
-  - A layout component has been created which is a general wrapper for the application.
-  - A header component is implemented and displayed on the layout.
-  - The layout is a wrapper and can be added to any of the future pages.
-
----
-
-</details>
-
-
-<details>
-  <summary>Task 20: Build Responsive Layout</summary>
-
-  ---
-
-  **Description:**
-
-  Implement a responsive design for the application that adapts to different screen sizes, ensuring usability on both mobile and desktop devices.
-
-  **Acceptance Criteria:**
-
-  - The application layout adjusts seamlessly between mobile, tablet, and desktop views. The tablet version is not included in the design. Style it however you see fit.
-  - Key components, are responsive and match the design.
-
----
-
-</details>
-
- <details>
-  <summary>Task 21: Display Expenses Table</summary>
-
-  ---
-
-  **Description:**
-
-  `ExpenseTable` component is already created. Connect data to it and display component on the screen
-
-  **Acceptance Criteria:**
-
-  - If no expenses are available, a placeholder message is displayed.
-  - If expenses are loading, a skeleton is shown.
-  - Pagination implemented. When the user scrolls to the end of the screen, a new piece of data should be loaded. When new data is loaded, a spinner should appear at the bottom of the table.
-  - Filtering is implemented. The user selects a range of dates and the table is redrawn taking into account the selected dates.
-  - *When the user clicks outside the `DatePickerRange` or presses the esc key, the component should close.
-
-  **Endpoints:**
-
-  - `GET /api/expenses` - Fetch all expenses.
-    - `limit` - Number of records per page.
-    - `offset` - Offset for pagination.
-    - `fromDate` -and toDate: Filter by date range.
-
-  **Materials:**
-
-  - [Client-Server Overview](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/First_steps/Client-Server_overview)
-  - [How to implement infinite scrolling in Javascript](https://www.educative.io/answers/how-to-implement-infinite-scrolling-in-javascript)
-  - [Event loop](https://www.youtube.com/watch?v=8aGhZQkoFbQ)
-
-  <details>
-  <summary>React</summary>
-
-  - [How to Create Infinite Scrolling in React Using the Intersection Observer API](https://www.freecodecamp.org/news/infinite-scrolling-in-react/)
-  </details>
-
----
-
-</details>
-
-<details>
-  <summary>Task 22: Implement Add Expense Functionality</summary>
-
-  ---
-
-  **Description:**
-
-  Create a form for adding a new expense. The form should be accessible through a right sidebar that opens when clicking the "+" button.
-
-  **Acceptance Criteria:**
-
-  - A button triggers the display of a right sidebar with the form.
-  - The form includes fields for Name, Payment amount, Category and Date.
-  - Submitting the form sends data to the backend and updates the table.
-  - Data validation has been added to the form. All fields are required and correspond to the type specified in the database. When user click on the submit button, if the field has an invalid value, an error message should be displayed under the input and also the input should have a red border.
-  - *The sidebar appear with smooth animation.
-  - *In case of error, the input should have a shaking animation.
-  - *Animate the appearance of a new record in the table
-
-  **Endpoints:**
-
-  - `POST /api/expenses` - Add a new expense.
-
-  **Technology-related requirements:**
-
-  <details>
-  <summary>React</summary>
-
-  - Use controlled components for form handling.
-  - Validate form inputs with `yup`.
-  - Use `react-hook-form` for work with forms.
-  </details>
-
-  <br />
-
-  **Materials:**
-
-  - [Client-side form validation](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
----
-
-</details>
-
-
-<details>
-  <summary>Task 23: Add Update and Delete Expense Features</summary>
-
-  ---
-
-  **Description:**
-
-  Implement functionality to update or delete an expense from the table.
-
-  **Acceptance Criteria:**
-
-  - An "Edit" button allows modification of expense details.
-  - A "Delete" button removes the expense from the list and updates the backend. Use modal for confirming deletion.
-  - In the mobile version there is no menu button, so when user click on a row, display a modal window with an Edit and Delete buttons.
-  - *Animate deleting a table record.
-  - *When the user clicks outside the modal window or presses the esc key, the component should close.
-  - *Animate the appearance and disappearance of a modal window.
-  - *Handle optimistic updates for better user experience.
-
-  **Endpoints:**
-
-  - `PATCH /api/expenses/:id` - Update an expense.
-  - `DELETE /api/expenses/:id` - Delete an expense.
-
-  **Materials:**
-
-  - [What is Optimistic UI?](https://javascript.plainenglish.io/what-is-optimistic-ui-656b9d6e187c)
-
----
-
-</details>
-
-
-<details>
-  <summary>Task 24: Final step</summary>
-
-  ---
-
-  - Open a pull request for the `master` branch and send the solution to the code review
-
-  ---
-
-</details>
-
-## Solution
-If you've already finished working on this part or are stuck, these repositories might be useful to you.
-  - [API](https://github.com/petproject-dev/expense-tracker-backend-part-2) - Express.js
-  - [UI](https://github.com/petproject-dev/expense-tracker-frontend-part-2) - React
-
-## Next Steps
-If you're ready to move forward, you can proceed to [next project part](../part-2/README.md).
-
-## Found an Issue?
-We strive to make the project as clear and helpful as possible. If you notice any errors, inconsistencies, or unclear instructions, please open a Pull Request in this repository with your suggested fixes or improvements. Your feedback helps improve the learning experience for everyone!
-
-Happy coding, and good luck with this part of the project!
+</rewritten_file>
