@@ -1205,5 +1205,3 @@ You can fork these repositories to get started. They contain basic tests. If you
   ---
 
 </details>
-
-</rewritten_file>
