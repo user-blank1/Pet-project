@@ -895,7 +895,8 @@ You can fork these repositories to get started. They contain basic tests. If you
 
   ```jsx
   <Loader />
-  ```  </details>
+  ```
+  </details>
 
   <br />
 
