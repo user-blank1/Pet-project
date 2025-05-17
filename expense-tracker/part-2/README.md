@@ -26,8 +26,6 @@ Create the user model and database schema to handle user-related data securely. 
 
 - [What are database migrations?](https://www.prisma.io/dataguide/types/relational/what-are-database-migrations)
 
----
-
 <details>
 <summary>AI Prompt (NodeJS)</summary>
 
@@ -66,8 +64,6 @@ Create endpoints for user registration (`POST /api/auth/sign-up`) and login (`PO
 
 - [JWT Authentication](https://mihai-andrei.com/blog/jwt-authentication-using-prisma-and-express/)
 
----
-
 <details>
 <summary>AI Prompt (NodeJS)</summary>
 
@@ -101,8 +97,6 @@ Develop middleware to validate and protect routes that require authentication.
 - Protected routes return `401 Unauthorized` if the token is invalid or expired.
 - Unauthorized access attempts are logged.
 
----
-
 <details>
 <summary>AI Prompt (NodeJS)</summary>
 
@@ -133,8 +127,6 @@ Create the `/api/users/me` endpoint in the `user` module to return details of th
 - `GET /api/users/me` returns user information (excluding sensitive fields).
 - Protected by authentication middleware.
 - Access to `/api/users/me` endpoint is logged.
-
----
 
 <details>
 <summary>AI Prompt (NodeJS)</summary>
@@ -167,8 +159,6 @@ Implement the `/api/auth/token` endpoint to refresh access tokens using refresh 
 - Issues a new access and refresh tokens if the refresh token is valid.
 - Invalid refresh tokens return `401 Unauthorized`.
 - Token refresh attempts are logged.
-
----
 
 <details>
 <summary>AI Prompt (NodeJS)</summary>
@@ -209,8 +199,6 @@ Implement the `/api/auth/forgot-password` endpoint to allow users to recover the
 
 - Use `nodemailer` for sending emails.
 </details>
-
----
 
 <details>
 <summary>AI Prompt (NodeJS)</summary>
@@ -253,8 +241,6 @@ Implement the `/api/auth/restore-password` endpoint.
 - Use `node-cron` for scheduling crone jobs.
 </details>
 
----
-
 <details>
 <summary>AI Prompt (NodeJS)</summary>
 
@@ -294,8 +280,6 @@ Implement the `/api/auth/logout` and `/api/auth/logoutAll` endpoints.
 
 - Use `node-cron` for scheduling crone jobs.
 </details>
-
----
 
 <details>
 <summary>AI Prompt (NodeJS)</summary>
@@ -338,8 +322,6 @@ Implement security measures to ensure data protection and prevent common vulnera
 - Validate all incoming data and sanitize inputs.
 </details>
 
----
-
 <details>
 <summary>AI Prompt (NodeJS)</summary>
 
@@ -381,8 +363,6 @@ Cover the functionality of `auth` and `user` modules with unit tests.
 - Use `supertest` and `jest`.
 </details>
 
----
-
 <details>
 <summary>AI Prompt (NodeJS)</summary>
 
@@ -409,8 +389,6 @@ Perform Backend Task 10 from the README file `expense-tracker/part-2/README.md`:
 
 - Make sure the tests pass - `npm run test`
 - Open a pull request for the `master` branch and send the solution to the code review
-
----
 
 <details>
 <summary>AI Prompt (NodeJS)</summary>
@@ -449,8 +427,6 @@ Add a router with empty blank pages. This will allow you to make transitions bet
 
 - Use `react-router-dom`
 </details>
-
----
 
 <details>
 <summary>AI Prompt (React)</summary>
@@ -492,8 +468,6 @@ Create a common layout for authentication pages.
 
 - [Building a Layout with React Router](https://medium.com/@ravipatel.it/building-a-layout-with-react-router-v6-step-by-step-guide-75b9637f1fbe)
 </details>
-
----
 
 <details>
 <summary>AI Prompt (React)</summary>
@@ -543,8 +517,6 @@ Create the Sign-Up page, allowing users to register by providing necessary infor
 - Use `yup` for validation.
 </details>
 
----
-
 <details>
 <summary>AI Prompt (React)</summary>
 
@@ -592,8 +564,6 @@ Create the Sign-In page to authenticate users using their email and password.
 - Display validation and backend errors clearly.
 </details>
 
----
-
 <details>
 <summary>AI Prompt (React)</summary>
 
@@ -640,8 +610,6 @@ After successful login, the user receives an access token as a response. A refre
 
 - [Using Axios interceptors for refreshing your API token](https://www.thedutchlab.com/insights/using-axios-interceptors-for-refreshing-your-api-token)
 
----
-
 <details>
 <summary>AI Prompt (React)</summary>
 
@@ -687,8 +655,6 @@ Develop a password recovery flow with pages for email submission, token validati
 - Handle loading and error states gracefully.
 </details>
 
----
-
 <details>
 <summary>AI Prompt (React)</summary>
 
@@ -731,8 +697,6 @@ Create route guards to protect authenticated routes and restrict unauthorized ac
 - Use `react-router-dom` to implement route protection.
 </details>
 
----
-
 <details>
 <summary>AI Prompt (React)</summary>
 
@@ -767,8 +731,6 @@ Create a user profile page displaying authenticated user details. Our design doe
 
 **Endpoints:**
 - `GET /api/users/me`
-
----
 
 <details>
 <summary>AI Prompt (React)</summary>
@@ -808,8 +770,6 @@ Cover the functionality with unit tests.
 - Use `react-testing-library`
 </details>
 
----
-
 <details>
 <summary>AI Prompt (React)</summary>
 
@@ -839,8 +799,6 @@ By now you should have a large number of components ready to be reused. As the a
 - All components that can be reused are added to the storybook.
 - The script for launching the storybook has been added to package.json
 
----
-
 <details>
 <summary>AI Prompt (React)</summary>
 
@@ -864,8 +822,6 @@ Perform Frontend Task 10 from the README file `expense-tracker/part-2/README.md`
 
 - Make sure the tests pass - `npm run test`
 - Open a pull request for the `master` branch and send the solution to the code review
-
----
 
 <details>
 <summary>AI Prompt (React)</summary>

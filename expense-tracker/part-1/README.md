@@ -642,12 +642,6 @@ You can fork these repositories to get started. They contain basic tests. If you
 ```
   </details>
 
-  <br />
-
-  **Materials:**
-
-  - [REST API Logging](https://romanglushach.medium.com/java-rest-api-logging-best-practices-and-guidelines-bf5982ee4180)
-
   <details>
   <summary>AI Prompt (NodeJS)</summary>
 
@@ -666,6 +660,12 @@ You can fork these repositories to get started. They contain basic tests. If you
   - After completion, provide a short report on what was done and what needs to be done manually
 
   </details>
+
+  <br />
+
+  **Materials:**
+
+  - [REST API Logging](https://romanglushach.medium.com/java-rest-api-logging-best-practices-and-guidelines-bf5982ee4180)
 
   ---
 
@@ -797,8 +797,6 @@ You can fork these repositories to get started. They contain basic tests. If you
 
   </details>
 
----
-
   <details>
   <summary>AI Prompt (React)</summary>
 
@@ -857,7 +855,6 @@ You can fork these repositories to get started. They contain basic tests. If you
   - [Your First Component](https://react.dev/learn/your-first-component)
   - [Building Reusable UI Components](https://medium.com/cstech/building-reusable-ui-components-with-react-best-practices-and-patterns-24b6fe921347)
   </details>
----
 
   <details>
   <summary>AI Prompt (React)</summary>
@@ -910,7 +907,6 @@ You can fork these repositories to get started. They contain basic tests. If you
   - [Your First Component](https://react.dev/learn/your-first-component)
   - [Building Reusable UI Components](https://medium.com/cstech/building-reusable-ui-components-with-react-best-practices-and-patterns-24b6fe921347)
   </details>
----
 
   <details>
   <summary>AI Prompt (React)</summary>
@@ -963,8 +959,6 @@ You can fork these repositories to get started. They contain basic tests. If you
   - [Your First Component](https://react.dev/learn/your-first-component)
   - [Building Reusable UI Components](https://medium.com/cstech/building-reusable-ui-components-with-react-best-practices-and-patterns-24b6fe921347)
   </details>
-
-  ---
 
   <details>
   <summary>AI Prompt (React)</summary>
@@ -1024,8 +1018,6 @@ You can fork these repositories to get started. They contain basic tests. If you
   - [Your First Component](https://react.dev/learn/your-first-component)
   - [Building Reusable UI Components](https://medium.com/cstech/building-reusable-ui-components-with-react-best-practices-and-patterns-24b6fe921347)
   </details>
-
-  ---
 
   <details>
   <summary>AI Prompt (React)</summary>
@@ -1090,8 +1082,6 @@ You can fork these repositories to get started. They contain basic tests. If you
   - [Building Reusable UI Components](https://medium.com/cstech/building-reusable-ui-components-with-react-best-practices-and-patterns-24b6fe921347)
   </details>
 
-  ---
-
   <details>
   <summary>AI Prompt (React)</summary>
 
@@ -1149,8 +1139,6 @@ You can fork these repositories to get started. They contain basic tests. If you
   - [Your First Component](https://react.dev/learn/your-first-component)
   - [Building Reusable UI Components](https://medium.com/cstech/building-reusable-ui-components-with-react-best-practices-and-patterns-24b6fe921347)
   </details>
-
-  ---
 
   <details>
   <summary>AI Prompt (React)</summary>
