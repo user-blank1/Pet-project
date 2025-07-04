@@ -1,0 +1,36 @@
+{
+  "name": "pet-project",
+  "version": "1.0.0",
+  "description": "Welcome to the petproject.dev repository! This collection of projects is designed to help students and developers of all levels build practical skills through hands-on experience. By working on real-world applications, you’ll not only learn how to code but also how to solve problems, design systems, and deliver functional solutions.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node build/index.js",
+    "build": "tsc",
+    "migrate": "prisma migrate dev",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "format": "prettier --write .",
+    "prepare": "husky install",
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/user-blank1/Pet-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/user-blank1/Pet-project/issues"
+  },
+  "homepage": "https://github.com/user-blank1/Pet-project#readme",
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.0.10",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
