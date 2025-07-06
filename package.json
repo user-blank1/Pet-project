@@ -4,15 +4,15 @@
   "description": "Welcome to the petproject.dev repository! This collection of projects is designed to help students and developers of all levels build practical skills through hands-on experience. By working on real-world applications, you’ll not only learn how to code but also how to solve problems, design systems, and deliver functional solutions.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node build/index.js",
     "build": "tsc",
     "migrate": "prisma migrate dev",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
     "format": "prettier --write .",
-    "prepare": "husky install",
-    "dev": "ts-node-dev --respawn --transpile-only src/index.ts"
+    "prepare": "husky",
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "postinstall": "husky install"
   },
   "repository": {
     "type": "git",
@@ -25,12 +25,25 @@
   },
   "homepage": "https://github.com/user-blank1/Pet-project#readme",
   "devDependencies": {
+    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
     "@types/node": "^24.0.10",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.2",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.8.3"
   },
   "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.35.1",
+    "@typescript-eslint/parser": "^8.35.1",
+    "cors": "^2.8.5",
+    "dotenv": "^17.0.1",
     "express": "^5.1.0"
+  },
+  "lint-staged": {
+    "*.{ts,js}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   }
 }
