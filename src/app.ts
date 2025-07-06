@@ -21,7 +21,7 @@ export const start = () =>
     });
 
 
-    console.log("Hello, world!!!!!!!!!!");
+    console.log("Hello, world!!!!!!!!!!!!!!!");
 }
 
 
