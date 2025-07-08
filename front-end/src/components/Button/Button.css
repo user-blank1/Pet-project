@@ -1,0 +1,27 @@
+
+.button-1
+{
+    width:267px;
+    padding:10px 0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:1rem;
+    background-color:#3629B7;
+    color:white;
+}
+.button-1:hover{
+    background-color:#382e95;
+    cursor: pointer;
+}
+.button-1:active{
+    background-color:#2f1f6e;
+}
+@media(max-width:991px)
+{
+
+}
+@media(min-width:992px)
+{
+
+}

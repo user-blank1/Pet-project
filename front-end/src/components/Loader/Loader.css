@@ -1,0 +1,24 @@
+#loader-div
+{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:1rem 0;
+}
+#loader-div svg {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+   0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@media(max-width:991px)
+{
+
+}
+@media(min-width:992px)
+{
+
+}

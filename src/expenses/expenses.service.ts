@@ -1,19 +1,16 @@
-// src/expenses.service.ts
-import {
-  insertExpense,
-  getAllExpenses as fetchAllExpenses,
-} from "./expenses.repository";
+import { findAllExpenses, createExpense } from "./expenses.repository";
 
-export function addExpense(expenseData: {
-  name: string;
-  amount: number;
-  currency: string;
-  category: string;
-  date: string;
-}) {
-  return insertExpense(expenseData);
-}
+export const getAllExpenses = () => {
+  return findAllExpenses();
+};
 
-export function getAllExpenses() {
-  return fetchAllExpenses();
-}
+export const addExpense = async (expenseData: any) => {
+  try {
+    const result = await createExpense(expenseData);
+    console.log("Service: createExpense result:", result);
+    return result;
+  } catch (error) {
+    console.error("Service error in createExpense:", error);
+    throw error;
+  }
+};

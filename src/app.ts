@@ -1,3 +1,6 @@
+import dotenv from "dotenv";
+dotenv.config();
+
 import express, { Request, Response } from "express";
 import cors from "cors";
 import { PORT } from "./config/index";
@@ -11,7 +14,7 @@ app.use(cors());
 app.use(express.json());
 
 // connection to sql
-app.use("/expenses", router);
+app.use("/api/expenses", router);
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Hello, world!");

@@ -1,0 +1,24 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  url      = env("DATABASE_URL")
+}
+datasource db {
+  provider = "postgresql"
+  url      = "prisma+postgres://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiMDFKWk5BOEc4N1BaNDRNTUJROVFXWjZGTlIiLCJ0ZW5hbnRfaWQiOiI4Mjk4MDAzNmM1YzBkNDhhNGFjMzQ3NWRkN2YyMGI4ZDc1Mjk3Mjg4ZmE4MDEwOTM3MzRjYjMzZjFlZDRiYzA3IiwiaW50ZXJuYWxfc2VjcmV0IjoiNDg1ZmM3OTktNTgwZi00ZTU1LTk2YTItMzFiZmY5OWFjN2RjIn0.mxNCI-qt4UruRxj5AMtYLFAB0dawJvlhAv4swMzkRok"
+
+
+}
+model Expense {
+  id       Int      @id @default(autoincrement())
+  name     String
+  amount   Float
+  currency String
+  category String
+  date     DateTime
+}

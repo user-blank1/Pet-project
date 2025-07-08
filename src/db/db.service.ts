@@ -1,3 +1,4 @@
+// I dont think I need this file anymore
 import Database from "better-sqlite3"; //use database to open connections and execute queries
 import * as path from "path";
 

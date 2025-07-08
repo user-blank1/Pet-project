@@ -1,6 +1,8 @@
 import "./App.css"
 import { useState, useEffect } from "react";
 import Logo from "./components/Logo/Logo";
+import Loader from "./components/Loader/Loader";
+import Button from "./components/Button/Button";
 function App() {
   const [message, setMessage] = useState("");
   useEffect(() => {
@@ -13,6 +15,8 @@ function App() {
     <>
       <h1>{message}</h1>
       <Logo />
+      <Loader/>
+      <Button/>
       
     </>
   );
