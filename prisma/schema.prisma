@@ -14,7 +14,7 @@ datasource db {
 }
 model Expense {
   id       Int      @id @default(autoincrement())
-  name     String
+  name     String @unique
   amount   Float
   currency String
   category String

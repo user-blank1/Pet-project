@@ -7,7 +7,7 @@ import { PORT } from "./config/index";
 import router from "./expenses/expenses.controller"; //  connection to sql
 
 import "./db/db.service";
-
+import logger from "./helpers/Logger";
 const app = express();
 
 app.use(cors());
@@ -23,8 +23,11 @@ app.get("/", (req: Request, res: Response) => {
 app.get("/ping", (req: Request, res: Response) => {
   res.json({ message: "pong" });
 });
-
+app.use((req: Request, res: Response) => {
+  logger.error("404 not found");
+});
 export const start = () => {
+  console.log("Starting server...");
   app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}: http://localhost:${PORT}`);
   });

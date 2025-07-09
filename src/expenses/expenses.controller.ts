@@ -2,16 +2,20 @@ import { Router, Request, Response } from "express";
 import { getAllExpenses, addExpense } from "./expenses.service";
 import { expenseSchema } from "./expenses.validation";
 import { z } from "zod";
+import logger from "../helpers/Logger";
 const router = Router();
 
-router.get("/", async (req: Request, res: Response) => {
+export const getExpensesHandler = async (req: Request, res: Response) => {
   const expenses = await getAllExpenses();
   if (expenses.length > 0) {
     res.status(200).json(expenses);
   } else {
-    res.send("Error: No expenses found");
+    logger.info("Error: No expenses found");
+    res.status(200).json([]); // Prevent hanging
   }
-});
+};
+
+router.get("/", getExpensesHandler);
 
 router.post("/", async (req: Request, res: Response) => {
   try {
@@ -28,7 +32,8 @@ router.post("/", async (req: Request, res: Response) => {
       res.status(400).send("sasjdiuh");
       // res.status(400).json({ error: error.errors });
     } else {
-      res.status(500).send(error);
+      logger.error("Error adding expense:", error);
+      res.status(500).json({ error: "Internal server error" });
     }
   }
 });
